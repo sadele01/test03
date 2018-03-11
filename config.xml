@@ -2,7 +2,7 @@
 <widget id="com.salbr.salbr" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>SalBr</name>
     <description>
-        La solución ideal para el servicio ideal
+        La soluciÃ³n ideal para el servicio ideal
     </description>
     <author email="michel.tobon@outlook.com" href="http://www.micheltobon.com/">
       Michel Tobon
@@ -69,7 +69,7 @@
     <preference name="StatusBarStyle" value="default" />
     <engine name="browser" spec="^4.1.0" />
     <plugin name="cordova-plugin-facebook4" spec="^1.9.1">
-        <variable name="APP_ID" value="660741374086000" />
-        <variable name="APP_NAME" value="SalBr" />
+        <variable name="APP_ID" value="147999889300513" />
+        <variable name="APP_NAME" value="Salbr" />
     </plugin>
 </widget>
