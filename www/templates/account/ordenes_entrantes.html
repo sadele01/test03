@@ -1,0 +1,19 @@
+<ion-view view-title="Órdenes Entrantes">
+    <ion-content class="padding">
+        <ion-list  ng-if="SalBr.getMyIncomingOrders().total_lines">
+            <ion-item class="item-remove-animate item-icon-right" 
+                      type="item-text-wrap"
+                      href="#/tab/account/incoming_order/{{order.id_order}}"
+                      collection-repeat="order in SalBr.getMyIncomingOrders().data">
+                <p>
+                    <i ng-class="SalBr.getOrderStatusClass(order.status)"></i> <strong>{{order.user}}</strong>
+                </p>
+                <p>
+                    <small>{{order.creation_timestamp}}</small>
+                </p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+        </ion-list>
+        <h3 class="text-center" ng-if="!SalBr.getMyIncomingOrders().total_lines">No tiene órdenes entrantes por el momento</h3>
+    </ion-content>
+</ion-view>

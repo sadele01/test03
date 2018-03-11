@@ -1,0 +1,30 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="">
+    <ion-content class="padding">
+        <h2 class="text-center">{{publication.title}}</h2>
+        <p class="text-center ratingContainer">
+            <i class="icon ion-star" ng-repeat="star in [1, 2, 3, 4, 5]"
+               ng-class="getStarClass($index + 1, publication.rating)"></i>
+        </p>
+        <p class="text-justify">
+            {{publication.description}}
+        </p>
+
+        <ion-slide-box on-slide-changed="slideHasChanged($index)"   ng-if="images.length" show-pager="false">
+            <ion-slide ng-repeat="id_media in images">
+                <div class="layer"><img ng-src="{{SalBr.getBaseURL()}}media/{{id_media}}" alt="{{publication.title}}"></div>
+            </ion-slide>
+        </ion-slide-box>
+        <p class="text-center">
+            <button class="button button-dark" ng-click="openModal();"> 
+                <i class="icon ion-ios-checkmark-outline"></i> Solicitar órden 
+            </button>
+        </p>
+
+    </ion-content>
+</ion-view>

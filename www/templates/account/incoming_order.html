@@ -1,0 +1,143 @@
+<ion-view view-title="">
+    <ion-content class="padding">
+        <div ng-if="order === null">
+            <h2 class="text-center">
+                <strong>Cargando órden</strong>
+                <br>
+                <ion-spinner icon="spiral" class="spiral-calm"></ion-spinner>
+            </h2>
+        </div>
+        <div ng-if="order !== null">
+            <div ng-if="!order.total_lines">
+                <h2>La órden seleccionada no está disponible</h2>
+            </div>
+            <div ng-if="order.total_lines">
+                <div class="row">
+                    <div class="col-33">
+                        Cliente:
+                    </div>
+                    <div>
+                        <strong>{{order.data.user}}</strong>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-33">
+                        Creación:
+                    </div>
+                    <div>
+                        <strong>{{order.data.creation_timestamp}}</strong>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-33">
+                        Estatus
+                    </div>
+                    <div>
+                        <i class="icon" ng-class="SalBr.getOrderStatusClass(order.data.status)"></i> <strong>{{SalBr.getOrderStatus(order.data.status)}}</strong>
+                        <h5 class="text-bold" ng-if="order.data.id_user_qualification"><i class="icon ion-star active"></i> Calificada!</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-33">
+                        Solicitud:
+                    </div>
+                    <div>
+                        <strong>{{order.data.text}}</strong>
+                    </div>
+                </div>
+                <div class="row" ng-if="order.data.status <= 2">
+                    <div class="col-33">
+                        Ubicación
+                    </div>
+                    <div>
+                        <strong><i class="icon ion-ios-location"></i> Ir al mapa</strong>
+                    </div>
+                </div>
+
+                <div ng-if="order.data.answered == 0">
+                    <div>
+                        <form id="answerOrderForm" ng-submit="answerOrder()">
+                            <ion-list class="textleft">
+                                <ion-item>
+                                    <h2 class="text-center">Responder órden</h2>
+                                </ion-item>
+                                <ion-checkbox ng-model="answer.response" class="checkbox-dark" ng-true-value="1" ng-false-value="0">Aceptar órden</ion-checkbox>
+                                <label class="item item-input item-stacked-label">
+                                    <span class="input-label">Respuesta al cliente</span>
+                                    <textarea maxlength="250" required="" ng-model="answer.text" ></textarea>
+                                </label>
+                                <label class="item item-input item-stacked-label">
+                                    <span class="input-label">Precio Estimado</span>
+                                    <input type="text" ng-model="answer.cost" required="" ng-pattern="onlyNumbers">
+                                </label>
+                                <button class="button button-dark button-full">
+                                    <i class="icon ion-paper-airplane"></i> Enviar respuesta
+                                </button>
+                            </ion-list>
+                        </form>
+                    </div>
+                </div>
+
+                <div ng-if="order.data.answered == 1">
+                    <hr>
+                    <div class="row">
+                        <div class="col-33">
+                            Respuesta
+                        </div>
+                        <div>
+                            {{order.data.publication_response_text}}
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col">
+                            <strong>
+                                {{getAnswerStatus()}}
+                            </strong>
+                        </div>
+                    </div>
+                    <div ng-if="order.data.answered_by_client == 1 && order.data.client_response == 1 && order.data.status == 1">
+                        <hr>
+                        <div class="row">
+                            <div class="col">
+                                <button class="button button-full button-balanced" ng-click="startService()">
+                                    <i class="icon ion-paper-airplane"></i> Iniciar servicio
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!----------------------- QUALIFICATION FORM --------------->
+                    
+                    <div ng-if="order.data.status == 3 && !order.data.id_user_qualification">
+                        <h5 class="text-center"><strong>Calificar al anunciante</strong></h5>
+                        <p class="text-center">
+                            Por favor califique al cliente para poder obtener puntos.
+                        </p>
+                        <form ng-submit="sendQualification()">
+                            <ion-list>
+                                <ion-item>
+                                    <div class="row starRankingSelector">
+                                        <div class="col-20 text-center" ng-repeat="rank in [1, 2, 3, 4, 5]">
+                                            <i class="icon ion-star" ng-click="ranking.setValue($index + 1)"
+                                               ng-class="ranking.isActive($index + 1)"></i>
+                                        </div>
+                                    </div>
+                                </ion-item>
+                                <label class="item item-input item-stacked-label">
+                                    <span class="input-label">Comentario</span>
+                                    <textarea maxlength="250" required="" ng-model="rank.comment"></textarea>
+                                </label>
+                                <button class="button button-dark button-full">
+                                    <i class="icon ion-paper-airplane"></i> Enviar calificación
+                                </button>
+                            </ion-list>
+                        </form>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,49 @@
+<ion-view view-title="Mi Perfil">
+
+    <ion-content>
+        <div ng-if="!SalBr.sessionActive();">
+            <br><br><br>
+            <p class="text-center">Para poder ver más anunciantes y disfrutar de nuestros beneficios</p>
+            <br>
+            <div class="text-center">
+                <button class="button button-positive" type="submit"
+                        ng-click="SalBr.FBLogin()">
+                    <i class="icon ion-social-facebook"></i> 
+                    <strong>Inicie su sesión con Facebook</strong>
+                </button>
+            </div>
+        </div>
+        <div ng-if="SalBr.sessionActive();">
+            <div class="text-center profile-img-container">
+                <img ng-src="http://graph.facebook.com/{{SalBr.getUser().id_fb_user || '4'}}/picture?type=square&height=100" class=""/>
+            </div>
+            <ion-list>
+                <ion-item class="item-icon-right" href="#/tab/account/mis_ordenes">
+                    Mis Órdenes
+                    <i class="icon ion-chevron-right icon-accessory"></i>
+                </ion-item>
+
+                <ion-item class="item-icon-right" href="#/tab/account/ordenes_entrantes"
+                          ng-if="SalBr.getUser().active_publications">
+                    Órdenes Entrantes
+                    <i class="icon ion-chevron-right icon-accessory"></i>
+                </ion-item>
+
+                <ion-item class="item-icon-right" href="#/tab/account/puntos">
+                    Mis Puntos
+                    <i class="icon ion-chevron-right icon-accessory"></i>
+                </ion-item>
+
+                <ion-item class="item-icon-right" href="#/tab/account/mi_codigo">
+                    Mi Código de Cliente
+                    <i class="icon ion-chevron-right icon-accessory"></i>
+                </ion-item>
+
+
+                <ion-item ng-click="SalBr.logout();">
+                    Cerrar sesión
+                </ion-item>
+            </ion-list>
+        </div>
+    </ion-content>
+</ion-view>

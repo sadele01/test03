@@ -1,0 +1,21 @@
+<ion-modal-view>
+    <ion-header-bar class="bar bar-header bar-dark">
+        <h1 class="title">Solicitar órden</h1>
+        <button class="button button-clear button-primary" ng-click="closeModal();">
+            <i class="icon ion-ios-close-outline"></i>
+        </button>
+    </ion-header-bar>
+    <ion-content>
+        <form ng-submit="sendNewOrder()">
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">¿Qué servicio necesita?</span>
+                    <textarea maxlength="250" required="" ng-model="new_order.text" ></textarea>
+                </label>
+                <button class="button button-dark button-full">
+                    <i class="icon ion-paper-airplane"></i> Enviar órden
+                </button>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

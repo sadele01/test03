@@ -1,0 +1,97 @@
+<ion-view view-title="SalBr">
+    <ion-content class="padding">
+        <h3 class="text-center">¿Qué estás buscando?</h3>
+        <form ng-submit="SalBr.search(search)" novalidate="" name="forms.search" id="searchForm">
+            <div class="list">
+
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        Categoría
+                    </div>
+                    <select ng-model="search.id_category" name="id_category" id="id_category" required="" ng-change="onChangeCategory()">
+                        <optgroup ng-repeat="parentCat in SalBr.getCategories()" label="{{parentCat.name}}">
+                            <option 
+                                ng-if="parentCat.children.length"
+                                ng-repeat="category in parentCat.children"
+                                ng-value="category.id_category"
+                                ng-selected="{{category.id_category == SalBr.getSearchParams.id_category}}">
+                                {{category.name}}
+                            </option>
+                        </optgroup>
+                    </select>
+                </label>
+
+                <label class="item item-input item-select" ng-if="childCategory">
+                    <div class="input-label">
+                        Subcategoría
+                    </div>
+                    <select ng-model="search.id_child_category" name="id_child_category" id="id_child_category" required="">
+                        <option 
+                            ng-repeat="child in childCategory.children"
+                            ng-value="child.id_category">
+                            {{child.name}}
+                        </option>
+                    </select>
+                </label>
+
+                <input type="hidden" name="id_state" ng-model="search.id_state" ng-value="21"/>
+                <!--label class="item item-input item-select hide">
+                    <div class="input-label">
+                        Estado
+                    </div>
+                    <select ng-model="id_state">
+                        <option>Blue</option>
+                        <option selected>Green</option>
+                        <option>Red</option>
+                    </select>
+                </label-->
+
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        Ciudad
+                    </div>
+                    <select ng-model="search.id_city" name="id_city" id="id_city">
+                        <option 
+                            ng-repeat="city in SalBr.getCities()"
+                            ng-value="city.id_city"
+                            ng-selected="{{city.id_city == 1684}}">
+                            {{city.name}}
+                        </option>
+                    </select>
+                </label>
+
+            </div>
+            <div class="text-center">
+                <button class="button button-dark button-block" type="submit"
+                        ng-disabled="forms.search.$invalid">
+                    <i class="icon ion-ios-search"></i>
+                    <strong>Buscar</strong>
+                </button>
+            </div>
+        </form>
+
+        <hr>
+
+        <ion-list ng-hide="!SalBr.getSearchResults().total_registries">
+            <ion-item class="item-remove-animate item-thumbnail-left item-icon-right" 
+                      collection-repeat="publication in SalBr.getSearchResults().data" 
+                      type="item-text-wrap" 
+                      href="#/tab/chats/{{publication.id_publication}}">
+                <img ng-src="{{SalBr.getBaseURL()}}publication_avatar/{{publication.id_publication}}?type=square" alt="{{publication.title}}">
+                <h2>{{publication.title}}</h2>
+                <p>{{publication.description}}</p>
+                <p class="text-center">
+                    <i class="icon ion-star" ng-repeat="star in [1, 2, 3, 4, 5]"
+                       ng-class="getStarClass($index + 1, publication.rating)"
+                       ></i>
+                </p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+        </ion-list>
+
+        <div class="text-center" ng-if="SalBr.getSearchResults().total_registries == 0 && SalBr.previousSearch();">
+            <h2>No hay resultados en la búsqueda especificada</h2>
+        </div>
+
+    </ion-content>
+</ion-view>

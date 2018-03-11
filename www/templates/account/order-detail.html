@@ -1,0 +1,125 @@
+<ion-view view-title="">
+    <ion-content>
+        <div ng-if="order === null">
+            <h2 class="text-center">
+                <strong>Cargando órden</strong>
+                <br>
+                <ion-spinner icon="spiral" class="spiral-calm"></ion-spinner>
+            </h2>
+        </div>
+        <div ng-if="order !== null">
+            <div ng-if="!order.error">
+                <div id="orderDetailsContainer">
+                    <div class="row">
+                        <div class="col col-33">
+                            <h5>Anunciante</h5>
+                        </div>
+                        <div class="col">
+                            <h5 class="text-bold">{{order.data.publication}}</h5>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col col-33">
+                            <h5>Creación</h5>
+                        </div>
+                        <div class="col">
+                            <h5 class="text-bold">{{order.data.creation_timestamp}}</h5>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col col-33">
+                            <h5>Estatus</h5>
+                        </div>
+                        <div class="col">
+                            <h5 class="text-bold"><i ng-class="SalBr.getOrderStatusClass(order.data.status)"></i> {{SalBr.getOrderStatus(order.data.status)}}</h5>
+                            <h5 class="text-bold" ng-if="order.data.id_publication_qualification"><i class="icon ion-star active"></i> Calificada!</h5>
+                        </div>
+                    </div>
+
+                    <div ng-if="order.data.answered == 1">
+                        <h5 class="text-center">Respuesta del anunciante:</h5>
+                        <div class="row">
+                            <div class="col-33">
+                                Respuesta:
+                            </div>
+                            <div ng-if="order.data.publication_response == 1" class="col">
+
+                                <strong><i class="icon ion-checkmark-circled balanced"></i> Órden Aceptada</strong>
+                                <p>
+                                    {{order.data.publication_response_text}}
+                                    <br>
+                                    <span ng-if="order.data.cost > 0">
+                                        <strong>Precio:</strong> {{order.data.cost| currency}}
+                                    </span>
+                                </p>
+                                <br>
+                            </div>
+                            <div class="col" ng-if="order.data.publication_response == 0">
+                                <span>
+                                    <strong><i class="icon ion-close-circled assertive"></i> Órden rechazada</strong>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="row" ng-if="order.data.publication_response == 1 && order.data.answered_by_client == 0">
+                            <div class="col">
+                                <button class="button button-assertive button-full" ng-click="answerPublicationOffer(0)">
+                                    <i class="icon ion-close-circled"></i> Rechazar
+                                </button>
+                            </div>
+                            <div class="col">
+                                <button class="button button-balanced button-full" ng-click="answerPublicationOffer(1)">
+                                    <i class="icon ion-checkmark-circled"></i> Confirmar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-if="order.data.answered == 0">
+                        <h5>Esperando respuesta del anunciante</h5>
+                    </div>
+                </div>
+
+                <div ng-if="order.data.status == 2">
+                    <button class="button button-full button-balanced" ng-click="finishOrder()">
+                        <i class="icon ion-checkmark-circled"></i> Confirmar órden terminada
+                    </button>
+                </div>
+
+                <div ng-if="order.data.status == 3 && !order.data.id_publication_qualification">
+                    <h5 class="text-center"><strong>Calificar al anunciante</strong></h5>
+                    <p class="text-center">
+                        Por favor califique al anunciante para poder obtener puntos.
+                    </p>
+                    <form ng-submit="sendQualification()">
+                        <ion-list>
+                            <ion-item>
+                                <div class="row starRankingSelector">
+                                    <div class="col-20 text-center" ng-repeat="rank in [1, 2, 3, 4, 5]">
+                                        <i class="icon ion-star" ng-click="ranking.setValue($index + 1)"
+                                           ng-class="ranking.isActive($index + 1)"></i>
+                                    </div>
+                                </div>
+                            </ion-item>
+                            <label class="item item-input item-stacked-label">
+                                <span class="input-label">Comentario</span>
+                                <textarea maxlength="250" required="" ng-model="rank.comment"></textarea>
+                            </label>
+                            <button class="button button-dark button-full">
+                                <i class="icon ion-paper-airplane"></i> Enviar calificación
+                            </button>
+                        </ion-list>
+                    </form>
+                </div>
+
+            </div>
+            <div ng-if="order.error">
+                <h1 class="text-center">Error:</h1>
+                <br>
+                <h3>{{order.message}}</h3>
+            </div>
+
+        </div>
+    </ion-content>
+</ion-view>
