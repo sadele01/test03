@@ -55,7 +55,7 @@
     <access origin="*" />
     <allow-intent href="*" />
     <allow-navigation href="*" />
-    <gap:plugin name="cordova-plugin-facebook4" source="npm">
+    <gap:plugin name="cordova-plugin-facebook4" spec="^1.7.4" source="npm">
         <param name="APP_ID" value="147999889300513" />
         <param name="APP_NAME" value="Salbr" />
     </gap:plugin>
