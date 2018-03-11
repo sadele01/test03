@@ -58,7 +58,7 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarStyle" value="default" />
     <engine name="browser" spec="^4.1.0" />
-    <plugin name="cordova-plugin-facebook4" spec="^1.0.4">
+    <plugin name="cordova-plugin-facebook4" spec="^1.9.1">
         <variable name="APP_ID" value="147999889300513" />
         <variable name="APP_NAME" value="Salbr" />
     </plugin>
