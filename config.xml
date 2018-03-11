@@ -9,7 +9,7 @@
   </author>
     <content src="index.html" />
     <icon src="img/icon.png" />
-    <preference name="phonegap-version" value="cli-7.0.0" />
+    <preference name="phonegap-version" value="cli-8.0.0" />
     <preference name="android-build-tool" value="gradle" />
     <preference name="android-minSdkVersion" value="16" />
     <preference name="android-targetSdkVersion" value="16" />
@@ -55,10 +55,7 @@
     <access origin="*" />
     <allow-intent href="*" />
     <allow-navigation href="*" />
-    <gap:plugin name="cordova-plugin-facebook4" source="npm">
-        <param name="APP_ID" value="147999889300513" />
-        <param name="APP_NAME" value="Salbr" />
-    </gap:plugin>
+
     <gap:plugin name="cordova-plugin-x-toast" source="npm" />
     <gap:plugin name="cordova-plugin-splashscreen" source="npm" />
     <preference name="SplashScreen" value="screen" />
