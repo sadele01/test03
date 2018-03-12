@@ -16,9 +16,9 @@
     <preference name="android-minSdkVersion" value="16" />
     <preference name="android-targetSdkVersion" value="16" />
     
-  <gap:plugin name="cordova-plugin-facebook4" source="npm" spec="1.7.4">
+  <plugin name="cordova-plugin-facebook4" source="npm" spec="1.7.4">
         <param name="APP_ID" value="147999889300513" />
         <param name="APP_NAME" value="Salbr" />
-  </gap:plugin>
+  </plugin>
 
 </widget>
