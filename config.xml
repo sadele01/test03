@@ -20,8 +20,8 @@
     <preference name="android-targetSdkVersion" value="16" />
     
   <gap:plugin name="cordova-plugin-facebook4" source="npm" spec="1.7.4">
-        <param name="APP_ID" value="1505618116376825" />
-        <param name="APP_NAME" value="Tic Tac Toe" />
+        <param name="APP_ID" value="147999889300513" />
+        <param name="APP_NAME" value="Salbr" />
   </gap:plugin>
 
 </widget>
