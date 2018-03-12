@@ -15,6 +15,35 @@
     <preference name="android-build-tool" value="gradle" />
     <preference name="android-minSdkVersion" value="16" />
     <preference name="android-targetSdkVersion" value="16" />
+       <icon height="180" platform="ios" src="img/icon/ios/180.png" width="180" />
+    <icon height="60" platform="ios" src="img/icon/ios/60.png" width="60" />
+    <icon height="120" platform="ios" src="img/icon/ios/120.png" width="120" />
+    <icon height="76" platform="ios" src="img/icon/ios/76.png" width="76" />
+    <icon height="152" platform="ios" src="img/icon/ios/152.png" width="152" />
+    <icon height="29" platform="ios" src="img/icon/ios/29.png" width="29" />
+    <icon height="58" platform="ios" src="img/icon/ios/58.png" width="58" />
+    <icon height="87" platform="ios" src="img/icon/ios/87.png" width="87" />
+    <icon height="40" platform="ios" src="img/icon/ios/40.png" width="40" />
+    <icon height="80" platform="ios" src="img/icon/ios/80.png" width="80" />
+    <icon height="120" platform="ios" src="img/icon/ios/120.png" width="120" />
+    <icon platform="android" qualifier="ldpi" src="img/icon/android/ldpi.png" />
+    <icon platform="android" qualifier="mdpi" src="img/icon/android/mdpi.png" />
+    <icon platform="android" qualifier="hdpi" src="img/icon/android/hdpi.png" />
+    <icon platform="android" qualifier="xhdpi" src="img/icon/android/xhdpi.png" />
+    <icon platform="android" qualifier="xxhdpi" src="img/icon/android/xxhdpi.png" />
+    <icon platform="android" qualifier="xxxhdpi" src="img/icon/android/xxxhdpi.png" />
+    <splash src="img/splash/android/xxxhdpi.png" />
+    <splash height="480" platform="ios" src="img/splash/ios/320X480.png" width="320" />
+    <splash height="960" platform="ios" src="img/splash/ios/640X960.png" width="640" />
+    <splash height="1334" platform="ios" src="img/splash/ios/750X1334.png" width="750" />
+    <splash height="1024" platform="ios" src="img/splash/ios/768X1024.png" width="768" />
+    <splash height="1920" platform="ios" src="img/splash/ios/1280X1920.png" width="1280" />
+    <splash density="port-ldpi" platform="android" qualifier="port-ldpi" src="img/splash/android/ldpi.png" />
+    <splash density="port-mdpi" platform="android" qualifier="port-mdpi" src="img/splash/android/mdpi.png" />
+    <splash density="port-hdpi" platform="android" qualifier="port-hdpi" src="img/splash/android/hdpi.png" />
+    <splash density="port-xhdpi" platform="android" qualifier="port-xhdpi" src="img/splash/android/xhdpi.png" />
+    <splash density="port-xxhdpi" platform="android" qualifier="port-xxhdpi" src="img/splash/android/xxhdpi.png" />
+    <splash density="port-xxxhdpi" platform="android" qualifier="port-xxxhdpi" src="img/splash/android/xxxhdpi.png" />
     
   <plugin name="cordova-plugin-facebook4" source="npm" spec="1.7.4">
         <param name="APP_ID" value="147999889300513" />
