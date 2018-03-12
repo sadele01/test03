@@ -7,5 +7,9 @@
     <author email="michel.tobon@outlook.com" href="http://www.micheltobon.com/">
       Michel Tobon
   </author>
+  <gap:plugin name="cordova-plugin-facebook4" source="npm" spec="1.7.4">
+        <param name="APP_ID" value="1505618116376825" />
+        <param name="APP_NAME" value="Tic Tac Toe" />
+  </gap:plugin>
 
 </widget>
