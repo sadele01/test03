@@ -61,14 +61,14 @@
     <engine name="browser" spec="^4.1.0" />
         
   <plugin name="cordova-plugin-facebook4" source="npm" spec="1.7.4">
-        <param name="APP_ID" value="147999889300513" />
+        <param name="APP_ID" value="202021910555202" />
         <param name="APP_NAME" value="Salbr" />
   </plugin>
             
     <config-file parent="/resources" target="./res/values/strings.xml">
-        <string name="fb_app_id">147999889300513</string>
+        <string name="fb_app_id">202021910555202</string>
         <string name="fb_app_name">Salbr</string>
-        <string name="facebook_app_id">147999889300513</string>
+        <string name="facebook_app_id">202021910555202</string>
         <string name="fb_login_protocol_scheme">fb147999889300513</string>
     </config-file>
 
