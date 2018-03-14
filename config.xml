@@ -96,7 +96,7 @@ xmlns:android="http://schemas.android.com/apk/res/android">
     <allow-intent href="*" />
     <allow-navigation href="*" />
 	
-	<gap:plugin name="cordova-plugin-facebook4" source="npm">
+	<gap:plugin name="cordova-plugin-facebook4" source="npm" spec="^1.7.4">
 		<param name="APP_ID" value="147999889300513" />
       	  	<param name="APP_NAME" value="Salbr" />
     	</gap:plugin>
