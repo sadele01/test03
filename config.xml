@@ -97,13 +97,14 @@ xmlns:android="http://schemas.android.com/apk/res/android">
     <allow-navigation href="*" />
 	
 	<gap:plugin name="cordova-plugin-facebook4" source="npm">
-        <param name="APP_ID" value="147999889300513" />
-        <param name="APP_NAME" value="Salbr" />
-	<string name="facebook_app_id">147999889300513</string>
-	<string name="fb_login_protocol_scheme">fb147999889300513</string>
-    </gap:plugin>
+		<param name="APP_ID" value="147999889300513" />
+      	  	<param name="APP_NAME" value="Salbr" />
+    	</gap:plugin>
 	
-
+	<config-file target="res/values/strings.xml" parent="/*">
+            	<string name="facebook_app_id">147999889300513</string>
+		<string name="fb_login_protocol_scheme">fb147999889300513</string>
+        </config-file>
 
 	
 	
