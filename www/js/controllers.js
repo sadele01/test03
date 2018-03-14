@@ -110,7 +110,7 @@ angular.module('starter.controllers', ['ionic'])
                         });
 
                 $scope.modal.hide();
-                $scope.new_order.text = '';
+                //$scope.new_order.text = '';
             };
         })
 
