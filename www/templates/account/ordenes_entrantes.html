@@ -13,7 +13,9 @@
                 </p>
                     <h5 class="text-bold"><i ng-class="SalBr.getOrderStatusClass(order.status)"></i> {{SalBr.getOrderStatus(order.status)}}</h5>                 
                     <h5 class="text-bold" ng-if="order.data.id_publication_qualification"> {{order.data.qualification}} <i class="icon ion-star active"></i> 's.</h5>
-                    //<h5>Estatus:</i>{{order.status}}</h5>
+                    <h5>Stars:</i>{{order.qualification}}</h5>
+                    <h5>Estatus:</i>{{order.data.qualification}}</h5>
+                <!-- <h5>Estatus:</i>{{order.status}}</h5> -->
             
                 <i class="icon ion-chevron-right icon-accessory"></i>
             </ion-item>
