@@ -223,17 +223,32 @@ angular.module('starter.services', [])
                 getOrderStatus: function (status) {
                     switch (status) {
                         case 0:
+                            console.log(status+10);
                             return 'Solicitada';
+                                    break;
                         case 1:
+                            console.log(status+10);
+                                    
                             return 'Aceptada';
+                                    break;
                         case 2:
+                            console.log(status+10);
+                                    
                             return 'En Proceso';
+                                    break;
                         case 3:
+                            console.log(status+10);
+                                    
                             return 'Terminada';
+                            break;
                         case 4:
+                            console.log(status+10);
+                                    
                             return 'Calificada';
+                                    break;
                         case 5:
                             return 'Cancelada';
+                                    break;
                     }
                 },
                 getOrderStatusClass: function (status) {
