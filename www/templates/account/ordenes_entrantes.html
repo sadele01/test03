@@ -11,9 +11,7 @@
                 <p>
                     <small>{{order.creation_timestamp}}</small>
                 </p>
-                    <i ng-class="SalBr.getOrderStatus(3)"></i> <strong>{{SalBr.getOrderStatus(3)}}</strong>
-                    <i ng-class="SalBr.getOrderStatusClass(4)"></i> <strong>{{SalBr.getOrderStatusClass(4)}}</strong>
-                    <i ng-class="getOrderStatusClass(2)"></i> <strong>{{getOrderStatusClass(2)}}</strong>
+                    <h5 class="text-bold"><i ng-class="SalBr.getOrderStatusClass(number(order.data.status))"></i> {{SalBr.getOrderStatus(number(order.data.status))}}</h5>                 
 
                     <h5>Estatus:</i>{{order.status}}</h5>
 
