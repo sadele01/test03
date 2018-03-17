@@ -221,38 +221,26 @@ angular.module('starter.services', [])
                             });
                 },
                 getOrderStatus: function (status) {
-                    switch (status) {
+                    switch (+status.value) {
                         case 0:
-                            console.log(status+10);
                             return 'Solicitada';
-                                    break;
-                        case 1:
-                            console.log(status+10);
-                                    
+                        case 1:     
                             return 'Aceptada';
-                                    break;
-                        case 2:
-                            console.log(status+10);
-                                    
+                        case 2:    
                             return 'En Proceso';
-                                    break;
-                        case 3:
-                            console.log(status+10);
-                                    
+                        case 3: 
                             return 'Terminada';
-                            break;
-                        case 4:
-                            console.log(status+10);
-                                    
+                        case 4:                             
                             return 'Calificada';
-                                    break;
                         case 5:
                             return 'Cancelada';
+                        default:
+                                    return = 'WTF';
                                     break;
                     }
                 },
                 getOrderStatusClass: function (status) {
-                    switch (status) {
+                    switch (+status.value) {
                         case 0:
                             return 'ion-record positive';
                         case 1:
@@ -265,6 +253,9 @@ angular.module('starter.services', [])
                             return 'ion-ios-star balanced';
                         case 5:
                             return 'ion-record assertive';
+                        default:
+                                return = 'FTW';
+                                break;
                     }
                 }
             };
