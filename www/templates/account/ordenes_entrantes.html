@@ -12,9 +12,12 @@
                     <small>{{order.creation_timestamp}}</small>
                 </p>
                     <h4 class="text-bold"><i ng-class="SalBr.getOrderStatusClass(order.status)"></i> {{SalBr.getOrderStatus(order.status)}}</h4>                 
-                    <h4 class="text-bold" ng-if="order.data.id_publication_qualification"> {{order.data.qualification}} <i class="icon ion-star active"></i> 's.</h4>
+                    <h4 class="text-bold" ng-if="order.data.id_publication_qualification"><i class="icon ion-star active"></i> Calificada!</h5>
+
+                    <h4 class="text-bold">{{order.data.qualification}} <i class="icon ion-star active"></i> 's.</h4>
+                    <h4>Stars:</i>{{order.data.id_publication_qualification}}</h4>                    
                     <h4>Stars:</i>{{order.qualification}}</h4>
-                    <h4>Estatus:</i>{{order.data.qualification}}</h4>
+                    <h4>Stars:</i>{{order.data.qualification}}</h4>
                 <!-- <h5>Estatus:</i>{{order.status}}</h5> -->
             
                 <i class="icon ion-chevron-right icon-accessory"></i>
