@@ -14,6 +14,9 @@
                     <i ng-class="SalBr.getOrderStatusClass(order.status)"></i> <strong>{{SalBr.getOrderStatus(order.status)}}</strong>
                     <i ng-class="SalBr.getOrderStatusClass(order.status)"></i> <strong>{{SalBr.getOrderStatusClass(order.status)}}</strong>
                     <strong>Test::: {{SalBr.getOrderStatusClass(order.status)}}</strong>
+                    <h5 class="text-bold"><i ng-class="SalBr.getOrderStatusClass(order.data.status)"></i> {{SalBr.getOrderStatus(order.data.status)}}</h5>
+                    <h5 class="text-bold" ng-if="order.data.id_publication_qualification"><i class="icon ion-star active"></i> Calificada!</h5>
+                        
                     <h5>Estatus:</i>{{order.status}}</h5>
             
                 <i class="icon ion-chevron-right icon-accessory"></i>
