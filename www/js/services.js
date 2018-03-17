@@ -221,7 +221,7 @@ angular.module('starter.services', [])
                             });
                 },
                 getOrderStatus: function (status) {
-                    switch (+status.value) {
+                    switch (+status) {
                         case 0:
                             return 'Solicitada';
                         case 1:     
@@ -237,7 +237,7 @@ angular.module('starter.services', [])
                     }
                 },
                 getOrderStatusClass: function (status) {
-                    switch (+status.value) {
+                    switch (parseInt(status,10)) {
                         case 0:
                             return 'ion-record positive';
                         case 1:
