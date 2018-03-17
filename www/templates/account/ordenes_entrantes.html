@@ -6,18 +6,13 @@
                       href="#/tab/account/incoming_order/{{order.id_order}}"
                       collection-repeat="order in SalBr.getMyIncomingOrders().data">
                 <p>
-                    <i ng-class="SalBr.getOrderStatusClass(order.status)"></i> <strong>{{order.user}}</strong>
+                    <strong>{{order.user}}</strong>
                 </p>
                 <p>
                     <small>{{order.creation_timestamp}}</small>
                 </p>
-                    a: <h5 class="text-bold"><i ng-class="SalBr.getOrderStatusClass(1)"></i> {{SalBr.getOrderStatus(1)}}</h5>                 
-                    b: <h5 class="text-bold"><i ng-class="SalBr.getOrderStatusClass(order.status)"></i> {{SalBr.getOrderStatusClass(order.status)}}</h5>                 
-                    c: <h5 class="text-bold"><i ng-class="SalBr.getOrderStatus(order.status)"></i> {{SalBr.getOrderStatus(order.status)}}</h5>                 
-                    d: <h5 class="text-bold"><i ng-class="getOrderStatusClass(5)"></i> {{getOrderStatus(5)}}</h5> 
-
+                    <h5 class="text-bold"><i ng-class="SalBr.getOrderStatusClass(order.status)"></i> {{SalBr.getOrderStatus(order.status)}}</h5>                 
                     <h5>Estatus:</i>{{order.status}}</h5>
-
             
                 <i class="icon ion-chevron-right icon-accessory"></i>
             </ion-item>
