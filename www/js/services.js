@@ -234,9 +234,6 @@ angular.module('starter.services', [])
                             return 'Calificada';
                         case 5:
                             return 'Cancelada';
-                        default:
-                                    return = 'WTF';
-                                    break;
                     }
                 },
                 getOrderStatusClass: function (status) {
@@ -253,9 +250,6 @@ angular.module('starter.services', [])
                             return 'ion-ios-star balanced';
                         case 5:
                             return 'ion-record assertive';
-                        default:
-                                return = 'FTW';
-                                break;
                     }
                 }
             };
