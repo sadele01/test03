@@ -45,27 +45,7 @@
                             <h5 class="text-bold"><i ng-class="SalBr.getOrderStatusClass(order.data.status)"></i> {{SalBr.getOrderStatus(order.data.status)}}</h5>
                             <h5 class="text-bold" ng-if="order.data.id_publication_qualification"><i class="icon ion-star active"></i> Calificada!</h5>
                         </div>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col col-33">
-                            <h5>Orden:::</h5>
-                        </div>
-                        <div class="col">
-                            <h5 class="text-bold">{{order.data}}</h5>
-                            <h5 class="text-bold">{{order.id_user}}</h5>
-                            <h5 class="text-bold">{{order.data.text}}</h5>
-                            <h5 class="text-bold">{{order.data.status}}</h5>
-                            <h5 class="text-bold">{{order.data.creation_timestamp}}</h5>
-                            <h5 class="text-bold">{{order.data.cost}}</h5>
-                            <h5 class="text-bold">{{order.data.id_publication_qualification}}</h5>
-                            <h5 class="text-bold">{{order.data.publication}}</h5>
-                            <h5 class="text-bold">{{order.data.qualification}}</h5>
-                            <h5 class="text-bold">{{order.data.comment}}</h5>
-                        </div>
-                    </div>
-                    
-                    
+                    </div>              
 
                     <div ng-if="order.data.answered == 1">
                         <h5 class="text-center">Respuesta del anunciante:</h5>
