@@ -11,7 +11,8 @@
                 <p>
                     <small>{{order.creation_timestamp}}</small>
                 </p>
-                    <h4 class="text-bold"><i ng-class="SalBr.getOrderStatusClass(order.status)"></i> {{SalBr.getOrderStatus(order.status)}} {{order.qualification}} <i class="icon ion-star active"></i> 's</h4>                       
+                    <h4 class="text-bold"><i ng-class="SalBr.getOrderStatusClass(order.status)"></i> {{SalBr.getOrderStatus(order.status)}} 
+                    <h4 class="text-bold" ng-if="order.data.id_publication_qualification">{{order.qualification}} <i class="icon ion-star active"></i> 's</h4></h4>                       
                 <i class="icon ion-chevron-right icon-accessory"></i>
             </ion-item>
         </ion-list>
