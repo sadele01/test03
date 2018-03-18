@@ -12,9 +12,9 @@
                     <small>{{order.creation_timestamp}}</small>
                 </p>
                     <h4 class="text-bold"><i ng-class="SalBr.getOrderStatusClass(order.status)"></i> {{SalBr.getOrderStatus(order.status)}}</h4>
-                    <small>{{order.qualification}}</small>
+                    <small>{{order.data.qualification}}</small>
                     <small>{{order}}</small>
-                    <small>{{order.comment}}</small>
+                    <small>{{order.data}}</small>
                 
                 <!-- <h5>Estatus:</i>{{order.status}}</h5> -->
             
