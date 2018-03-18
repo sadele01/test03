@@ -13,7 +13,9 @@
                 </p>
                 
                     <h4 class="text-bold"><i ng-class="SalBr.getOrderStatusClass(order.status)"></i> {{SalBr.getOrderStatus(order.status)}}</h4>                       
-                    <!-- <h5>Estatus:</i>{{order.status}}</h5> -->
+                    {{order.qualification}}
+                    {{order.comment}}
+                <!-- <h5>Estatus:</i>{{order.status}}</h5> -->
                 <i class="icon ion-chevron-right icon-accessory"></i>
             </ion-item>
         </ion-list>
