@@ -5,16 +5,32 @@
                       type="item-text-wrap" 
                       href="#/tab/account/order/{{order.id_order}}"
                       collection-repeat="order in SalBr.getMyOrders().data">
-                <p>
-                    </i> <strong>{{order.category}}</strong>
-                </p>
-                <p>
-                    <small>{{order.creation_timestamp}}</small>
-                </p>
-                <p>   
-                    <h4 class="text-bold"><i ng-class="SalBr.getOrderStatusClass(order.status)"></i> {{SalBr.getOrderStatus(order.status)}} 
-                    {{order.qualification}} <i ng-class="icon ion-star active">'s</i></h4> 
-                </p>
+                     <div id="ordersContainer">
+                        <div class="row">
+                            <div class="col col-33">
+                                <h5>Categoria:</h5>
+                            </div>
+                            <div class="col">
+                                <h5 class="text-bold">{{order.category}}</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-33">
+                                <h5>Fecha:</h5>
+                            </div>
+                            <div class="col">
+                                <h5 class="text-bold">{{order.creation_timestamp}}</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-33">
+                                <h4 class="text-bold"><i ng-class="SalBr.getOrderStatusClass(order.status)"></i> {{SalBr.getOrderStatus(order.status)}}</h4>
+                            </div>
+                            <div class="col">
+                                <h4 class="text-bold" ng-if="order.qualification">{{order.qualification}}<i class="icon ion-star active"></i> 's</h5>                            </div>
+                            </div>
+                         </div>
+                    </div>
                 <i class="icon ion-chevron-right icon-accessory"></i>
             </ion-item>
         </ion-list>
