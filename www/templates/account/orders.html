@@ -6,10 +6,11 @@
                       href="#/tab/account/order/{{order.id_order}}"
                       collection-repeat="order in SalBr.getMyOrders().data">
                         <p>
-                            <h5>Categoria: {{order.category}}</h5>
+                            <h4>Categoria: {{order.category}}</h4>
+                            <h4>{{order.data.publication}}</h5>
                         </p> 
                         <p>
-                            <h5>Fecha: {{order.creation_timestamp}}</h5>
+                            <h4>Fecha: {{order.creation_timestamp}}</h4>
                         </p>
                         <p>
                             <h5 class="text-bold"><i ng-class="SalBr.getOrderStatusClass(order.status)"></i> {{SalBr.getOrderStatus(order.status)}}</h5>
