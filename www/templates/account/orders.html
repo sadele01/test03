@@ -6,7 +6,7 @@
                       href="#/tab/account/order/{{order.id_order}}"
                       collection-repeat="order in SalBr.getMyOrders().data">
                         <div id="myOrders">
-                            <div class=".row-no-padding">
+                            <div class="row-no-padding">
                                 <div class="col col-33">
                                     <h3 class="text-bold">Categoría:</h3>
                                 </div>
@@ -14,7 +14,7 @@
                                     <p>{{order.category}}</p>
                                 </div>
                             </div>
-                            <div class=".row-no-padding">
+                            <div class="row-no-padding">
                                 <div class="col col-33">
                                     <h3 class="text-bold">Fecha:</h3>
                                 </div>
@@ -22,7 +22,7 @@
                                     <p>{{order.creation_timestamp}}</p>
                                 </div>
                             </div>  
-                            <div class=".row-no-padding">
+                            <div class="row-no-padding">
                                 <div class="col col-33">
                                     <h4 class="text-bold"><i ng-class="SalBr.getOrderStatusClass(order.status)"></i> {{SalBr.getOrderStatus(order.status)}}</h4>
                                 </div>
