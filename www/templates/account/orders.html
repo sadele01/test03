@@ -5,18 +5,32 @@
                       type="item-text-wrap" 
                       href="#/tab/account/order/{{order.id_order}}"
                       collection-repeat="order in SalBr.getMyOrders().data">
-                        <p>
-                            <h4>Categoria: {{order.category}}</h4>
-                            <h4>{{order.data.publication}}</h5>
-                        </p> 
-                        <p>
-                            <h4>Fecha: {{order.creation_timestamp}}</h4>
-                        </p>
-                        <p>
-                            <h5 class="text-bold"><i ng-class="SalBr.getOrderStatusClass(order.status)"></i> {{SalBr.getOrderStatus(order.status)}}</h5>
-                            <h5 class="text-bold" ng-if="order.qualification">Calificaste con: {{order.qualification}} estrellas</h5>
-                        </p>
-
+                        <div id="orderDetailsContainer">
+                            <div class="row">
+                                <div class="col col-30">
+                                    <h5>Categoría:</h5>
+                                </div>
+                                <div class="col">
+                                    <h5 class="text-bold">{{order.category}}</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-30">
+                                    <h5>Fecha:</h5>
+                                </div>
+                                <div class="col">
+                                    <h5 class="text-bold">{{order.creation_timestamp}}</h5>
+                                </div>
+                            </div>                           
+                             <div class="row">
+                                <div class="col col-50">
+                                    <h5 class="text-bold"><i ng-class="SalBr.getOrderStatusClass(order.status)"></i> {{SalBr.getOrderStatus(order.status)}}</h5>
+                                </div>
+                                <div class="col">
+                                    <h5 class="text-bold" ng-if="order.qualification">Calificaste con: {{order.qualification}} estrellas</h5>
+                                </div>
+                            </div>                             
+                        </div>
                 <i class="icon ion-chevron-right icon-accessory"></i>
             </ion-item>
         </ion-list>
