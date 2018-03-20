@@ -8,21 +8,22 @@
                         <div id="myOrders">
                             <div class="row">
                                 <div class="col col-30">
-                                    <h5 class="text-bold">Categoría:</h5>
+                                    <h4 class="text-bold">Categoría:</h4>
                                 </div>
                                 <div class="col">
-                                    <h5>{{order.category}}</h5>
+                                    <p>{{order.category}}</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col col-30">
-                                    <h5 class="text-bold">Fecha:</h5>
+                                    <h4 class="text-bold">Fecha:</h4>
                                 </div>
                                 <div class="col">
-                                    <h5>{{order.creation_timestamp}}</h5>
+                                    <p>{{order.creation_timestamp}}</p>
                                 </div>
-                            </div>                           
-                             <div class="row">
+                            </div>  
+                            <div class="row"></div> 
+                            <div class="row">
                                 <div class="col col-50">
                                     <h5 class="text-bold"><i ng-class="SalBr.getOrderStatusClass(order.status)"></i> {{SalBr.getOrderStatus(order.status)}}</h5>
                                 </div>
