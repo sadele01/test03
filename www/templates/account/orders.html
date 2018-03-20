@@ -5,28 +5,28 @@
                       type="item-text-wrap" 
                       href="#/tab/account/order/{{order.id_order}}"
                       collection-repeat="order in SalBr.getMyOrders().data">
-                        <div id="orderDetailsContainer">
+                        <div id="myOrders">
                             <div class="row">
                                 <div class="col col-30">
-                                    <h5>Categoría:</h5>
+                                    <h5 class="text-bold">Categoría:</h5>
                                 </div>
                                 <div class="col">
-                                    <h5 class="text-bold">{{order.category}}</h5>
+                                    <h5>{{order.category}}</h5>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col col-30">
-                                    <h5>Fecha:</h5>
+                                    <h5 class="text-bold">Fecha:</h5>
                                 </div>
                                 <div class="col">
-                                    <h5 class="text-bold">{{order.creation_timestamp}}</h5>
+                                    <h5>{{order.creation_timestamp}}</h5>
                                 </div>
                             </div>                           
                              <div class="row">
                                 <div class="col col-50">
                                     <h5 class="text-bold"><i ng-class="SalBr.getOrderStatusClass(order.status)"></i> {{SalBr.getOrderStatus(order.status)}}</h5>
                                 </div>
-                                <div class="col">
+                                <div class="col col-50">
                                     <h5 class="text-bold" ng-if="order.qualification">Calificaste con: {{order.qualification}} estrellas</h5>
                                 </div>
                             </div>                             
