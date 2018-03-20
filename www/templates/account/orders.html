@@ -7,7 +7,7 @@
                       collection-repeat="order in SalBr.getMyOrders().data">
                         <div id="myOrders">
                             <div class="row">
-                                <div class="col col-30">
+                                <div class="col col-33">
                                     <h4 class="text-bold">Categoría:</h4>
                                 </div>
                                 <div class="col">
@@ -15,19 +15,18 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col col-30">
+                                <div class="col col-33">
                                     <h4 class="text-bold">Fecha:</h4>
                                 </div>
                                 <div class="col">
                                     <p>{{order.creation_timestamp}}</p>
                                 </div>
                             </div>  
-                            <div class="row"></div> 
                             <div class="row">
-                                <div class="col col-50">
+                                <div class="col col-33">
                                     <h4 class="text-bold"><i ng-class="SalBr.getOrderStatusClass(order.status)"></i> {{SalBr.getOrderStatus(order.status)}}</h4>
                                 </div>
-                                <div class="col col-50">
+                                <div class="col">
                                     <h4 class="text-bold" ng-if="order.qualification">Calificaste con: {{order.qualification}} estrellas</h4>
                                 </div>
                             </div>                             
