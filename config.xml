@@ -71,7 +71,7 @@ xmlns:android="http://schemas.android.com/apk/res/android">
 	
 	<!-- SPLASH -->
 	<!-- BASE SPLASH -->
-	<splash src="img/splash/android/xxxhdpi.png" />
+	<splash src="www/img/splash/android/xxxhdpi.png" />
   
    <!-- iPhone and iPod touch -->
     <splash src="img/splash/ios/320X480.png" platform="ios" width="320" height="480" />
