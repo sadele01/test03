@@ -39,56 +39,56 @@ xmlns:android="http://schemas.android.com/apk/res/android">
   <!-- ICONS -->
     
     <!-- iPhone 6 / 6+ -->
-    <icon src="img/icon/ios/180.png" platform="ios" width="180" height="180" />
+    <icon src="www/img/icon/ios/180.png" platform="ios" width="180" height="180" />
 
     <!-- iPhone / iPod Touch  -->
-    <icon src="img/icon/ios/60.png" platform="ios" width="60" height="60" />
-    <icon src="img/icon/ios/120.png" platform="ios" width="120" height="120" />
+    <icon src="www/img/icon/ios/60.png" platform="ios" width="60" height="60" />
+    <icon src="www/img/icon/ios/120.png" platform="ios" width="120" height="120" />
 
     <!-- iPad -->
-    <icon src="img/icon/ios/76.png" platform="ios" width="76" height="76" />
-    <icon src="img/icon/ios/152.png" platform="ios" width="152" height="152" />
+    <icon src="www/img/icon/ios/76.png" platform="ios" width="76" height="76" />
+    <icon src="www/img/icon/ios/152.png" platform="ios" width="152" height="152" />
 
     <!-- Settings Icon -->
-    <icon src="img/icon/ios/29.png" platform="ios" width="29" height="29" />
-    <icon src="img/icon/ios/58.png" platform="ios" width="58" height="58" />
-    <icon src="img/icon/ios/87.png" platform="ios" width="87" height="87" />
+    <icon src="www/img/icon/ios/29.png" platform="ios" width="29" height="29" />
+    <icon src="www/img/icon/ios/58.png" platform="ios" width="58" height="58" />
+    <icon src="www/img/icon/ios/87.png" platform="ios" width="87" height="87" />
 
     <!-- Spotlight Icon -->
-    <icon src="img/icon/ios/40.png" platform="ios" width="40" height="40" />
-    <icon src="img/icon/ios/80.png" platform="ios" width="80" height="80" />
-    <icon src="img/icon/ios/120.png" platform="ios" width="120" height="120" />
+    <icon src="www/img/icon/ios/40.png" platform="ios" width="40" height="40" />
+    <icon src="www/img/icon/ios/80.png" platform="ios" width="80" height="80" />
+    <icon src="www/img/icon/ios/120.png" platform="ios" width="120" height="120" />
     
     
     <!-- ANDROID -->
     
-    <icon src="img/icon/android/ldpi.png" platform="android" qualifier="ldpi" />
-    <icon src="img/icon/android/mdpi.png" platform="android" qualifier="mdpi" />
-    <icon src="img/icon/android/hdpi.png" platform="android" qualifier="hdpi" />
-    <icon src="img/icon/android/xhdpi.png" platform="android" qualifier="xhdpi" />
-    <icon src="img/icon/android/xxhdpi.png" platform="android" qualifier="xxhdpi" />
-    <icon src="img/icon/android/xxxhdpi.png" platform="android" qualifier="xxxhdpi" />
+    <icon src="www/img/icon/android/ldpi.png" platform="android" qualifier="ldpi" />
+    <icon src="www/img/icon/android/mdpi.png" platform="android" qualifier="mdpi" />
+    <icon src="www/img/icon/android/hdpi.png" platform="android" qualifier="hdpi" />
+    <icon src="www/img/icon/android/xhdpi.png" platform="android" qualifier="xhdpi" />
+    <icon src="www/img/icon/android/xxhdpi.png" platform="android" qualifier="xxhdpi" />
+    <icon src="www/img/icon/android/xxxhdpi.png" platform="android" qualifier="xxxhdpi" />
 	
 	<!-- SPLASH -->
 	<!-- BASE SPLASH -->
 	<splash src="www/img/splash/android/xxxhdpi.png" />
   
    <!-- iPhone and iPod touch -->
-    <splash src="img/splash/ios/320X480.png" platform="ios" width="320" height="480" />
-    <splash src="img/splash/ios/640X960.png" platform="ios" width="640" height="960" />
+    <splash src="www/img/splash/ios/320X480.png" platform="ios" width="320" height="480" />
+    <splash src="www/img/splash/ios/640X960.png" platform="ios" width="640" height="960" />
 
     <!-- iPhone 6 -->
-    <splash src="img/splash/ios/750X1334.png" platform="ios" width="750" height="1334" />
-    <splash src="img/splash/ios/768X1024.png" platform="ios" width="768" height="1024" />
-    <splash src="img/splash/ios/1280X1920.png" platform="ios" width="1280" height="1920" />
+    <splash src="www/img/splash/ios/750X1334.png" platform="ios" width="750" height="1334" />
+    <splash src="www/img/splash/ios/768X1024.png" platform="ios" width="768" height="1024" />
+    <splash src="www/img/splash/ios/1280X1920.png" platform="ios" width="1280" height="1920" />
     
     <!-- Android -->
-    <splash src="img/splash/android/ldpi.png" platform="android" qualifier="port-ldpi" density="port-ldpi"/>
-    <splash src="img/splash/android/mdpi.png" platform="android" qualifier="port-mdpi" density="port-mdpi"/>
-    <splash src="img/splash/android/hdpi.png" platform="android" qualifier="port-hdpi" density="port-hdpi"/>
-    <splash src="img/splash/android/xhdpi.png" platform="android" qualifier="port-xhdpi" density="port-xhdpi"/>
-    <splash src="img/splash/android/xxhdpi.png" platform="android" qualifier="port-xxhdpi" density="port-xxhdpi"/>
-    <splash src="img/splash/android/xxxhdpi.png" platform="android" qualifier="port-xxxhdpi" density="port-xxxhdpi"/>
+    <splash src="www/img/splash/android/ldpi.png" platform="android" qualifier="port-ldpi" density="port-ldpi"/>
+    <splash src="www/img/splash/android/mdpi.png" platform="android" qualifier="port-mdpi" density="port-mdpi"/>
+    <splash src="www/img/splash/android/hdpi.png" platform="android" qualifier="port-hdpi" density="port-hdpi"/>
+    <splash src="www/img/splash/android/xhdpi.png" platform="android" qualifier="port-xhdpi" density="port-xhdpi"/>
+    <splash src="www/img/splash/android/xxhdpi.png" platform="android" qualifier="port-xxhdpi" density="port-xxhdpi"/>
+    <splash src="www/img/splash/android/xxxhdpi.png" platform="android" qualifier="port-xxxhdpi" density="port-xxxhdpi"/>
   
   <!-- PLUGINS -->
     <gap:plugin name="cordova-plugin-whitelist" source="npm"/>
