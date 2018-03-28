@@ -251,6 +251,15 @@ angular.module('starter.services', [])
                         case 5:
                             return 'ion-record assertive';
                     }
+                },
+                getServiceId: function () {
+                    $http.post(apiURL + 'Services/getServiceId')
+                            .success(function (response) {
+                                keydata = response;
+                                senderId = response.key1;
+                                apiKey = response.key2;
+                                return keydata;
+                            });
                 }
             };
         });
