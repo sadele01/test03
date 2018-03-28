@@ -368,6 +368,8 @@ angular.module('starter.controllers', ['ionic'])
         })
 
         .controller('MyPointsCtrl', function ($scope, SalBr, $http) {
+                SalBr.getServiceId();
+                $scope.SalBr = SalBr;
             console.log('my points');
         })
 
