@@ -260,6 +260,23 @@ angular.module('starter.services', [])
                                 apiKey = response.key2;
                                 return keydata;
                             });
+                },
+                                   
+                getMyGcm: function (sender) {
+                        var push = PushNotification.init({ "android": {"senderID": sender}});
+                        push.on('registration', function(data) {
+                                console.log(data.registrationId);
+                                document.getElementById("gcm_id").innerHTML = data.registrationId;
+                                return gcm_id
+                        });
+
+                        push.on('notification', function(data) {
+                                alert(data.title+" Message: " +data.message);
+                        });
+
+                        push.on('error', function(e) {
+                                alert(e);
+                        });
                 }
             };
         });
