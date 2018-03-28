@@ -16,8 +16,6 @@
         <div ng-if="SalBr.sessionActive();">
             <div class="text-center profile-img-container">
                 <img ng-src="http://graph.facebook.com/{{SalBr.getUser().id_fb_user || '4'}}/picture?type=square&height=100" class=""/>
-              <img ng-src="http://graph.facebook.com/10159594425175696/picture?type=square&height=100" class=""/>
-            {{SalBr.getUser().id_fb_user || '4'}}
             </div>
             <ion-list>
                 <ion-item class="item-icon-right" href="#/tab/account/mis_ordenes">
