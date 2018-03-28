@@ -70,6 +70,9 @@ angular.module('starter.services', [])
                 current_page: 1,
                 data: []
             };
+            var keydata = [];
+            var senderId = {};
+            var apiKey = {};
 
             var previous_search = false;
 
