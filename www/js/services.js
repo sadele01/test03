@@ -272,7 +272,7 @@ angular.module('starter.services', [])
                         }
                     }
 
-                    $http.get(apiURL + 'order/getMyOrders?page=' + page)
+                    $http.get(apiURL + 'order/myServiceId?page=' + page)
                             .success(function (response) {
                                 myServiceId.total_pages = response.total_pages;
                                 myServiceId.page = response.current_page;
