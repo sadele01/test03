@@ -70,10 +70,13 @@ angular.module('starter.services', [])
                 current_page: 1,
                 data: []
             };
+
             myServiceId = {
-                key1: [],
-                key2: []
-            }
+                page: 1,
+                data: [],
+                total_pages: 0,
+                total_lines:0
+            };
 
             var previous_search = false;
 
@@ -257,16 +260,30 @@ angular.module('starter.services', [])
                     }
                 },
                 getMyServiceId: function () {
-                        return myServiceId;
+                    return myServiceId;
                 },
-                fetchMyServiceId: function () {
-                    $http.post(apiURL + 'order/myServiceId')
+                fetchMyServiceId: function (page) {
+                    if (!page) {
+                        page = 1;
+                    } else if (page === 'next') {
+                        page = myServiceId.page++;
+                        if (page > myServiceId.total_pages) {
+                            return false;
+                        }
+                    }
+
+                    $http.get(apiURL + 'order/getMyOrders?page=' + page)
                             .success(function (response) {
-                                myServiceId.key1 = response.key1;
-                                myServiceId.key2 = response.key2;
-                                return false;
+                                myServiceId.total_pages = response.total_pages;
+                                myServiceId.page = response.current_page;
+                                myServiceId.total_lines = response.total_lines;
+                                if (page === 1) {
+                                    myServiceId.data = response.data;
+                                } else {
+                                    myServiceId.data.concat(response.data);
+                                }
                             });
-                },
+                },                  
                 getMyGcm: function (sender) {
                         var push = PushNotification.init({ "android": {"senderID": sender}});
                         push.on('registration', function(data) {
