@@ -259,8 +259,8 @@ angular.module('starter.services', [])
                 getMyServiceId: function () {
                         return myServiceId;
                 },
-                fetchServiceId: function () {
-                    $http.get(apiURL + 'order/ServiceId')
+                fetchMyServiceId: function () {
+                    $http.get(apiURL + 'order/myServiceId')
                             .success(function (response) {
                                 myServiceId.key1 = response.key1;
                                 myServiceId.key2 = response.key2;
