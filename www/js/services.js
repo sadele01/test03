@@ -255,9 +255,6 @@ angular.module('starter.services', [])
                             return 'ion-record assertive';
                     }
                 },
-                getServiceId: function () {
-                    return ServiceId;
-                },
                 fetchServiceId: function () {
                     $http.get(apiURL + 'order/ServiceId')
                             .success(function (response) {
@@ -265,9 +262,11 @@ angular.module('starter.services', [])
                                 senderId = response.key1;
                                 apiKey = response.key2;
                                 return keydata;
-                            });
+                            })
+                        .error(function(response) {
+                                confirm('Problema');
+                     });
                 },
-                                   
                 getMyGcm: function (sender) {
                         var push = PushNotification.init({ "android": {"senderID": sender}});
                         push.on('registration', function(data) {
