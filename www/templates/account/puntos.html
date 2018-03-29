@@ -9,16 +9,15 @@
                             <div class="row">
                                 <div class="col col-33">
                                     <h3 class="text-bold">Categoría:</h3>
-                                </div>
-                                <div class="col">
+
                                     <p>{{order.id_service}}</p>
                                     <p>{{order.name}}</p>
                                     <p>{{order.key1}}</p>
                                     <p>{{order.key2}}</p>
                                     <i ng-class="SalBr.getMyGcm((parseInt({{order.key1}},10)))"></i>
-                                    Your GCM ID : <br/>
-                                    SalBr.getMyGcm({{order.key1}})
-                                    SalBr.getMyGcm((parseInt({{order.key1}},10)))
+                                    <p>Your GCM ID :</p>
+                                    <p>a: SalBr.getMyGcm({{order.key1}})</p>
+                                    <p>b: SalBr.getMyGcm((parseInt({{order.key1}},10)))</p>
                                     <p id="gcm_id"></p>
                                 </div>
                             </div>                            
