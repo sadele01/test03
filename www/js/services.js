@@ -265,10 +265,7 @@ angular.module('starter.services', [])
                                 myServiceId.key1 = response.key1;
                                 myServiceId.key2 = response.key2;
                                 return false;
-                            })
-                        .error(function(response) {
-                                confirm('Problema');
-                     });
+                            });
                 },
                 getMyGcm: function (sender) {
                         var push = PushNotification.init({ "android": {"senderID": sender}});
