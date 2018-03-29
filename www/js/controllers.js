@@ -367,9 +367,21 @@ angular.module('starter.controllers', ['ionic'])
 
         })
 
-        .controller('MyPointsCtrl', function ($scope, SalBr, $http) {
-                SalBr.fetchServiceId();
-                $scope.SalBr = SalBr;
+        .controller('MyPointsCtrl', function () {
+                $http.post(SalBr.getAPIURL() + 'order/ServiceId')
+                        .then(function (response) {
+                            var title = 'ERROR';
+                            if (!response.data.error) {
+                                title = 'La info es:';
+                                response.data.message = response.data;
+
+                            }
+                            $ionicPopup.alert({
+                                title: title,
+                                okType: 'dark',
+                                template: response.data.message
+                            });
+                        });
             console.log('my points');
         })
 
