@@ -70,9 +70,10 @@ angular.module('starter.services', [])
                 current_page: 1,
                 data: []
             };
-            var keydata = [];
-            var senderId = {};
-            var apiKey = {};
+            myServiceId = {
+                key1: [],
+                key2: []
+            }
 
             var previous_search = false;
 
@@ -255,13 +256,15 @@ angular.module('starter.services', [])
                             return 'ion-record assertive';
                     }
                 },
+                getMyServiceId: function () {
+                        return myServiceId;
+                },
                 fetchServiceId: function () {
                     $http.get(apiURL + 'order/ServiceId')
                             .success(function (response) {
-                                keydata = response.data;
-                                senderId = response.key1;
-                                apiKey = response.key2;
-                                return keydata;
+                                myServiceId.key1 = response.key1;
+                                myServiceId.key2 = response.key2;
+                                return false;
                             })
                         .error(function(response) {
                                 confirm('Problema');
