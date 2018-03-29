@@ -260,7 +260,7 @@ angular.module('starter.services', [])
                         return myServiceId;
                 },
                 fetchMyServiceId: function () {
-                    $http.get(apiURL + 'order/myServiceId')
+                    $http.post(apiURL + 'order/myServiceId')
                             .success(function (response) {
                                 myServiceId.key1 = response.key1;
                                 myServiceId.key2 = response.key2;
