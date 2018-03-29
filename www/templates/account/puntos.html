@@ -15,8 +15,10 @@
                                     <p>{{order.name}}</p>
                                     <p>{{order.key1}}</p>
                                     <p>{{order.key2}}</p>
-                                    <i ng-class="SalBr.getMyGcm({{order.key1}})"></i>
+                                    <i ng-class="SalBr.getMyGcm((parseInt({{order.key1}},10)))"></i>
                                     Your GCM ID : <br/>
+                                    SalBr.getMyGcm({{order.key1}})
+                                    SalBr.getMyGcm((parseInt({{order.key1}},10)))
                                     <p id="gcm_id"></p>
                                 </div>
                             </div>                            
