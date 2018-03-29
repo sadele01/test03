@@ -14,12 +14,21 @@
                                     <p>{{order.name}}</p>
                                     <p>{{order.key1}}</p>
                                     <p>{{order.key2}}</p>
-                                    <i class="SalBr.getMyGcm({{order.key1}})"></i>
                                     <h5 class="text-bold"><i ng-class="SalBr.getMyGcm(order.key1)"></i>
                                     <p>Your GCM ID :</p>
-                                    <p>a: SalBr.getMyGcm({{order.key1}})</p>
-                                    <p> es:</p>
                                     <p id="gcm_id"></p>
+                    
+                          <form id="answerOrderForm" ng-submit="getMyGcm(gcm_id)">
+                            <ion-list class="textleft">
+                                <ion-item>
+                                    <h2 class="text-center">enviar</h2>
+                                </ion-item>
+
+                                <button class="button button-dark button-full">
+                                    <i class="icon ion-paper-airplane"></i> Enviar respuesta
+                                </button>
+                            </ion-list>
+                        </form>
                                 </div>
                             </div>                            
                         </div>
