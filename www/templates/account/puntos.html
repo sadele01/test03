@@ -1,20 +1,39 @@
-<ion-view view-title="Mis Datos">
+<ion-view view-title="Mis Órdenes">
     <ion-content class="padding">
-        <h1 class="text-center">EN DESARROLLO</h1>
-        <ion-list>
-           
-                <h1>Push Notification Example</h1>
-                Your GCM ID : <br/>
-                <p id="gcm_id"></p>
-                a: {{gcm_id}}
-                b: {{response.data}}
-                c: {{data}}
-                d: {{response.data.key1}}
-                e: {{response}}
-                f: {{key1}}
-                g: {{order}}
-                h: {{order.data}}
-                i: {{apiKey}}                
+        <ion-list ng-if="SalBr.getMyServiceId().total_lines">
+            <ion-item class="item-remove-animate item-icon-right" 
+                      type="item-text-wrap" 
+                      href="#/tab/account/order/{{order.id_order}}"
+                      collection-repeat="order in SalBr.getMyServiceId().data">
+                        <div id="getMyServiceId">
+                            <div class="row">
+                                <div class="col col-33">
+                                    <h3 class="text-bold">Categoría:</h3>
+                                </div>
+                                <div class="col">
+                                    <p>{{order.category}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-33">
+                                    <h3 class="text-bold">Fecha:</h3>
+                                </div>
+                                <div class="col">
+                                    <p>{{order.creation_timestamp}}</p>
+                                </div>
+                            </div>  
+                            <div class="row">
+                                <div class="col col-33">
+                                    <h3 class="text-bold"><i ng-class="SalBr.getOrderStatusClass(order.status)"></i> {{SalBr.getOrderStatus(order.status)}}</h3>
+                                </div>
+                                <div class="col">
+                                    <h3 class="text-bold" ng-if="order.qualification">Calificaste con: {{order.qualification}} estrellas</h3>
+                                </div>
+                            </div>                             
+                        </div>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
         </ion-list>
+        <h3 class="text-center" ng-if="!SalBr.getMyServiceId().total_lines">No tiene órdenes por el momento</h3>
     </ion-content>
 </ion-view>
