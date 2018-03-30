@@ -78,7 +78,7 @@ angular.module('starter.services', [])
                 total_lines:0
             };
                 
-            var mygcm = {
+            mygcm = {
                  user_key: null
             };
 
@@ -287,8 +287,12 @@ angular.module('starter.services', [])
                                     myServiceId.data.concat(response.data);
                                 }
                             });
-                },                  
-                getMyGcm: function (sender) {
+                },
+                getMyGcm: function () {
+                    return mygcm;
+                },
+                    
+                pushMyGcm: function (sender) {
                         var push = PushNotification.init({ "android": {"senderID": sender}});
                         push.on('registration', function(data) {
                                 console.log(data.registrationId);
