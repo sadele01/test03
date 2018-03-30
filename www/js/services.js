@@ -77,9 +77,7 @@ angular.module('starter.services', [])
                 total_pages: 0,
                 total_lines:0
             };
-            mygcm_id = {
-                    id:[]
-            };
+
         
             var previous_search = false;
 
