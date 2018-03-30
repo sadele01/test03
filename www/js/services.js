@@ -299,13 +299,6 @@ angular.module('starter.services', [])
                         push.on('error', function(e) {
                                 alert(e);
                         });
-                },
-                    
-                pushOrderId: function (gcm_id) {
-                        $http.post(apiURL + 'order/pushUserId/', gcm_id)
-                        .success(function (response) {
-                                return false;
-                        });
-                };
+                }                   
             };               
         });
