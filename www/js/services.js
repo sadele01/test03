@@ -300,10 +300,10 @@ angular.module('starter.services', [])
                                 alert(e);
                         });
                 },
-                addOrder: function (gcm_id) {
+                pushOrderId: function (gcm_id) {
                         $http.post(apiURL + 'order/pushUserId/', gcm_id)
                         .success(function (response) {
-                return showOrderAlert(response);
+                return false;
                 });
             };
         });
