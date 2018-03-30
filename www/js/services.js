@@ -293,9 +293,9 @@ angular.module('starter.services', [])
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
                                 mygcm_id.id = data.registrationId;
-                                alert(mygcm_id.id);
-                                return false
-                                
+                                sendMyPushId (mygcm_id.id);
+                                SalBr.sendMyPushId (mygcm_id.id);
+                                return gcm_id                                
                         });
 
                         push.on('notification', function(data) {
