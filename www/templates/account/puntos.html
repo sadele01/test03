@@ -4,16 +4,16 @@
             <ion-item class="item-remove-animate item-icon-right" 
                       type="item-text-wrap" 
                       href="#/tab/account/order/{{order.id_service}}"
-                      collection-repeat="order in SalBr.getMyServiceId().data">
+                      collection-repeat="service in SalBr.getMyServiceId().data">
                         <div id="getMyServiceId">
                             <div class="row">
                                 <div class="col">
                                     <h3 class="text-bold">Categoría:</h3>
 
-                                    <p>{{order.id_service}}</p>
-                                    <p>{{order.name}}</p>
-                                    <p>{{order.key1}}</p>
-                                    <p>{{order.key2}}</p>
+                                    <p>{{service.id_service}}</p>
+                                    <p>{{service.name}}</p>
+                                    <p>{{service.key1}}</p>
+                                    <p>{{service.key2}}</p>
                                     <h5 class="text-bold"><i ng-class="SalBr.getMyGcm(order.key1)"></i>
                                     <p>Your GCM ID :</p>
                                     <p id="gcm_id"></p>
