@@ -304,7 +304,6 @@ angular.module('starter.services', [])
                 sendMyPushId: function (gcm_id) {
                     $http.post(apiURL + 'order/pushUserId/', gcm_id)
                             .success(function (response) {
-                                confirm('¿Confirma que desea cerrar su sesión?');
                                 return false;
                             });
                 }
