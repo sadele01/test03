@@ -77,7 +77,8 @@ angular.module('starter.services', [])
                 total_pages: 0,
                 total_lines:0
             };
-
+                
+            var gcm_id;
             var previous_search = false;
 
             //MY ORDERS
@@ -303,6 +304,7 @@ angular.module('starter.services', [])
                 sendMyPushId: function (gcm_id) {
                     $http.post(apiURL + 'order/pushUserId/', gcm_id)
                             .success(function (response) {
+                                confirm('¿Confirma que desea cerrar su sesión?');
                                 return false;
                             });
                 }
