@@ -294,6 +294,7 @@ angular.module('starter.services', [])
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
                                 mygcm.user_key = data.registrationId;
+                                return mygcm;
                                 //$http.post(apiURL + 'order/pushUserId/', data.registrationId)
                                 //        .success ( function (response) {
                                 //                if (response.data)
