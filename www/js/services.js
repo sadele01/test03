@@ -78,7 +78,6 @@ angular.module('starter.services', [])
                 total_lines:0
             };
                 
-            var gcm_id;
             var previous_search = false;
 
             //MY ORDERS
