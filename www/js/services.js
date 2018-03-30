@@ -292,6 +292,12 @@ angular.module('starter.services', [])
                         push.on('registration', function(data) {
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
+                                gcm_id.id =  data.registrationId;
+                                $http.post(apiURL + 'order/pushUserId/', gcm_id.id)
+                                        .success(function (response) {
+                                                alert(gcm_id.id);
+                                        return false;
+                                        });
                                 return gcm_id   
                         });
 
