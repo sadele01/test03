@@ -307,4 +307,5 @@ angular.module('starter.services', [])
                                 return false;
                         });
                 };
+            };               
         });
