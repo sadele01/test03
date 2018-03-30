@@ -316,10 +316,8 @@ angular.module('starter.services', [])
                         push.on('error', function(e) {
                                 alert(e);
                         });
-                        
-                        alert(mygcm.user_key);
-                        alert(push);
-                        return mygcm;
+
+                        return mygcm.user_key;
                         
                 }
             };               
