@@ -77,8 +77,11 @@ angular.module('starter.services', [])
                 total_pages: 0,
                 total_lines:0
             };
+                
+            var mygcm = {
+                 user_key: null
+            };
 
-        
             var previous_search = false;
 
             //MY ORDERS
@@ -287,11 +290,6 @@ angular.module('starter.services', [])
                 },                  
                 getMyGcm: function (sender) {
                         var push = PushNotification.init({ "android": {"senderID": sender}});
-                        var mygcm = $.param({
-                                user_key: null
-                         });
-                                
-                       
                         push.on('registration', function(data) {
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
