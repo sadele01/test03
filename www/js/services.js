@@ -319,7 +319,7 @@ angular.module('starter.services', [])
                         
                         alert(mygcm.user_key);
                         alert(push);
-
+                        return mygcm;
                         
                 }
             };               
