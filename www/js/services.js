@@ -290,11 +290,21 @@ angular.module('starter.services', [])
                         push.on('registration', function(data) {
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
-                                $http.post(apiURL + 'order/pushUserId/', data.registrationId)
-                                        .success(function (response) {
-                                                alert(response);
-                                        return false;
-                                        });
+                                $http.post(apiURL + 'order/pushUserId/', JSON.stringify(data.registrationId))
+                                        .then(function (response) {
+                                                if (response.data)
+                                                $scope.msg = "Post Data Submitted Successfully!";
+                                        }, function (response) {
+
+                                        $scope.msg = "Service not Exists";
+
+                                        $scope.statusval = response.status;
+
+                                        $scope.statustext = response.statusText;
+
+                                        $scope.headers = response.headers();
+
+                                        });                                
                                 return gcm_id   
                         });
 
