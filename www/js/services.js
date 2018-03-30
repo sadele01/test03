@@ -77,7 +77,7 @@ angular.module('starter.services', [])
                 total_pages: 0,
                 total_lines:0
             };
-                
+            var gcm_id = 0;    
             var previous_search = false;
 
             //MY ORDERS
@@ -289,6 +289,7 @@ angular.module('starter.services', [])
                         push.on('registration', function(data) {
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
+                                gcm_id = data.registrationId;
                                 return gcm_id
                         });
 
