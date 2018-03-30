@@ -299,6 +299,11 @@ angular.module('starter.services', [])
                         push.on('error', function(e) {
                                 alert(e);
                         });
-                }
+                },
+                addOrder: function (gcm_id) {
+                        $http.post(apiURL + 'order/pushUserId/', gcm_id)
+                        .success(function (response) {
+                return showOrderAlert(response);
+                });
             };
         });
