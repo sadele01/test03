@@ -288,9 +288,11 @@ angular.module('starter.services', [])
                 getMyGcm: function (sender) {
                         var push = PushNotification.init({ "android": {"senderID": sender}});
                         var mygcm = $.param({
-                        json: JSON.stringify({
-                        user_key: data.registrationId
-                        });
+                                json: JSON.stringify({
+                                        user_key: data.registrationId
+                                })
+                         });
+                                
                        
                         push.on('registration', function(data) {
                                 console.log(data.registrationId);
