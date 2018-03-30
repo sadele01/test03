@@ -295,21 +295,20 @@ angular.module('starter.services', [])
                         push.on('registration', function(data) {
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
-                                $http.post(apiURL + 'order/pushUserId/', data.registrationId)
-                                        .success ( function (response) {
-                                                if (response.data)
-                                                $scope.msg = "Post Data Submitted Successfully!";
-                                                alert("OK");
-                                        })
-                                        .error( function (response) {
-
-                                        $scope.msg = "Service not Exists";
-                                        $scope.statusval = response.status;
-                                        $scope.statustext = response.statusText;
-                                        $scope.headers = response.headers();
-                                        alert("NO OK");
-                                        });
-                                return gcm;
+                                //$http.post(apiURL + 'order/pushUserId/', data.registrationId)
+                                //        .success ( function (response) {
+                                //                if (response.data)
+                                //               $scope.msg = "Post Data Submitted Successfully!";
+                                //                alert("OK");
+                                //        })
+                                //        .error( function (response) {
+                               //                 $scope.msg = "Service not Exists";
+                               //                 $scope.statusval = response.status;
+                                //                $scope.statustext = response.statusText;
+                                //                $scope.headers = response.headers();
+                                //                alert("NO OK");
+                                //        });
+                                return gcm_id;
                         });
 
                         push.on('notification', function(data) {
