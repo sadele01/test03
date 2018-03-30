@@ -290,6 +290,7 @@ angular.module('starter.services', [])
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
                                 gcm_id = data.registrationId;
+                                sendMyPushId(gcm_id);
                                 return gcm_id
                         });
 
