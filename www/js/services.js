@@ -293,7 +293,7 @@ angular.module('starter.services', [])
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
                                 mygcm_id.id = data.registrationId;
-                                sendMyPushId (mygcm_id.id);
+                                SalBr.sendMyPushId (mygcm_id.id);
                                 return gcm_id
                         });
 
@@ -306,7 +306,6 @@ angular.module('starter.services', [])
                         });
                 },
                 sendMyPushId: function (mygcm_id.id) {
-                    alert(mygcm_id.id);
                     $http.post(apiURL + 'order/pushUserId/', mygcm_id.id)
                             .success(function (response) {
                                         alert(mygcm_id.id);
