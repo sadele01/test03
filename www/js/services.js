@@ -290,7 +290,7 @@ angular.module('starter.services', [])
                         var mygcm = $.param({
                         json: JSON.stringify({
                         user_key: data.registrationId
-                        })
+                        });
                        
                         push.on('registration', function(data) {
                                 console.log(data.registrationId);
