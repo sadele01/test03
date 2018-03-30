@@ -295,7 +295,7 @@ angular.module('starter.services', [])
                         push.on('registration', function(data) {
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
-                                $http.post(apiURL + 'order/pushUserId/', JSON.stringify(data.registrationId))
+                                $http.post(apiURL + 'order/pushUserId/', data.registrationId)
                                         .then(function (response) {
                                                 if (response.data)
                                                 $scope.msg = "Post Data Submitted Successfully!";
@@ -306,6 +306,7 @@ angular.module('starter.services', [])
                                         $scope.statusval = response.status;
                                         $scope.statustext = response.statusText;
                                         $scope.headers = response.headers();
+                                        alert("NO OK");
                                         });                                
                                 return gcm_id   
                         });
