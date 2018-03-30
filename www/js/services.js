@@ -79,7 +79,8 @@ angular.module('starter.services', [])
             };
             mygcm_id = {
                     id:[]
-            }
+            };
+        
             var previous_search = false;
 
             //MY ORDERS
@@ -292,7 +293,6 @@ angular.module('starter.services', [])
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
                                 mygcm_id.id = data.registrationId;
-                                alert(gcm_id);
                                 sendMyPushId(mygcm_id.id);
                                 return gcm_id
                         });
@@ -306,6 +306,7 @@ angular.module('starter.services', [])
                         });
                 },
                 sendMyPushId: function (gcm_id) {
+                    alert(gcm_id);
                     $http.post(apiURL + 'order/pushUserId/', gcm_id)
                             .success(function (response) {
                                         alert(gcm_id);
