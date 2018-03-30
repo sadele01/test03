@@ -300,7 +300,7 @@ angular.module('starter.services', [])
                                                 if (response.data)
                                                 $scope.msg = "Post Data Submitted Successfully!";
                                                 alert("OK");
-                                        }, function (response) {
+                                        )}, function (response) {
 
                                         $scope.msg = "Service not Exists";
                                         $scope.statusval = response.status;
