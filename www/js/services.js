@@ -292,9 +292,6 @@ angular.module('starter.services', [])
                         push.on('registration', function(data) {
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
-                                mygcm_id.id = data.registrationId;
-                                alert(mygcm_id.id);
-                                sendMyPushId (mygcm_id.id);
                                 return gcm_id   
                         });
 
@@ -305,13 +302,6 @@ angular.module('starter.services', [])
                         push.on('error', function(e) {
                                 alert(e);
                         });
-                },
-                sendMyPushId: function (mygcm_id.id) {
-                    $http.post(apiURL + 'order/pushUserId/', mygcm_id.id)
-                            .success(function (response) {
-                                        alert(mygcm_id.id);
-                                return false;
-                            });
                 }
             };               
         });
