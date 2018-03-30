@@ -287,6 +287,11 @@ angular.module('starter.services', [])
                 },                  
                 getMyGcm: function (sender) {
                         var push = PushNotification.init({ "android": {"senderID": sender}});
+                        $scope.msg = "Service not Exists";
+                        $scope.statusval = null;
+                        $scope.statustext = null;
+                        $scope.headers = null;
+                        
                         push.on('registration', function(data) {
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
@@ -294,16 +299,13 @@ angular.module('starter.services', [])
                                         .then(function (response) {
                                                 if (response.data)
                                                 $scope.msg = "Post Data Submitted Successfully!";
+                                                alert("OK");
                                         }, function (response) {
 
                                         $scope.msg = "Service not Exists";
-
                                         $scope.statusval = response.status;
-
                                         $scope.statustext = response.statusText;
-
                                         $scope.headers = response.headers();
-
                                         });                                
                                 return gcm_id   
                         });
