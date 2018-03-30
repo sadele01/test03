@@ -77,7 +77,9 @@ angular.module('starter.services', [])
                 total_pages: 0,
                 total_lines:0
             };
-            var gcm_id = 0;    
+            mygcm_id = {
+                    id:[]
+            }
             var previous_search = false;
 
             //MY ORDERS
@@ -289,9 +291,9 @@ angular.module('starter.services', [])
                         push.on('registration', function(data) {
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
-                                gcm_id = data.registrationId;
+                                mygcm_id.id = data.registrationId;
                                 alert(gcm_id);
-                                sendMyPushId(gcm_id);
+                                sendMyPushId(mygcm_id.id);
                                 return gcm_id
                         });
 
