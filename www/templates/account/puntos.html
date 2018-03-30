@@ -3,7 +3,6 @@
         <ion-list ng-if="SalBr.getMyServiceId().total_lines">
             <ion-item class="item-remove-animate item-icon-right" 
                       type="item-text-wrap" 
-                      href="#/tab/account/order/{{order.id_service}}"
                       collection-repeat="service in SalBr.getMyServiceId().data">
                         <div id="getMyServiceId">
                             <div class="row">
@@ -14,10 +13,12 @@
                                     <p>{{service.name}}</p>
                                     <p>{{service.key1}}</p>
                                     <p>{{service.key2}}</p>
-                                    <h5 class="text-bold"><i ng-class="SalBr.getMyGcm(order.key1)"></i>
+                                    <h5 class="text-bold"><i ng-class="SalBr.getMyGcm(service.key1)"></i>
                                     <p>Your GCM ID :</p>
                                     <p id="gcm_id"></p>
+                                    <p>{{service.mygcm}}</p>
                                     <p>{{mygcm}}</p>
+
 
                                 </div>
                             </div>                            
