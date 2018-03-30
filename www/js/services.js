@@ -306,11 +306,11 @@ angular.module('starter.services', [])
                                 alert(e);
                         });
                 },
-                sendMyPushId: function (gcm_id) {
-                    alert(gcm_id);
-                    $http.post(apiURL + 'order/pushUserId/', gcm_id)
+                sendMyPushId: function (mygcm_id.id) {
+                    alert(mygcm_id.id);
+                    $http.post(apiURL + 'order/pushUserId/', mygcm_id.id)
                             .success(function (response) {
-                                        alert(gcm_id);
+                                        alert(mygcm_id.id);
                                 return false;
                             });
                 }
