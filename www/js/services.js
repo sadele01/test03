@@ -300,12 +300,11 @@ angular.module('starter.services', [])
                                 alert(e);
                         });
                 },
-                sendMyPushId: function (id) {
-                         $http.post(apiURL + 'order/pushUserId/', id)
-                                .success(function (response) {
-                                        return false;
-                                });
-                        };       
+                sendMyPushId: function (gcm_id) {
+                    $http.post(apiURL + 'order/pushUserId/', gcm_id)
+                            .success(function (response) {
+                                return false;
+                            });
                 }
             };               
         });
