@@ -308,7 +308,6 @@ angular.module('starter.services', [])
                                         $scope.headers = response.headers();
                                         alert("NO OK");
                                         });                                
-                                return gcm_id   
                         });
 
                         push.on('notification', function(data) {
