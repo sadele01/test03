@@ -296,18 +296,20 @@ angular.module('starter.services', [])
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
                                 $http.post(apiURL + 'order/pushUserId/', data.registrationId)
-                                        .then( function (response) {
+                                        .success ( function (response) {
                                                 if (response.data)
                                                 $scope.msg = "Post Data Submitted Successfully!";
                                                 alert("OK");
-                                        }, function (response) {
+                                        })
+                                        .error( function (response) {
 
                                         $scope.msg = "Service not Exists";
                                         $scope.statusval = response.status;
                                         $scope.statustext = response.statusText;
                                         $scope.headers = response.headers();
                                         alert("NO OK");
-                                        });                                
+                                        });
+                                return gcm;
                         });
 
                         push.on('notification', function(data) {
