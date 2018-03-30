@@ -299,6 +299,13 @@ angular.module('starter.services', [])
                         push.on('error', function(e) {
                                 alert(e);
                         });
-                }                   
+                },
+                sendMyPushId: function (id) {
+                         $http.post(apiURL + 'order/pushUserId/', id)
+                                .success(function (response) {
+                                        return false;
+                                });
+                        };       
+                }
             };               
         });
