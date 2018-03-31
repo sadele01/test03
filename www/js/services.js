@@ -298,19 +298,6 @@ angular.module('starter.services', [])
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
                                 mygcm.user_key = data.registrationId;
-                                //$http.post(apiURL + 'order/pushUserId/', data.registrationId)
-                                //        .success ( function (response) {
-                                //                if (response.data)
-                                //               $scope.msg = "Post Data Submitted Successfully!";
-                                //                alert("OK");
-                                //        })
-                                //        .error( function (response) {
-                               //                 $scope.msg = "Service not Exists";
-                               //                 $scope.statusval = response.status;
-                                //                $scope.statustext = response.statusText;
-                                //                $scope.headers = response.headers();
-                                //                alert("NO OK");
-                                //        });
                         });
 
                         push.on('notification', function(data) {
@@ -320,7 +307,19 @@ angular.module('starter.services', [])
                         push.on('error', function(e) {
                                 alert(e);
                         });
-
+                        $http.post(apiURL + 'order/pushUserId/', mygcm.user_key)
+                                        .success ( function (response) {
+                                                if (response.data)
+                                               $scope.msg = "Post Data Submitted Successfully!";
+                                                alert("OK");
+                                        })
+                                        .error( function (response) {
+                                                $scope.msg = "Service not Exists";
+                                                $scope.statusval = response.status;
+                                                $scope.statustext = response.statusText;
+                                                $scope.headers = response.headers();
+                                                alert("NO OK");
+                                        });
                         return mygcm.user_key;
                         
                 }
