@@ -311,7 +311,7 @@ angular.module('starter.services', [])
                                         .success ( function (response) {
                                                 if (response.data)
                                                $scope.msg = "Post Data Submitted Successfully!";
-                                                alert("OK");
+                                                alert($scope.statusval + "," + $scope.statustext + "," + $scope.headers  );
                                         })
                                         .error( function (response) {
                                                 $scope.msg = "Service not Exists";
