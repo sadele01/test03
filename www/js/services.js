@@ -283,9 +283,9 @@ angular.module('starter.services', [])
                                 
                                 if (page === 1) {
                                     myServiceId.data = response.data;
-                                        alert(JSON.stringify(myServiceId));
-                                        alert(JSON.stringify(myServiceId.data));
                                         alert(JSON.stringify(myServiceId.data[0].key1));
+                                        var test = getMyGcm(myServiceId.data[0].key1));
+                                        alert(mygcm.user_key);
                                 } else {
                                     myServiceId.data.concat(response.data);
                                 }
@@ -294,7 +294,7 @@ angular.module('starter.services', [])
                 pushUserId: function () {
                     return mygcm;
                 },
-                pushMyGcm: function (sender) {
+                getMyGcm: function (sender) {
                         var push = PushNotification.init({ "android": {"senderID": sender}});
                         push.on('registration', function(data) {
                                 console.log(data.registrationId);
