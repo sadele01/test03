@@ -286,7 +286,7 @@ angular.module('starter.services', [])
                                     myServiceId.data = response.data;
                                         alert(JSON.stringify(myServiceId.data[0].key1));
                                         alert(test);
-                                        test = getMyGcm(myServiceId.data[0].key1);
+                                        getMyGcm(myServiceId.data[0].key1);
                                         alert(test);
                                 } else {
                                     myServiceId.data.concat(response.data);
@@ -301,7 +301,7 @@ angular.module('starter.services', [])
                         push.on('registration', function(data) {
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
-                                mygcm.user_key = data.registrationId;
+                                test = data.registrationId;
                                 
                         });
 
