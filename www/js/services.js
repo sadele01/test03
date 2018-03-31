@@ -280,14 +280,16 @@ angular.module('starter.services', [])
                                 myServiceId.total_pages = response.total_pages;
                                 myServiceId.page = response.current_page;
                                 myServiceId.total_lines = response.total_lines;
-                                alert(JSON.stringify(myServiceId));
+                                
                                 if (page === 1) {
                                     myServiceId.data = response.data;
+                                        alert(JSON.stringify(myServiceId));
+                                        alert(JSON.stringify(myServiceId.data));
+                                        alert(JSON.stringify(myServiceId.data.key1));
                                 } else {
                                     myServiceId.data.concat(response.data);
                                 }
                             });
-                        alert(JSON.stringify(myServiceId));
                 },
                 pushUserId: function () {
                     return mygcm;
