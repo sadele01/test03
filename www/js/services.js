@@ -286,6 +286,7 @@ angular.module('starter.services', [])
                                     myServiceId.data.concat(response.data);
                                 }
                             });
+                        getMyServiceId();
                         alert(JSON.stringify(myServiceId));
                 },
                 pushUserId: function () {
