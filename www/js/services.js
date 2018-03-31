@@ -287,7 +287,7 @@ angular.module('starter.services', [])
                                         alert(JSON.stringify(myServiceId.data[0].key1));
                                         alert(test);
                                         test = getMyGcm(myServiceId.data[0].key1);
-                                        alert(mygcm.user_key);
+                                        alert(test);
                                 } else {
                                     myServiceId.data.concat(response.data);
                                 }
