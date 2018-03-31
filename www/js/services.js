@@ -284,7 +284,9 @@ angular.module('starter.services', [])
                                 
                                 if (page === 1) {
                                     myServiceId.data = response.data;
-                                        getMyGcm(myServiceId.data[0].key1);
+                                        test = myServiceId.data[0].key1;
+                                        alert("a" + test);
+                                        getMyGcm(test);
                                 } else {
                                     myServiceId.data.concat(response.data);
                                 }
