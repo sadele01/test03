@@ -307,7 +307,7 @@ angular.module('starter.services', [])
                         push.on('error', function(e) {
                                 alert(e);
                         });
-                        $http.post(apiURL + 'order/pushUserId/', {params: {user_key: 'hello world'})
+                        $http.post(apiURL + 'order/pushUserId/', {user_key: 'hello world'})
                                         .success ( function (response) {
                                                 if (response.data)
                                                $scope.msg = "Post Data Submitted Successfully!";
