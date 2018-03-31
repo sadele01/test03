@@ -285,7 +285,7 @@ angular.module('starter.services', [])
                                     myServiceId.data = response.data;
                                         alert(JSON.stringify(myServiceId));
                                         alert(JSON.stringify(myServiceId.data));
-                                        alert(JSON.stringify(myServiceId.data.key1));
+                                        alert(JSON.stringify(myServiceId.data[0].key1));
                                 } else {
                                     myServiceId.data.concat(response.data);
                                 }
