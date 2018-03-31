@@ -80,6 +80,7 @@ angular.module('starter.services', [])
                 mygcm = {
                          user_key: null
                 };
+                var test = null;
 
             var previous_search = false;
 
@@ -284,7 +285,8 @@ angular.module('starter.services', [])
                                 if (page === 1) {
                                     myServiceId.data = response.data;
                                         alert(JSON.stringify(myServiceId.data[0].key1));
-                                        var test = getMyGcm(myServiceId.data[0].key1));
+                                        alert(test);
+                                        test = getMyGcm(myServiceId.data[0].key1);
                                         alert(mygcm.user_key);
                                 } else {
                                     myServiceId.data.concat(response.data);
