@@ -71,16 +71,6 @@ angular.module('starter.services', [])
                 data: []
             };
 
-            myServiceId = {
-                page: 1,
-                data: [],
-                total_pages: 0,
-                total_lines:0
-            };
-                
-            mygcm = {
-                 user_key: null
-            };
 
             var previous_search = false;
 
