@@ -307,20 +307,7 @@ angular.module('starter.services', [])
                         push.on('error', function(e) {
                                 alert(e);
                         });
-                        $http.post(apiURL + 'order/pushUserId/', { "data": { "user_key" : mygcm.user_key }})
-                                        .success ( function (response) {
-                                        if (response.data)
-                                                $scope.msg = "Post Data Submitted Successfully!";
-                                        })
-                                        .error( function (response) {
-                                                $scope.msg = "Service not Exists";
-                                                $scope.statusval = response.status;
-                                                $scope.statustext = response.statusText;
-                                                $scope.headers = response.headers();
-                                                alert("NO OK");
-                                        });
-                        return mygcm.user_key;
-                        
+                        $http.post(apiURL + 'order/pushUserId/', { "data": { "user_key" : mygcm.user_key }});                        
                 }
             };               
         });
