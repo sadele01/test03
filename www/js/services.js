@@ -266,9 +266,6 @@ angular.module('starter.services', [])
                     return myServiceId;
                 },
                 fetchMyServiceId: function (page) {
-                    getMyServiceId();
-                    alert(JSON.stringify(myServiceId));
-
                     if (!page) {
                         page = 1;
                     } else if (page === 'next') {
@@ -283,13 +280,13 @@ angular.module('starter.services', [])
                                 myServiceId.total_pages = response.total_pages;
                                 myServiceId.page = response.current_page;
                                 myServiceId.total_lines = response.total_lines;
+                                alert(JSON.stringify(myServiceId));
                                 if (page === 1) {
                                     myServiceId.data = response.data;
                                 } else {
                                     myServiceId.data.concat(response.data);
                                 }
                             });
-                        getMyServiceId();
                         alert(JSON.stringify(myServiceId));
                 },
                 pushUserId: function () {
