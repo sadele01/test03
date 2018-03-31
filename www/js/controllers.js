@@ -375,16 +375,13 @@ angular.module('starter.controllers', ['ionic'])
                         total_lines:0
                 };
                 
+                mygcm = {
+                         user_key: null
+                };
 
                 SalBr.fetchMyServiceId();
                 $scope.SalBr = SalBr;
-
-                $scope.new_gcm = {
-                        user_key: $scope.service.key1,
-                };
-                alert(new_gcm);
-
-              
+                
             console.log('my points');
         })
 
