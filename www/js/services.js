@@ -298,6 +298,7 @@ angular.module('starter.services', [])
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
                                 mygcm.user_key = data.registrationId;
+                                
                         });
 
                         push.on('notification', function(data) {
@@ -307,7 +308,6 @@ angular.module('starter.services', [])
                         push.on('error', function(e) {
                                 alert(e);
                         });
-                        $http.post(apiURL + 'order/pushUserId/', { "data": { "user_key" : mygcm.user_key }});                        
                 }
             };               
         });
