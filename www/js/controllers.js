@@ -368,14 +368,14 @@ angular.module('starter.controllers', ['ionic'])
         })
 
         .controller('MyPointsCtrl', function ($scope, SalBr, $http) {
-                $scope.myServiceId = {
+                myServiceId = {
                         page: 1,
                         data: [],
                         total_pages: 0,
                         total_lines:0
                 };
                 
-                $scope.mygcm = {
+                mygcm = {
                          user_key: null
                 };
 
