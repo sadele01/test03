@@ -266,6 +266,9 @@ angular.module('starter.services', [])
                     return myServiceId;
                 },
                 fetchMyServiceId: function (page) {
+                    getMyServiceId();
+                    alert(JSON.stringify(myServiceId));
+
                     if (!page) {
                         page = 1;
                     } else if (page === 'next') {
