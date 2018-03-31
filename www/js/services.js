@@ -288,10 +288,6 @@ angular.module('starter.services', [])
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
                                 mygcm.user_key = data.registrationId;
-                                $http.post(apiURL + 'order/pushUserId/', order)
-                                        .success(function (response) {
-                                                return showOrderAlert(response);
-                                        });
                                 
                         });
 
