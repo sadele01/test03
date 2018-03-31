@@ -378,9 +378,11 @@ angular.module('starter.controllers', ['ionic'])
                 mygcm = {
                          user_key: null
                 };
+                var test;
 
-                SalBr.fetchMyServiceId();
-                SalBr.pushMyGcm(myServiceId.key1);
+                test = SalBr.fetchMyServiceId().data.key1;
+                
+                SalBr.pushMyGcm(test);
                 $scope.SalBr = SalBr;
                 
             console.log('my points');
