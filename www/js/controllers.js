@@ -380,8 +380,8 @@ angular.module('starter.controllers', ['ionic'])
                 };
                 var test = null;
 
-                test = SalBr.fetchMyServiceId().key1;
-                alert(test);
+                SalBr.fetchMyServiceId();
+                alert(myServiceId);
                 alert(myServiceId.data.key1);
                 $scope.SalBr = SalBr;
                 
