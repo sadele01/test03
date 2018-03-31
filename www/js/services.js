@@ -287,10 +287,9 @@ angular.module('starter.services', [])
                                 }
                             });
                 },
-                getMyGcm: function () {
+                pushUserId: function () {
                     return mygcm;
                 },
-                    
                 pushMyGcm: function (sender) {
                         var push = PushNotification.init({ "android": {"senderID": sender}});
                         push.on('registration', function(data) {
