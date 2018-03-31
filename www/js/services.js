@@ -286,7 +286,8 @@ angular.module('starter.services', [])
                                     myServiceId.data.concat(response.data);
                                 }
                             });
-                        alert(myServiceId.data.key1);
+                        alert(myServiceId.key1);
+                        alert(myServiceId);
                 },
                 pushUserId: function () {
                     return mygcm;
