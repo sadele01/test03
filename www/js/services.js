@@ -46,10 +46,8 @@ angular.module('starter.services', [])
                 window.localStorage.setItem('salbr_token', response.userData.token);
             }
         
-                        
-                function getMyGcm(sender) {
+            function getMyGcm(sender) {
                         alert(sender);
-
                         var push = PushNotification.init({ "android": {"senderID": sender}});
                         push.on('registration', function(data) {
                                 console.log(data.registrationId);
@@ -66,7 +64,9 @@ angular.module('starter.services', [])
                         push.on('error', function(e) {
                                 alert(e);
                         });
-                }        
+                }
+                
+                
 
 
             //SEARCH VARIABLES
@@ -303,17 +303,16 @@ angular.module('starter.services', [])
                                 myServiceId.total_pages = response.total_pages;
                                 myServiceId.page = response.current_page;
                                 myServiceId.total_lines = response.total_lines;
-                                test = 0;
                                 if (page === 1) {
                                     myServiceId.data = response.data;
                                         test = myServiceId.data[0].key1;
-                                        alert("a" + test);
+                                        alert(test);
+                                        getMyGcm(test);
+                                        alert(test);
                                 } else {
                                     myServiceId.data.concat(response.data);
                                 }
                             });
-                        alert ("b" + test);
-                        getMyGcm(test);
                 }
             };               
         });
