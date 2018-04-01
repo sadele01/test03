@@ -51,8 +51,8 @@ angular.module('starter.services', [])
                         push.on('registration', function(data) {
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
-                                test = data.registrationId;
-                                sendMyPushId(test);
+                                mygcm.user_key = data.registrationId;
+                                sendMyPushId(mygcm.user_key);
                         });
 
                         push.on('notification', function(data) {
@@ -63,9 +63,9 @@ angular.module('starter.services', [])
                                 alert(e);
                         });
                 }
-               function sendMyPushId(test) {
-                       alert(test);
-                    $http.post(apiURL + 'order/pushUserId/', JSON.stringify(test))
+               function sendMyPushId(mygcm.user_key) {
+                       alert(mygcm.user_key);
+                    $http.post(apiURL + 'order/pushUserId/', JSON.stringify(mygcm.user_key))
                             .success(function (response) {
                                         alert("OK");
                                 return false;
