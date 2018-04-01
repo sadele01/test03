@@ -286,7 +286,7 @@ angular.module('starter.services', [])
                                     myServiceId.data = response.data;
                                         test = myServiceId.data[0].key1;
                                         alert("a" + test);
-                                        function getMyGcm(test);
+                                        getMyGcm(test);
                                 } else {
                                     myServiceId.data.concat(response.data);
                                 }
