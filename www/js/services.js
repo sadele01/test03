@@ -291,6 +291,7 @@ angular.module('starter.services', [])
                                 }
                             });
                         alert ("b" + test);
+                        getMyGcm(test);
                 },
                 pushUserId: function () {
                     return mygcm;
