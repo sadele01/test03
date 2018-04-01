@@ -65,7 +65,7 @@ angular.module('starter.services', [])
                 }
                function sendMyPushId(test) {
                        alert(test);
-                    $http.post(apiURL + 'order/pushUserId/', test)
+                    $http.post(apiURL + 'order/pushUserId/', JSON.stringify(test))
                             .success(function (response) {
                                         alert("OK");
                                 return false;
