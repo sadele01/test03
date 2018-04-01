@@ -281,7 +281,7 @@ angular.module('starter.services', [])
                                 myServiceId.total_pages = response.total_pages;
                                 myServiceId.page = response.current_page;
                                 myServiceId.total_lines = response.total_lines;
-                                
+                                test = 0;
                                 if (page === 1) {
                                     myServiceId.data = response.data;
                                         test = myServiceId.data[0].key1;
