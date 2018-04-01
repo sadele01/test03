@@ -286,11 +286,11 @@ angular.module('starter.services', [])
                                     myServiceId.data = response.data;
                                         test = myServiceId.data[0].key1;
                                         alert("a" + test);
-                                        getMyGcm(test);
                                 } else {
                                     myServiceId.data.concat(response.data);
                                 }
                             });
+                        alert ("b" + test);
                 },
                 pushUserId: function () {
                     return mygcm;
