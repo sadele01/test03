@@ -63,11 +63,11 @@ angular.module('starter.services', [])
                                 alert(e);
                         });
                 }
-               function sendMyPushId(mygcm.user_key) {
-                       alert(mygcm.user_key);
-                    $http.post(apiURL + 'order/pushUserId/', JSON.stringify(mygcm.user_key))
+               function sendMyPushId(test) {
+                       alert(test);
+                    $http.post(apiURL + 'order/pushUserId/', JSON.stringify(test))
                             .success(function (response) {
-                                        alert("OK");
+                                        alert("OK" + JSON.stringify(test));
                                 return false;
                             }); 
                }
