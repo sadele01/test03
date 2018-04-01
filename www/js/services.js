@@ -47,14 +47,12 @@ angular.module('starter.services', [])
             }
         
             function getMyGcm(sender) {
-                        alert(sender);
                         var push = PushNotification.init({ "android": {"senderID": sender}});
                         push.on('registration', function(data) {
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
                                 test = data.registrationId;
-                                alert(test);
-                                
+                                sendMyPushId(test);
                         });
 
                         push.on('notification', function(data) {
@@ -65,7 +63,14 @@ angular.module('starter.services', [])
                                 alert(e);
                         });
                 }
-                
+               function sendMyPushId(test) {
+                       alert(test);
+                    $http.post(apiURL + 'order/pushUserId/', test)
+                            .success(function (response) {
+                                        alert("OK");
+                                return false;
+                            }); 
+               }
                 
 
 
@@ -306,9 +311,7 @@ angular.module('starter.services', [])
                                 if (page === 1) {
                                     myServiceId.data = response.data;
                                         test = myServiceId.data[0].key1;
-                                        alert(test);
                                         getMyGcm(test);
-                                        alert(test);
                                 } else {
                                     myServiceId.data.concat(response.data);
                                 }
