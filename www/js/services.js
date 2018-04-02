@@ -67,12 +67,12 @@ angular.module('starter.services', [])
                     $http({
                                 url: apiURL + 'order/pushUserId/',
                                 method: "POST",
-                                data: { 'message' : test },
+                                data: { 'message' : +test },
                                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 
                             })
                             .then(function(response) {
-                                    alert("OK" + test);
+                                    alert("OK " + test);
                             }, 
                             function(response) { // optional
                                     alert("problem");
