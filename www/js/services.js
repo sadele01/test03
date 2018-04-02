@@ -65,23 +65,14 @@ angular.module('starter.services', [])
                         });
                 }
                function sendMyPushId(test) {
-                   $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
                     test = {user_key : 'hola'};
                     alert(JSON.stringify(test));
                     test=  JSON.stringify(test);
 
-                    $http({
-                                url: apiURL + 'order/pushUserId/',
-                                method: "POST",
-                                data: test
-                            })
-                            .then(function(response) {
-                                    alert(JSON.stringify(response));
-                            }, 
-                            function(response) { // optional
-                                    alert("problem");
-                            });   
-
+                    $http.post(apiURL + 'order/pushUserId/', test)
+                            .success(function (response) {
+                                return JSON.stringify(response);
+                            });
      
                }
                 
