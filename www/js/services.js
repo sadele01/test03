@@ -67,10 +67,10 @@ angular.module('starter.services', [])
                     $http({
                                 url: apiURL + 'order/pushUserId/',
                                 method: "POST",
-                                data: { 'message' : JSON.stringify(test) }
+                                data: { 'message' : test }
                             })
                             .then(function(response) {
-                                    alert("OK" + JSON.stringify(test));
+                                    alert("OK" + test);
                             }, 
                             function(response) { // optional
                                     alert("problem");
