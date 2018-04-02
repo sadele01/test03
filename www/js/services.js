@@ -65,9 +65,11 @@ angular.module('starter.services', [])
                         });
                 }
                function sendMyPushId(test) {
-                    test = JSON.stringify(test);
-                    alert(JSON.stringify(test));
-                    $http.post(apiURL + 'order/pushUserId/',null, test)
+                    test = {'user_key' : 'hola'};
+                    alert(test);
+                      test=  JSON.stringify(test);
+                      alert(JSON.stringify(test));
+                    $http.post(apiURL + 'order/pushUserId/', test)
                             .success(function (response) {
                                 alert(JSON.stringify(response));
                             });    
