@@ -65,6 +65,7 @@ angular.module('starter.services', [])
                         });
                 }
                function sendMyPushId(test) {
+                   $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
                     test = {user_key : 'hola'};
                     alert(JSON.stringify(test));
                     test=  JSON.stringify(test);
