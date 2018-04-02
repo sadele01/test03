@@ -67,7 +67,7 @@ angular.module('starter.services', [])
                     $http({
                                 url: apiURL + 'order/pushUserId/',
                                 method: "POST",
-                                data: { 'message' : +test },
+                                data: $.param({ 'message' : test }),
                                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 
                             })
