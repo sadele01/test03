@@ -73,9 +73,7 @@ angular.module('starter.services', [])
                     $http({
                                 url: apiURL + 'order/pushUserId/',
                                 method: "POST",
-                                data: test,
-                                headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
-
+                                data: test
                             })
                             .then(function(response) {
                                     alert(JSON.stringify(response));
