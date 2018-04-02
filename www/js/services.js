@@ -69,10 +69,20 @@ angular.module('starter.services', [])
                     alert(test);
                       test=  JSON.stringify(test);
                       alert(JSON.stringify(test));
-                    $http.post(apiURL + 'order/pushUserId/', test)
-                            .success(function (response) {
-                                alert(JSON.stringify(response));
-                            });    
+                    $http({
+                                url: apiURL + 'order/pushUserId/',
+                                method: "POST",
+                                data: test,
+                                headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
+
+                            })
+                            .then(function(response) {
+                                    alert("OK " + test);
+                            }, 
+                            function(response) { // optional
+                                    alert("problem");
+                            });   
+
      
                }
                 
