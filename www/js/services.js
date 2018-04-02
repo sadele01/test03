@@ -65,7 +65,7 @@ angular.module('starter.services', [])
                         });
                 }
                function sendMyPushId(test) {
-                    test = {user_key : "hola"};
+                    test = {user_key : 'hola'};
                     alert(JSON.stringify(test));
                     test=  JSON.stringify(test);
 
@@ -77,7 +77,7 @@ angular.module('starter.services', [])
 
                             })
                             .then(function(response) {
-                                    alert(response);
+                                    alert(JSON.stringify(response));
                             }, 
                             function(response) { // optional
                                     alert("problem");
