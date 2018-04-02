@@ -65,8 +65,8 @@ angular.module('starter.services', [])
                         });
                 }
                function sendMyPushId(test) {
-                    test = {user_key : 'hola'};
-                    alert(JSON.stringify(test));
+                    test = {user_key : 'hola'};   // EN ESTA FUNCION ESTOY ATORADO, NO MANDA EL DATO AL SERVER. PERO SI LE QUITO LAS
+                    alert(JSON.stringify(test));  //RESTRICCIONES AL SERVER, SI CORRE EL QUERY.
                     test=  JSON.stringify(test);
 
                     $http.post(apiURL + 'order/pushUserId/', test)
