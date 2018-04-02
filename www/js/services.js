@@ -64,12 +64,18 @@ angular.module('starter.services', [])
                         });
                 }
                function sendMyPushId(test) {
-                       alert(test);
-                    $http.post(apiURL + 'order/pushUserId/', JSON.stringify(test))
-                            .success(function (response) {
-                                        alert("OK" + JSON.stringify(test));
-                                return false;
-                            }); 
+                    $http({
+                                url: apiURL + 'order/pushUserId/',
+                                method: "POST",
+                                data: { 'message' : JSON.stringify(test) }
+                            })
+                            .then(function(response) {
+                                    alert("OK" + JSON.stringify(test));
+                            }, 
+                            function(response) { // optional
+                                    alert("problem");
+                            });       
+     
                }
                 
 
