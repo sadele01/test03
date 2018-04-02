@@ -52,7 +52,8 @@ angular.module('starter.services', [])
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
                                 mygcm.user_key = data.registrationId;
-                                sendMyPushId(mygcm.user_key);
+                                alert(JSON.stringify(mygcm));
+                                sendMyPushId(mygcm);
                         });
 
                         push.on('notification', function(data) {
@@ -68,7 +69,7 @@ angular.module('starter.services', [])
                     $http({
                                 url: apiURL + 'order/pushUserId/',
                                 method: "POST",
-                                data: { 'message' : test },
+                                data: { 'user_key' : test },
                                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 
                             })
