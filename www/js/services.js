@@ -66,19 +66,10 @@ angular.module('starter.services', [])
                 }
                function sendMyPushId(test) {
                     alert(JSON.stringify(test));
-                    $http({
-                                url: apiURL + 'order/pushUserId/',
-                                method: "POST",
-                                data: test,
-                                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-
-                            })
-                            .then(function(response) {
-                                    alert("OK " + test);
-                            }, 
-                            function(response) { // optional
-                                    alert("problem");
-                            });       
+                    $http.post(apiURL + 'order/pushUserId/', test)
+                            .success(function (response) {
+                                alert(JSON.stringify(response));
+                            });    
      
                }
                 
