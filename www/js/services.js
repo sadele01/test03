@@ -64,6 +64,7 @@ angular.module('starter.services', [])
                         });
                 }
                function sendMyPushId(test) {
+                    alert(JSON.stringify(test));
                     $http({
                                 url: apiURL + 'order/pushUserId/',
                                 method: "POST",
