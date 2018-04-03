@@ -64,8 +64,8 @@ angular.module('starter.services', [])
                         });
                 }
                function sendMyPushId(test) {
-                    data = 'user_key=12345';    
-                    body = 'user_key=67890';    
+                    data = {user_key: 12345};    
+                    body = JSON.stringify('user_key=67890');    
 
                     $http({
                                 url: apiURL + 'order/pushUserId/',
