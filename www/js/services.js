@@ -64,8 +64,8 @@ angular.module('starter.services', [])
                         });
                 }
                function sendMyPushId(test) {
-                    data = 'user_key=12345';    
-                    body = JSON.stringify('user_key=12345');    
+                    data = $httpParamSerializerJQLike('user_key=12345');    
+                    body = $httpParamSerializerJQLike('user_key=67890');    
 
                     $http({
                                 url: apiURL + 'order/pushUserId/',
@@ -83,6 +83,7 @@ angular.module('starter.services', [])
                                 url: apiURL + 'order/pushUserId/',
                                 method: "POST",
                                 data: body
+                                headers : {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
                             })
                             .then(function(response) {
                                     alert(JSON.stringify(response));
