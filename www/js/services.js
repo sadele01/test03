@@ -52,7 +52,6 @@ angular.module('starter.services', [])
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
                                 mygcm.user_key = data.registrationId;
-                                alert(JSON.stringify(mygcm));
                                 sendMyPushId(mygcm);
                         });
 
@@ -65,13 +64,13 @@ angular.module('starter.services', [])
                         });
                 }
                function sendMyPushId(test) {
-                    test = {user_key : 'hola'};   // EN ESTA FUNCION ESTOY ATORADO, NO MANDA EL DATO AL SERVER. PERO SI LE QUITO LAS
+                    //test = {user_key : 'hola'};   // EN ESTA FUNCION ESTOY ATORADO, NO MANDA EL DATO AL SERVER. PERO SI LE QUITO LAS
                     alert(JSON.stringify(test));  //RESTRICCIONES AL SERVER, SI CORRE EL QUERY.
-                    test=  JSON.stringify(test);
+                    //test=  JSON.stringify(test);
 
                     $http.post(apiURL + 'order/pushUserId/', test)
                             .success(function (response) {
-                                return JSON.stringify(response);
+                                alert JSON.stringify(response);
                             });
      
                }
