@@ -65,20 +65,35 @@ angular.module('starter.services', [])
                 }
                function sendMyPushId(test) {
                     test = {user_key : 'hola'};    
+                    test2 = {user_key : 12345};    
 
 
                     $http({
                                 url: apiURL + 'order/pushUserId/',
                                 method: "POST",
-                                data: test
+                                data: {user_key : 'hola'}
                             })
                             .then(function(response) {
                                     alert(JSON.stringify(response));
                             }, 
                             function(response) { // optional
                                     alert("problem");
-                            });   
-     
+                            }); 
+                     
+                       $http({
+                                url: apiURL + 'order/pushUserId/',
+                                method: "POST",
+                                data: test2
+                            })
+                            .then(function(response) {
+                                    alert(JSON.stringify(response));
+                            }, 
+                            function(response) { // optional
+                                    alert("problem");
+                            });                       
+                       
+                       
+  
                }
                 
 
