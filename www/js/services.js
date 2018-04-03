@@ -65,8 +65,7 @@ angular.module('starter.services', [])
                 }
                function sendMyPushId(test) {
                     test = {user_key : 'hola'};    
-                    alert(JSON.stringify(test)); 
-                    test=  JSON.stringify(test);
+
 
                     $http({
                                 url: apiURL + 'order/pushUserId/',
