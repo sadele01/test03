@@ -64,14 +64,14 @@ angular.module('starter.services', [])
                         });
                 }
                function sendMyPushId(test) {
-                    test = {user_key : 'hola'};    
-                    test2 = {user_key : 12345};    
+                    data = {user_key : 'hola'};    
+                    body = {user_key : 12345};    
 
 
                     $http({
                                 url: apiURL + 'order/pushUserId/',
                                 method: "POST",
-                                data: {user_key : 'hola'}
+                                data: data
                             })
                             .then(function(response) {
                                     alert(JSON.stringify(response));
@@ -83,7 +83,7 @@ angular.module('starter.services', [])
                        $http({
                                 url: apiURL + 'order/pushUserId/',
                                 method: "POST",
-                                data: test2
+                                data: body
                             })
                             .then(function(response) {
                                     alert(JSON.stringify(response));
@@ -91,9 +91,6 @@ angular.module('starter.services', [])
                             function(response) { // optional
                                     alert("problem");
                             });                       
-                       
-                       
-  
                }
                 
 
