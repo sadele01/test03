@@ -52,7 +52,7 @@ angular.module('starter.services', [])
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
                                 mygcm.user_key = data.registrationId;
-                                alert(JSON.stringify(mygcm));
+                                alert(angular.toJson(mygcm));
                                 sendMyPushId(mygcm);
                         });
 
@@ -73,7 +73,7 @@ angular.module('starter.services', [])
                                 data: data
                             })
                             .then(function(response) {
-                                    alert(JSON.stringify(response));
+                                alert(angular.toJson(response));
                             }, 
                             function(response) { // optional
                                     alert("problem");
@@ -309,15 +309,8 @@ angular.module('starter.services', [])
                             })
                             .then(function(response) {
                                 myServiceId.data = response.data;
-                                //alert(JSON.stringify(myServiceId.data));
-                                //test = myServiceId.data[0].key1;
-                                alert(angular.toJson(myServiceId.data.data));
-                                alert(angular.toJson(myServiceId.data.data.key1));
-
-
-                                //alert(JSON.stringify(myServiceId));
-                                //getMyGcm(test);
-                           
+                                //alert(angular.toJson(myServiceId.data.data.key1));
+                                getMyGcm(myServiceId.data.data.key1);
                             }, 
                             function(response) { // optional
                                     alert("problem");
