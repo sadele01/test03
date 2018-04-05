@@ -1,7 +1,5 @@
 function onDeviceReady() {
     //document.addEventListener("backbutton", onBackButton, false);
-   fetchMyServiceId();
-
 }
 
 var IAMapp = {
