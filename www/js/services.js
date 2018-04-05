@@ -47,7 +47,8 @@ angular.module('starter.services', [])
             }
 
 
-               function sendMyPushId(test) {
+               
+                function sendMyPushId(test) {
                     data = test;    
 
                     $http({
@@ -302,6 +303,7 @@ angular.module('starter.services', [])
                     }); 
                 },
                 getMyGcm: function () {
+                        alert(angular.toJson(mygcm));
                         var push = PushNotification.init({ "android": {"senderID": myAppKey}});
                         push.on('registration', function(data) {
                                 //console.log(data.registrationId);
