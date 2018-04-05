@@ -32,7 +32,6 @@ angular.module('starter.controllers', ['ionic'])
                         }
                     }
                 }
-                SalBr.fetchMyServiceId();
             };
 
 
