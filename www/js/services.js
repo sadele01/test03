@@ -306,7 +306,11 @@ angular.module('starter.services', [])
                                 method: "GET"
                             })
                             .then(function(response) {
-                                    alert(JSON.stringify(response));
+                                myData = response.data;
+                                alert(JSON.stringify(myData));
+                                myData = response.data[0].key1;
+                                alert(JSON.stringify(myData));
+                            
                             }, 
                             function(response) { // optional
                                     alert("problem");
