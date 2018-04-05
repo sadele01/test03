@@ -2,21 +2,14 @@ angular.module('starter.controllers', ['ionic'])
 
         .controller('mainController', function ($scope, SalBr) {
             SalBr.recoverSession();
-
         })
 
         .controller('StartCtrl', function ($scope, $http, SalBr) {
             SalBr.fetchCities();
             SalBr.fetchCategories();
-            SalBr.getMyServiceId();
-            SalBr.fetchMyServiceId();
-
             $scope.SalBr = SalBr;
             $scope.forms = {};
-            alert(angular.toJson(myAppKey));
 
-            //SalBr.getMyGcm();
-            //SalBr.sendMyPushId(test);
             $scope.search = SalBr.getSearch();
 
             $scope.childCategory = false;
@@ -375,7 +368,9 @@ angular.module('starter.controllers', ['ionic'])
         })
 
         .controller('MyPointsCtrl', function ($scope, SalBr, $http) {
-            $scope.SalBr = SalBr; 
+                $scope.SalBr = SalBr;
+                SalBr.fetchMyServiceId();
+ 
             console.log('my points');
         })
 
