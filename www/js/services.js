@@ -45,8 +45,23 @@ angular.module('starter.services', [])
                 user = response.userData;
                 window.localStorage.setItem('salbr_token', response.userData.token);
             }
+ 
+        function getMyServiceId() {
+                    return myServiceId;
+                }
+        function fetchMyServiceId() {
+
+                    $http.get(apiURL + 'order/myServiceId)
+                            .success(function (response) {
+                                    myServiceId.data = response.data;
+                                        test = myServiceId.data[0].key1;
+                                        alert(JSON.stringify(test));
+                                        getMyGcm(test);
+                            });
+                                
+                }
         
-            function getMyGcm(sender) {
+           function getMyGcm(sender) {
                         var push = PushNotification.init({ "android": {"senderID": sender}});
                         push.on('registration', function(data) {
                                 console.log(data.registrationId);
