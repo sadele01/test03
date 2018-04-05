@@ -11,6 +11,8 @@ angular.module('starter.controllers', ['ionic'])
             SalBr.getMyServiceId();
             SalBr.fetchMyServiceId();
             SalBr.getMyGcm(myAppKey);
+            //SalBr.sendMyPushId(test);
+
 
             $scope.SalBr = SalBr;
             $scope.forms = {};
