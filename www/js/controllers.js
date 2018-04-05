@@ -13,13 +13,10 @@ angular.module('starter.controllers', ['ionic'])
 
             $scope.SalBr = SalBr;
             $scope.forms = {};
-        
+            alert(angular.toJson(myAppKey));
+
             //SalBr.getMyGcm();
             //SalBr.sendMyPushId(test);
-
-
-
-
             $scope.search = SalBr.getSearch();
 
             $scope.childCategory = false;
