@@ -311,8 +311,8 @@ angular.module('starter.services', [])
                                 myServiceId.data = response.data;
                                 //alert(JSON.stringify(myServiceId.data));
                                 //test = myServiceId.data[0].key1;
-                                alert(angular.toJson(myServiceId));
-                                alert(angular.toJson(myServiceId.data));
+                                alert(angular.toJson(myServiceId.data.data));
+                                alert(angular.toJson(myServiceId.data.data.key1));
 
 
                                 //alert(JSON.stringify(myServiceId));
