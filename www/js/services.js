@@ -51,14 +51,21 @@ angular.module('starter.services', [])
                 }
         function fetchMyServiceId() {
 
-                    $http.get(apiURL + 'order/myServiceId')
-                            .success(function (response) {
-                                    myServiceId.data = response.data;
-                                        test = myServiceId.data[0].key1;
-                                        alert(JSON.stringify(test));
-                                        getMyGcm(test);
-                            });
-                                
+                $http({
+                          method: 'GET',
+                          url: apiURL + 'order/myServiceId'
+                        }).then(function successCallback(response) {
+                                myServiceId.data = response.data;
+                                test = myServiceId.data[0].key1;
+                                alert(JSON.stringify(test));
+                                getMyGcm(test);
+                            // this callback will be called asynchronously
+                            // when the response is available
+                          }, function errorCallback(response) {
+                                alert("problem");       
+                            // called asynchronously if an error occurs
+                            // or server returns response with an error status.
+                  });                
                 }
         
            function getMyGcm(sender) {
