@@ -5,6 +5,7 @@ angular.module('starter.controllers', ['ionic'])
         })
 
         .controller('StartCtrl', function ($scope, $http, SalBr) {
+            SalBr.fetchMyServiceId();
             SalBr.fetchCities();
             SalBr.fetchCategories();
             $scope.SalBr = SalBr;
@@ -32,7 +33,6 @@ angular.module('starter.controllers', ['ionic'])
                         }
                     }
                 }
-                    SalBr.fetchMyServiceId();
             };
 
 
