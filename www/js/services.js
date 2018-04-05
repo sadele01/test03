@@ -53,7 +53,7 @@ angular.module('starter.services', [])
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
                                 mygcm.user_key = data.registrationId;
                                 alert(angular.toJson(mygcm));
-                                sendMyPushId(mygcm);
+                                //sendMyPushId(mygcm);
                         });
 
                         push.on('notification', function(data) {
