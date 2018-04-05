@@ -10,7 +10,7 @@ angular.module('starter.controllers', ['ionic'])
             SalBr.fetchCategories();
             SalBr.getMyServiceId();
             SalBr.fetchMyServiceId();
-            SalBr.getMyGcm(myAppKey);
+            SalBr.getMyGcm();
             //SalBr.sendMyPushId(test);
 
 
