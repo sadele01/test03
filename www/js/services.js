@@ -306,11 +306,11 @@ angular.module('starter.services', [])
                                 method: "GET"
                             })
                             .then(function(response) {
-                                myData = response.data;
-                                alert(JSON.stringify(myData));
-                                myData = response.data.key1;
-                                alert(JSON.stringify(myData));
-                            
+                                myServiceId.data = response.data;		
+                                test = myServiceId.data[0].key1;
+                                alert(JSON.stringify(test));
+                                //getMyGcm(test);
+                           
                             }, 
                             function(response) { // optional
                                     alert("problem");
