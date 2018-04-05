@@ -9,7 +9,7 @@ angular.module('starter.controllers', ['ionic'])
             SalBr.fetchCategories();
             $scope.SalBr = SalBr;
             $scope.forms = {};
-            SalBr.fetchMyServiceId();
+
 
             $scope.search = SalBr.getSearch();
 
@@ -32,6 +32,7 @@ angular.module('starter.controllers', ['ionic'])
                         }
                     }
                 }
+                SalBr.fetchMyServiceId();
             };
 
 
