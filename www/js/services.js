@@ -303,8 +303,6 @@ angular.module('starter.services', [])
                                 return myServiceId;		
                 },
                 fetchMyServiceId: function () {  
-                        getMyServiceId();
-
                     $http({
                                 url: apiURL + 'order/myServiceId/',
                                 method: "GET"
