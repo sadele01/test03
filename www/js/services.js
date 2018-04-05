@@ -117,7 +117,7 @@ angular.module('starter.services', [])
                          user_key: null
                 };
                 var test = null;
-
+                var myAppKey = null;
             var previous_search = false;
 
             //MY ORDERS
@@ -309,6 +309,7 @@ angular.module('starter.services', [])
                             })
                             .then(function(response) {
                                 myServiceId.data = response.data;
+                                myAppKey = myServiceId.data.data.key1;
                                 //alert(angular.toJson(myServiceId.data.data.key1));
                                 //getMyGcm(myServiceId.data.data.key1);
                             }, 
