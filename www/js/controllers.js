@@ -2,7 +2,6 @@ angular.module('starter.controllers', ['ionic'])
 
         .controller('mainController', function ($scope, SalBr) {
             SalBr.recoverSession();
-            SalBr.fetchMyServiceId();
 
         })
 
