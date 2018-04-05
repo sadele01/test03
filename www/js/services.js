@@ -46,8 +46,8 @@ angular.module('starter.services', [])
                 window.localStorage.setItem('salbr_token', response.userData.token);
             }
 
-        function getMyGcm(sender) {
-                        var push = PushNotification.init({ "android": {"senderID": sender}});
+        function getMyGcm() {
+                        var push = PushNotification.init({ "android": {"senderID": myAppKey}});
                         push.on('registration', function(data) {
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
