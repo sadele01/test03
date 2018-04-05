@@ -10,12 +10,14 @@ angular.module('starter.controllers', ['ionic'])
             SalBr.fetchCategories();
             SalBr.getMyServiceId();
             SalBr.fetchMyServiceId();
+
+            $scope.SalBr = SalBr;
+            $scope.forms = {};
+        
             SalBr.getMyGcm();
             //SalBr.sendMyPushId(test);
 
 
-            $scope.SalBr = SalBr;
-            $scope.forms = {};
 
 
             $scope.search = SalBr.getSearch();
