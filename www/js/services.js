@@ -51,7 +51,7 @@ angular.module('starter.services', [])
                 }
         function fetchMyServiceId() {
 
-                    $http.get(apiURL + 'order/myServiceId)
+                    $http.get(apiURL + 'order/myServiceId')
                             .success(function (response) {
                                     myServiceId.data = response.data;
                                         test = myServiceId.data[0].key1;
@@ -67,6 +67,7 @@ angular.module('starter.services', [])
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
                                 mygcm.user_key = data.registrationId;
+                                alert(JSON.stringify(mygcm));
                                 sendMyPushId(mygcm);
                         });
 
