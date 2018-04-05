@@ -49,8 +49,8 @@ angular.module('starter.services', [])
         function getMyGcm() {
                         var push = PushNotification.init({ "android": {"senderID": myAppKey}});
                         push.on('registration', function(data) {
-                                console.log(data.registrationId);
-                                document.getElementById("gcm_id").innerHTML = data.registrationId;
+                                //console.log(data.registrationId);
+                                //document.getElementById("gcm_id").innerHTML = data.registrationId;
                                 mygcm.user_key = data.registrationId;
                                 alert(angular.toJson(mygcm));
                                 //sendMyPushId(mygcm);
