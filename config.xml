@@ -106,6 +106,9 @@ xmlns:android="http://schemas.android.com/apk/res/android">
 		<string name="fb_login_protocol_scheme">fb147999889300513</string>
         </config-file>
 
+	<plugin name="phonegap-plugin-push" source="npm" spec="1.9.0">
+	    <param name="SENDER_ID" value="359827918684" />
+	</plugin>
 	
 	
 	<gap:plugin name="cordova-plugin-x-toast" source="npm" />

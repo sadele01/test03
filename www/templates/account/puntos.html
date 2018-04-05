@@ -1,21 +1,29 @@
 <ion-view view-title="Mis Órdenes">
     <ion-content class="padding">
-        <h1 class="text-center">EN DESARROLLO</h1>
-        <ion-list>
-            <ion-item class="item-remove-animate item-thumbnail-left item-icon-right" 
+        <ion-list ng-if="SalBr.getMyServiceId().total_lines">
+            <ion-item class="item-text-wrap" 
                       type="item-text-wrap" 
-                      href="#/tab/account/order/1">
-                <!--img ng-src="{{SalBr.getBaseURL()}}publication_avatar/{{publication.id_publication}}?type=square" alt="{{publication.title}}">
-                <h2>{{publication.title}}</h2>
-                <p>{{publication.description}}</p>
-                <p class="text-center">
-                    <i class="icon ion-star" ng-repeat="star in [1, 2, 3, 4, 5]"
-                       ng-class="getStarClass($index + 1, publication.rating)"
-                       ></i>
-                </p-->
+                      collection-repeat="service in SalBr.getMyServiceId().data">		
+                        <div id="getMyServiceId">
+                            <div class="row">
+                                <div class="col">
+                                    <h3 class="text-bold">Categoría:</h3>
 
+                                    <p>{{service.id_service}}</p>
+                                    <p>{{service.name}}</p>
+                                    <p>{{service.key1}}</p>
+                                    <p>{{service.key2}}</p>
+                                    <p>Your GCM ID :</p>
+                                    <p id="gcm_id"></p>
+                                    <p>{{service}}</p>
+                                    <p>{{mygcm.user_key}}</p>    
+                                        
+                                </div>
+                            </div>                            
+                        </div>
                 <i class="icon ion-chevron-right icon-accessory"></i>
             </ion-item>
         </ion-list>
+        <h3 class="text-center" ng-if="!SalBr.getMyServiceId().total_lines">No tiene órdenes por el momento</h3>
     </ion-content>
 </ion-view>
