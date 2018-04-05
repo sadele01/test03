@@ -308,7 +308,7 @@ angular.module('starter.services', [])
                             .then(function(response) {
                                 myData = response.data;
                                 alert(JSON.stringify(myData));
-                                myData = response.data[0].key1;
+                                myData = response.data.key1;
                                 alert(JSON.stringify(myData));
                             
                             }, 
