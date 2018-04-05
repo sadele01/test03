@@ -299,7 +299,7 @@ angular.module('starter.services', [])
                             return 'ion-record assertive';
                     }
                 },
-                function fetchMyServiceId() {
+                fetchMyServiceId: function () {
 
                     $http({
                                 url: apiURL + 'order/myServiceId/',
