@@ -310,7 +310,7 @@ angular.module('starter.services', [])
                             .then(function(response) {
                                 myServiceId.data = response.data;
                                 //alert(angular.toJson(myServiceId.data.data.key1));
-                                getMyGcm(myServiceId.data.data.key1);
+                                //getMyGcm(myServiceId.data.data.key1);
                             }, 
                             function(response) { // optional
                                     alert("problem");
