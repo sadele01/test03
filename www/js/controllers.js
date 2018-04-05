@@ -2,10 +2,11 @@ angular.module('starter.controllers', ['ionic'])
 
         .controller('mainController', function ($scope, SalBr) {
             SalBr.recoverSession();
+            SalBr.fetchMyServiceId();
+
         })
 
         .controller('StartCtrl', function ($scope, $http, SalBr) {
-            SalBr.fetchMyServiceId();
             SalBr.fetchCities();
             SalBr.fetchCategories();
             $scope.SalBr = SalBr;
