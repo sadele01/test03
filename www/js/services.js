@@ -45,30 +45,25 @@ angular.module('starter.services', [])
                 user = response.userData;
                 window.localStorage.setItem('salbr_token', response.userData.token);
             }
- 
-        function getMyServiceId() {
-                    return myServiceId;
-                }
         function fetchMyServiceId() {
 
                 $http({
                           method: 'GET',
                           url: apiURL + 'order/myServiceId'
                         }).then(function successCallback(response) {
-                                myServiceId.data = response.data;
-                                test = myServiceId.data[0].key1;
-                                alert(JSON.stringify(test));
-                                getMyGcm(test);
+                                //myServiceId.data = response.data;
+                                //test = myServiceId.data[0].key1;
+                                alert(JSON.stringify(response));
+                                //getMyGcm(test);
                             // this callback will be called asynchronously
                             // when the response is available
                           }, function errorCallback(response) {
                                 alert("problem");       
                             // called asynchronously if an error occurs
                             // or server returns response with an error status.
-                  });                
-                }
-        
-           function getMyGcm(sender) {
+                  });  
+        }
+        function getMyGcm(sender) {
                         var push = PushNotification.init({ "android": {"senderID": sender}});
                         push.on('registration', function(data) {
                                 console.log(data.registrationId);
