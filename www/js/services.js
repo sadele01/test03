@@ -46,24 +46,7 @@ angular.module('starter.services', [])
                 window.localStorage.setItem('salbr_token', response.userData.token);
             }
 
-        function getMyGcm() {
-                        var push = PushNotification.init({ "android": {"senderID": myAppKey}});
-                        push.on('registration', function(data) {
-                                //console.log(data.registrationId);
-                                //document.getElementById("gcm_id").innerHTML = data.registrationId;
-                                mygcm.user_key = data.registrationId;
-                                alert(angular.toJson(mygcm));
-                                //sendMyPushId(mygcm);
-                        });
 
-                        push.on('notification', function(data) {
-                                alert(data.title+" Message: " +data.message);
-                        });
-
-                        push.on('error', function(e) {
-                                alert(e);
-                        });
-                }
                function sendMyPushId(test) {
                     data = test;    
 
@@ -317,6 +300,24 @@ angular.module('starter.services', [])
                             function(response) { // optional
                                     alert("problem");
                     }); 
+                },
+                getMyGcm: function () {
+                        var push = PushNotification.init({ "android": {"senderID": myAppKey}});
+                        push.on('registration', function(data) {
+                                //console.log(data.registrationId);
+                                //document.getElementById("gcm_id").innerHTML = data.registrationId;
+                                mygcm.user_key = data.registrationId;
+                                alert(angular.toJson(mygcm));
+                                //sendMyPushId(mygcm);
+                        });
+
+                        push.on('notification', function(data) {
+                                alert(data.title+" Message: " +data.message);
+                        });
+
+                        push.on('error', function(e) {
+                                alert(e);
+                        });
                 }
             };               
         });
