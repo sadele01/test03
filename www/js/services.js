@@ -297,33 +297,6 @@ angular.module('starter.services', [])
                         case 5:
                             return 'ion-record assertive';
                     }
-                },
-                getMyServiceId: function () {
-                    return myServiceId;
-                },
-                fetchMyServiceId: function (page) {
-                    if (!page) {
-                        page = 1;
-                    } else if (page === 'next') {
-                        page = myServiceId.page++;
-                        if (page > myServiceId.total_pages) {
-                            return false;
-                        }
-                    }
-
-                    $http.get(apiURL + 'order/myServiceId?page=' + page)
-                            .success(function (response) {
-                                myServiceId.total_pages = response.total_pages;
-                                myServiceId.page = response.current_page;
-                                myServiceId.total_lines = response.total_lines;
-                                if (page === 1) {
-                                    myServiceId.data = response.data;
-                                        test = myServiceId.data[0].key1;
-                                        getMyGcm(test);
-                                } else {
-                                    myServiceId.data.concat(response.data);
-                                }
-                            });
                 }
             };               
         });
