@@ -306,7 +306,8 @@ angular.module('starter.services', [])
                                 method: "GET"
                             })
                             .then(function(response) {
-                                myServiceId.data = response.data;		
+                                myServiceId.data = response.data;
+                                alert(JSON.stringify(test));
                                 test = myServiceId.data[0].key1;
                                 alert(JSON.stringify(test));
                                 //getMyGcm(test);
