@@ -48,7 +48,7 @@ angular.module('starter.services', [])
         function fetchMyServiceId() {
 
                 $http({
-                          method: 'GET',
+                          method: "GET",
                           url: apiURL + 'order/myServiceId'
                         }).then(function successCallback(response) {
                                 //myServiceId.data = response.data;
