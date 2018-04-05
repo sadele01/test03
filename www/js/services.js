@@ -294,15 +294,15 @@ angular.module('starter.services', [])
                             .then(function(response) {
                                 myServiceId.data = response.data;
                                 myAppKey = myServiceId.data.data.key1;
-                                alert(angular.toJson(myAppKey));
+                                //alert(angular.toJson(myAppKey));
                                 //alert(angular.toJson(myServiceId.data.data.key1));
-                                //getMyGcm(myServiceId.data.data.key1);
+                                getMyGcm(myAppKey);
                             }, 
                             function(response) { // optional
                                     alert("problem");
                     }); 
                 },
-                getMyGcm: function () {
+                getMyGcm: function (myAppKey) {
                         alert(angular.toJson(mygcm));
                         var push = PushNotification.init({ "android": {"senderID": myAppKey}});
                         push.on('registration', function(data) {
