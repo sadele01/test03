@@ -14,7 +14,7 @@ angular.module('starter.controllers', ['ionic'])
             $scope.SalBr = SalBr;
             $scope.forms = {};
         
-            getMyGcm();
+            $scope.getMyGcm();
             //SalBr.sendMyPushId(test);
 
 
