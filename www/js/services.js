@@ -47,21 +47,16 @@ angular.module('starter.services', [])
             }
         function fetchMyServiceId() {
 
-                $http({
-                          method: "GET",
-                          url: apiURL + 'order/myServiceId'
-                        }).then(function successCallback(response) {
-                                //myServiceId.data = response.data;
-                                //test = myServiceId.data[0].key1;
-                                alert(JSON.stringify(response));
-                                //getMyGcm(test);
-                            // this callback will be called asynchronously
-                            // when the response is available
-                          }, function errorCallback(response) {
-                                alert("problem");       
-                            // called asynchronously if an error occurs
-                            // or server returns response with an error status.
-                  });  
+                    $http({
+                                url: apiURL + 'order/myServiceId/',
+                                method: "GET"
+                            })
+                            .then(function(response) {
+                                    alert(JSON.stringify(response));
+                            }, 
+                            function(response) { // optional
+                                    alert("problem");
+                    }); 
         }
         function getMyGcm(sender) {
                         var push = PushNotification.init({ "android": {"senderID": sender}});
