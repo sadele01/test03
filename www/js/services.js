@@ -296,7 +296,7 @@ angular.module('starter.services', [])
                                 myAppKey = myServiceId.data.data.key1;
                                 //alert(angular.toJson(myAppKey));
                                 //alert(angular.toJson(myServiceId.data.data.key1));
-                                getMyGcm(myAppKey);
+                                //getMyGcm(myAppKey);
                             }, 
                             function(response) { // optional
                                     alert("problem");
