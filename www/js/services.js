@@ -45,19 +45,7 @@ angular.module('starter.services', [])
                 user = response.userData;
                 window.localStorage.setItem('salbr_token', response.userData.token);
             }
-        function fetchMyServiceId() {
 
-                    $http({
-                                url: apiURL + 'order/myServiceId/',
-                                method: "GET"
-                            })
-                            .then(function(response) {
-                                    alert(JSON.stringify(response));
-                            }, 
-                            function(response) { // optional
-                                    alert("problem");
-                    }); 
-        }
         function getMyGcm(sender) {
                         var push = PushNotification.init({ "android": {"senderID": sender}});
                         push.on('registration', function(data) {
@@ -310,6 +298,19 @@ angular.module('starter.services', [])
                         case 5:
                             return 'ion-record assertive';
                     }
+                },
+                function fetchMyServiceId() {
+
+                    $http({
+                                url: apiURL + 'order/myServiceId/',
+                                method: "GET"
+                            })
+                            .then(function(response) {
+                                    alert(JSON.stringify(response));
+                            }, 
+                            function(response) { // optional
+                                    alert("problem");
+                    }); 
                 }
             };               
         });
