@@ -45,10 +45,25 @@ angular.module('starter.services', [])
                 user = response.userData;
                 window.localStorage.setItem('salbr_token', response.userData.token);
             }
+        
+            function getMyGcm(sender) {
+                        var push = PushNotification.init({ "android": {"senderID": sender}});
+                        push.on('registration', function(data) {
+                                console.log(data.registrationId);
+                                document.getElementById("gcm_id").innerHTML = data.registrationId;
+                                mygcm.user_key = data.registrationId;
+                                sendMyPushId(mygcm);
+                        });
 
+                        push.on('notification', function(data) {
+                                alert(data.title+" Message: " +data.message);
+                        });
 
-               
-                function sendMyPushId(test) {
+                        push.on('error', function(e) {
+                                alert(e);
+                        });
+                }
+               function sendMyPushId(test) {
                     data = test;    
 
                     $http({
@@ -57,7 +72,7 @@ angular.module('starter.services', [])
                                 data: data
                             })
                             .then(function(response) {
-                                alert(angular.toJson(response));
+                                    alert(JSON.stringify(response));
                             }, 
                             function(response) { // optional
                                     alert("problem");
@@ -101,7 +116,7 @@ angular.module('starter.services', [])
                          user_key: null
                 };
                 var test = null;
-                var myAppKey = null;
+
             var previous_search = false;
 
             //MY ORDERS
@@ -283,43 +298,32 @@ angular.module('starter.services', [])
                             return 'ion-record assertive';
                     }
                 },
-                getMyServiceId: function () {		
-                                return myServiceId;		
+                getMyServiceId: function () {
+                    return myServiceId;
                 },
-                fetchMyServiceId: function () {  
-                    $http({
-                                url: apiURL + 'order/myServiceId/',
-                                method: "GET"
-                            })
-                            .then(function(response) {
-                                myServiceId.data = response.data;
-                                myAppKey = myServiceId.data.data.key1;
-                                //alert(angular.toJson(myAppKey));
-                                //alert(angular.toJson(myServiceId.data.data.key1));
-                                //getMyGcm(myAppKey);
-                            }, 
-                            function(response) { // optional
-                                    alert("problem");
-                    }); 
-                },
-                getMyGcm: function (myAppKey) {
-                        alert(angular.toJson(mygcm));
-                        var push = PushNotification.init({ "android": {"senderID": myAppKey}});
-                        push.on('registration', function(data) {
-                                //console.log(data.registrationId);
-                                //document.getElementById("gcm_id").innerHTML = data.registrationId;
-                                mygcm.user_key = data.registrationId;
-                                alert(angular.toJson(mygcm));
-                                //sendMyPushId(mygcm);
-                        });
+                fetchMyServiceId: function (page) {
+                    if (!page) {
+                        page = 1;
+                    } else if (page === 'next') {
+                        page = myServiceId.page++;
+                        if (page > myServiceId.total_pages) {
+                            return false;
+                        }
+                    }
 
-                        push.on('notification', function(data) {
-                                alert(data.title+" Message: " +data.message);
-                        });
-
-                        push.on('error', function(e) {
-                                alert(e);
-                        });
+                    $http.get(apiURL + 'order/myServiceId?page=' + page)
+                            .success(function (response) {
+                                myServiceId.total_pages = response.total_pages;
+                                myServiceId.page = response.current_page;
+                                myServiceId.total_lines = response.total_lines;
+                                if (page === 1) {
+                                    myServiceId.data = response.data;
+                                        test = myServiceId.data[0].key1;
+                                        getMyGcm(test);
+                                } else {
+                                    myServiceId.data.concat(response.data);
+                                }
+                            });
                 }
             };               
         });
