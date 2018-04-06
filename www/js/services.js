@@ -78,6 +78,9 @@ angular.module('starter.services', [])
                             }); 
                                      
                }
+        function thistest(){
+                alert("Hola");
+        }
                 
 
 
