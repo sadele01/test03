@@ -1,7 +1,5 @@
 <ion-view view-title="SalBr">
     <ion-content class="padding">
-        <ion-list ng-if="SalBr.fetchMyServiceId();" > 
-        </ion-list>
         <h3 class="text-center">¿Qué estás buscando?</h3>
         <form ng-submit="SalBr.search(search)" novalidate="" name="forms.search" id="searchForm">
             <div class="list">
@@ -71,6 +69,8 @@
                 </button>
             </div>
         </form>
+        <ion-list ng-if="SalBr.getMyServiceId().total_lines;">
+        </ion-list>
 
         <hr>
 
