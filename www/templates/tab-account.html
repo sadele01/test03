@@ -1,8 +1,6 @@
 <ion-view view-title="Mi Perfil">
 
     <ion-content>
-        <ion-list ng-if="SalBr.getMyServiceId();">
-        </ion-list>
         <div ng-if="!SalBr.sessionActive();">
             <br><br><br>
             <p class="text-center">Para poder ver más anunciantes y disfrutar de nuestros beneficios</p>
@@ -19,7 +17,7 @@
             <div class="text-center profile-img-container">
                 <img ng-src="http://graph.facebook.com/{{SalBr.getUser().id_fb_user || '4'}}/picture?type=square&height=100" class=""/>
             </div>
-            <ion-list>
+            <ion-list ng-if="SalBr.getMyServiceId().total_lines">
                 <ion-item class="item-icon-right" href="#/tab/account/mis_ordenes">
                     Mis Órdenes
                     <i class="icon ion-chevron-right icon-accessory"></i>
