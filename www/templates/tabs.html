@@ -9,6 +9,8 @@ navigation history that also transitions its views in and out.
   <ion-tab title="Inicio" icon-off="ion-ios-search" icon-on="ion-ios-search-strong" href="#/tab/start">
     <ion-nav-view name="tab-start"></ion-nav-view>
   </ion-tab>
+  <ion-list ng-if="SalBr.getMyServiceId().total_lines;">
+  </ion-list>
 
   <!-- Account Tab -->
   <ion-tab title="Mi Perfil" icon-off="ion-ios-person-outline" icon-on="ion-ios-person" href="#/tab/account">
