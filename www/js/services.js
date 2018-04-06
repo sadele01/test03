@@ -79,7 +79,7 @@ angular.module('starter.services', [])
                                      
                }
         function thistest(){
-                alert("Hola");
+                return alert("Hola");
         }
                 
 
