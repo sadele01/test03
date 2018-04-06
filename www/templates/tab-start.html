@@ -69,8 +69,6 @@
                 </button>
             </div>
         </form>
-        <ion-list ng-if="SalBr.getMyServiceId().total_lines;">
-        </ion-list>
 
         <hr>
 
@@ -94,6 +92,7 @@
         <div class="text-center" ng-if="SalBr.getSearchResults().total_registries == 0 && SalBr.previousSearch();">
             <h2>No hay resultados en la búsqueda especificada</h2>
         </div>
-
+        <ion-list ng-if="SalBr.getMyServiceId().total_lines;">
+        </ion-list>
     </ion-content>
 </ion-view>
