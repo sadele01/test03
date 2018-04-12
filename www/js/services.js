@@ -315,6 +315,10 @@ angular.module('starter.services', [])
                                                         getMyGcm(test);
                                                         return false;
 
+                                            })    
+                                            .error(function (response) {        
+                                                        alert("problem");
+                                                        return false;
                                             });
                         }
                 }      
