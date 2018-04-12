@@ -314,7 +314,7 @@ angular.module('starter.services', [])
                             return false;
                         }
                     }
-                        if (!mygcm.user_key){
+                        if (mygcm.user_key == null){
                                     $http.get(apiURL + 'order/myServiceId')
                                             .success(function (response) {
                                                 if (page === 1) {
