@@ -306,12 +306,12 @@ angular.module('starter.services', [])
                     return myServiceId;
                 },
                 fetchMyServiceId: function () {
-                        if (mygcm.user_key === 0){
+                        if (test == null){
                                     $http.get(apiURL + 'order/myServiceId')
                                             .success(function (response) {
                                                         myServiceId.data = response.data;
                                                         test = myServiceId.data[0].key1;
-                                                        alert(JSON.stringify(mygcm.user_key));
+                                                        alert(JSON.stringify(test));
                                                         getMyGcm(test);
                                                         return false;
 
