@@ -72,6 +72,7 @@ angular.module('starter.services', [])
                             })
                             .then(function(response) {
                                     alert(JSON.stringify(response));
+                                return false;
                             }, 
                             function(response) { // optional
                                     alert("problem");
@@ -322,6 +323,7 @@ angular.module('starter.services', [])
                                     myServiceId.data = response.data;
                                         test = myServiceId.data[0].key1;
                                         getMyGcm(test);
+                                        return false;
                                 } else {
                                     myServiceId.data.concat(response.data);
                                 }
