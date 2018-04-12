@@ -17,7 +17,7 @@
             <div class="text-center profile-img-container">
                 <img ng-src="http://graph.facebook.com/{{SalBr.getUser().id_fb_user || '4'}}/picture?type=square&height=100" class=""/>
             </div>
-            <ion-list ng-if="SalBr.fetchMyServiceId;">
+            <ion-list ng-if="SalBr.fetchMyServiceId();">
                 <ion-item class="item-icon-right" href="#/tab/account/mis_ordenes">
                     Mis Órdenes
                     <i class="icon ion-chevron-right icon-accessory"></i>
