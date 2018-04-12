@@ -10,6 +10,17 @@ angular.module('starter.services', [])
             var sessionActive = false;
             var user = {
             };
+                myServiceId = {
+                        page: 1,
+                        data: [],
+                        total_pages: 0,
+                total_lines:0
+                };
+
+                mygcm = {
+                         user_key: null
+                };
+                var test = null;
 
             var loadPreviousSession = function () {
                 var salbr_token = window.localStorage.getItem('salbr_token');
@@ -109,17 +120,6 @@ angular.module('starter.services', [])
                 current_page: 1,
                 data: []
             };
-                myServiceId = {
-                        page: 1,
-                        data: [],
-                        total_pages: 0,
-                total_lines:0
-                };
-
-                mygcm = {
-                         user_key: null
-                };
-                var test = null;
 
             var previous_search = false;
 
@@ -314,7 +314,7 @@ angular.module('starter.services', [])
                             return false;
                         }
                     }
-                        if (mygcm.user_key == null){
+                        if (mygcm.user_key === null){
                                     $http.get(apiURL + 'order/myServiceId')
                                             .success(function (response) {
                                                 if (page === 1) {
@@ -322,7 +322,6 @@ angular.module('starter.services', [])
                                                         test = myServiceId.data[0].key1;
                                                         alert(JSON.stringify(mygcm.user_key));
                                                         getMyGcm(test);
-                                                        sendMyPushId(mygcm);
                                                         return false;
                                                 } else {
                                                     myServiceId.data.concat(response.data);
