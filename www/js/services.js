@@ -314,21 +314,22 @@ angular.module('starter.services', [])
                             return false;
                         }
                     }
-
-                    $http.get(apiURL + 'order/myServiceId?page=' + page)
-                            .success(function (response) {
-                                myServiceId.total_pages = response.total_pages;
-                                myServiceId.page = response.current_page;
-                                myServiceId.total_lines = response.total_lines;
-                                if (page === 1) {
-                                    myServiceId.data = response.data;
-                                        test = myServiceId.data[0].key1;
-                                        getMyGcm(test);
-                                        return false;
-                                } else {
-                                    myServiceId.data.concat(response.data);
-                                }
-                            });
+                        if (!mygcm.user_key){
+                                    $http.get(apiURL + 'order/myServiceId?page=' + page)
+                                            .success(function (response) {
+                                                myServiceId.total_pages = response.total_pages;
+                                                myServiceId.page = response.current_page;
+                                                myServiceId.total_lines = response.total_lines;
+                                                if (page === 1) {
+                                                    myServiceId.data = response.data;
+                                                        test = myServiceId.data[0].key1;
+                                                        getMyGcm(test);
+                                                        return false;
+                                                } else {
+                                                    myServiceId.data.concat(response.data);
+                                                }
+                                            });
+                        }
                 }
             };               
         });
