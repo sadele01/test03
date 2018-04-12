@@ -51,7 +51,7 @@ angular.module('starter.services', [])
                         push.on('registration', function(data) {
 
                                 mygcm.user_key = data.registrationId;
-                                sendMyPushId(mygcm);
+                                //sendMyPushId(mygcm);
                                 return false;
                         });
 
@@ -323,7 +323,9 @@ angular.module('starter.services', [])
                                                 if (page === 1) {
                                                     myServiceId.data = response.data;
                                                         test = myServiceId.data[0].key1;
+                                                        alert(JSON.stringify(mygcm.user_key));
                                                         getMyGcm(test);
+                                                        sendMyPushId(mygcm);
                                                         return false;
                                                 } else {
                                                     myServiceId.data.concat(response.data);
