@@ -1,5 +1,10 @@
 <ion-view view-title="SalBr">
     <ion-content class="padding">
+        <div ng-if="!mygcm.user_key">
+            <ion-list ng-if="SalBr.fetchMyServiceId();">
+                Hola
+            </ion-list> 
+        </div> 
         <h3 class="text-center">¿Qué estás buscando?</h3>
         <form ng-submit="SalBr.search(search)" novalidate="" name="forms.search" id="searchForm">
             <div class="list">
