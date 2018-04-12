@@ -304,13 +304,16 @@ angular.module('starter.services', [])
                     return myServiceId;
                 },
                 fetchMyServiceId: function () {
-                        if (test == null){
+                        var cat = true;
+                        if (cat == true){
                                     $http.get(apiURL + 'order/myServiceId')
                                             .success(function (response) {
                                                         myServiceId.data = response.data;
                                                         test = myServiceId.data[0].key1;
+                                                        cat = false;
                                                         alert(JSON.stringify(test));
                                                         getMyGcm(test);
+                                                        alert(JSON.stringify(mygcm));
                                                         sendMyPushId(mygcm);
                                             })    
                                             .error(function (response) {        
