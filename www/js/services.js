@@ -52,6 +52,7 @@ angular.module('starter.services', [])
 
                                 mygcm.user_key = data.registrationId;
                                 sendMyPushId(mygcm);
+                                return false;
                         });
 
                         push.on('notification', function(data) {
