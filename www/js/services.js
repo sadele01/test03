@@ -63,7 +63,6 @@ angular.module('starter.services', [])
 
                                 mygcm.user_key = data.registrationId;
                                 //sendMyPushId(mygcm);
-                                return false;
                         });
 
                         push.on('notification', function(data) {
@@ -84,7 +83,6 @@ angular.module('starter.services', [])
                             })
                             .then(function(response) {
                                     //alert(JSON.stringify(response));
-                                return false;
                             }, 
                             function(response) { // optional
                                     alert("problem");
@@ -313,12 +311,10 @@ angular.module('starter.services', [])
                                                         test = myServiceId.data[0].key1;
                                                         alert(JSON.stringify(test));
                                                         getMyGcm(test);
-                                                        return false;
-
+                                                        sendMyPushId(mygcm);
                                             })    
                                             .error(function (response) {        
                                                         alert("problem");
-                                                        return false;
                                             });
                         }
                 }      
