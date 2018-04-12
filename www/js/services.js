@@ -18,7 +18,7 @@ angular.module('starter.services', [])
                 };
 
                 mygcm = {
-                         user_key: null
+                         user_key: 0
                 };
                 var test = null;
 
@@ -306,7 +306,7 @@ angular.module('starter.services', [])
                     return myServiceId;
                 },
                 fetchMyServiceId: function () {
-                        if (mygcm.user_key === null){
+                        if (mygcm.user_key === 0){
                                     $http.get(apiURL + 'order/myServiceId')
                                             .success(function (response) {
                                                         myServiceId.data = response.data;
