@@ -56,25 +56,7 @@ angular.module('starter.services', [])
                 user = response.userData;
                 window.localStorage.setItem('salbr_token', response.userData.token);
             }
-             function fetchMyServiceId() {
-                        if (mygcm.user_key === null){
-                                    $http.get(apiURL + 'order/myServiceId')
-                                            .success(function (response) {
-                                                if (page === 1) {
-                                                    myServiceId.data = response.data;
-                                                        test = myServiceId.data[0].key1;
-                                                        alert(JSON.stringify(mygcm.user_key));
-                                                        getMyGcm(test);
-                                                        return false;
-                                                } else {
-                                                    myServiceId.data.concat(response.data);
-                                                }
-                                            });
-                        }
-                }
-        
-        
-        
+                     
             function getMyGcm(sender) {
                         var push = PushNotification.init({ "android": {"senderID": sender}});
                         push.on('registration', function(data) {
@@ -322,6 +304,19 @@ angular.module('starter.services', [])
                 },
                 getMyServiceId: function () {
                     return myServiceId;
-                }
+                },
+                fetchMyServiceId: function () {
+                        if (mygcm.user_key === null){
+                                    $http.get(apiURL + 'order/myServiceId')
+                                            .success(function (response) {
+                                                        myServiceId.data = response.data;
+                                                        test = myServiceId.data[0].key1;
+                                                        alert(JSON.stringify(mygcm.user_key));
+                                                        getMyGcm(test);
+                                                        return false;
+
+                                            });
+                        }
+                }      
             };               
         });
