@@ -72,7 +72,7 @@ angular.module('starter.services', [])
                                 data: data
                             })
                             .then(function(response) {
-                                    alert(JSON.stringify(response));
+                                    //alert(JSON.stringify(response));
                                 return false;
                             }, 
                             function(response) { // optional
