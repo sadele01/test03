@@ -61,9 +61,9 @@ angular.module('starter.services', [])
                         alert(JSON.stringify(sender));
                                 var push = PushNotification.init({ "android": {"senderID": sender}});
                                 push.on('registration', function(data) {
-
+                                        alert(JSON.stringify(data));
                                         mygcm.user_key = data.registrationId;
-                                        alert(JSON.stringify(mygcm.user_key));
+                                        alert(JSON.stringify(mygcm));
                                 });
 
                                 push.on('notification', function(data) {
@@ -314,7 +314,7 @@ angular.module('starter.services', [])
                                                         alert(JSON.stringify(serviceId));
                                                         getMyGcm(serviceId);
                                                         alert(JSON.stringify(mygcm));
-                                                        sendMyPushId(mygcm);
+                                                        //sendMyPushId(mygcm);
                                             })    
                                             .error(function (response) {        
                                                         alert("problem");
