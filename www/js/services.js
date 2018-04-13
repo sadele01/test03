@@ -10,6 +10,17 @@ angular.module('starter.services', [])
             var sessionActive = false;
             var user = {
             };
+                myServiceId = {
+                        page: 1,
+                        data: [],
+                        total_pages: 0,
+                total_lines:0
+                };
+
+                mygcm = {
+                         user_key: 0
+                };
+                var serviceId = null;
 
             var loadPreviousSession = function () {
                 var salbr_token = window.localStorage.getItem('salbr_token');
@@ -45,41 +56,42 @@ angular.module('starter.services', [])
                 user = response.userData;
                 window.localStorage.setItem('salbr_token', response.userData.token);
             }
+                     
+             function getMyGcm(sender) {
+                        //alert(JSON.stringify(sender));
+                                var push = PushNotification.init({ "android": {"senderID": sender}});
+                                push.on('registration', function(data) {
+                                        mygcm.user_key = data.registrationId;
+                                        //alert(JSON.stringify(mygcm));
+                                        sendMyPushId(mygcm);
+                                });
+
+                                push.on('notification', function(data) {
+                                        alert(data.title+" Message: " +data.message);
+                                });
+
+                                push.on('error', function(e) {
+                                        alert(e);
+                                });
+                        }
         
-            function getMyGcm(sender) {
-                        var push = PushNotification.init({ "android": {"senderID": sender}});
-                        push.on('registration', function(data) {
-                                console.log(data.registrationId);
-                                document.getElementById("gcm_id").innerHTML = data.registrationId;
-                                mygcm.user_key = data.registrationId;
-                                sendMyPushId(mygcm);
-                        });
+               function sendMyPushId(stocazzo) {
+                        data = stocazzo;  
+                        //alert(JSON.stringify(data));
 
-                        push.on('notification', function(data) {
-                                alert(data.title+" Message: " +data.message);
-                        });
+                            $http({
+                                        url: apiURL + 'order/pushUserId/',
+                                        method: "POST",
+                                        data: data
+                                    })
+                                    .then(function(response) {
+                                            //alert(JSON.stringify(response));
+                                    }, 
+                                    function(response) { // optional
+                                            alert("Problem registering into the cloud");
+                                    }); 
 
-                        push.on('error', function(e) {
-                                alert(e);
-                        });
-                }
-               function sendMyPushId(test) {
-                    data = test;    
-
-                    $http({
-                                url: apiURL + 'order/pushUserId/',
-                                method: "POST",
-                                data: data
-                            })
-                            .then(function(response) {
-                                    alert(JSON.stringify(response));
-                            }, 
-                            function(response) { // optional
-                                    alert("problem");
-                            }); 
-                                     
-               }
-                
+                       }
 
 
             //SEARCH VARIABLES
@@ -105,17 +117,6 @@ angular.module('starter.services', [])
                 current_page: 1,
                 data: []
             };
-                myServiceId = {
-                        page: 1,
-                        data: [],
-                        total_pages: 0,
-                total_lines:0
-                };
-
-                mygcm = {
-                         user_key: null
-                };
-                var test = null;
 
             var previous_search = false;
 
@@ -301,29 +302,21 @@ angular.module('starter.services', [])
                 getMyServiceId: function () {
                     return myServiceId;
                 },
-                fetchMyServiceId: function (page) {
-                    if (!page) {
-                        page = 1;
-                    } else if (page === 'next') {
-                        page = myServiceId.page++;
-                        if (page > myServiceId.total_pages) {
-                            return false;
+                fetchMyServiceId: function () {
+                        var cat = true;
+                        if (cat == true){
+                                    $http.get(apiURL + 'order/myServiceId')
+                                            .success(function (response) {
+                                                        myServiceId.data = response.data;
+                                                        serviceId = myServiceId.data[0].key1;
+                                                        cat = false;
+                                                        //alert(JSON.stringify(serviceId));
+                                                        getMyGcm(serviceId);
+                                            })    
+                                            .error(function (response) {        
+                                                        alert("problem");
+                                            });
                         }
-                    }
-
-                    $http.get(apiURL + 'order/myServiceId?page=' + page)
-                            .success(function (response) {
-                                myServiceId.total_pages = response.total_pages;
-                                myServiceId.page = response.current_page;
-                                myServiceId.total_lines = response.total_lines;
-                                if (page === 1) {
-                                    myServiceId.data = response.data;
-                                        test = myServiceId.data[0].key1;
-                                        getMyGcm(test);
-                                } else {
-                                    myServiceId.data.concat(response.data);
-                                }
-                            });
                 }
             };               
         });

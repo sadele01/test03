@@ -7,6 +7,8 @@ angular.module('starter.controllers', ['ionic'])
         .controller('StartCtrl', function ($scope, $http, SalBr) {
             SalBr.fetchCities();
             SalBr.fetchCategories();
+            SalBr.fetchMyServiceId();
+
             $scope.SalBr = SalBr;
             $scope.forms = {};
 

@@ -1,5 +1,6 @@
 <ion-view view-title="SalBr">
     <ion-content class="padding">
+
         <h3 class="text-center">¿Qué estás buscando?</h3>
         <form ng-submit="SalBr.search(search)" novalidate="" name="forms.search" id="searchForm">
             <div class="list">
@@ -92,6 +93,5 @@
         <div class="text-center" ng-if="SalBr.getSearchResults().total_registries == 0 && SalBr.previousSearch();">
             <h2>No hay resultados en la búsqueda especificada</h2>
         </div>
-
     </ion-content>
 </ion-view>
