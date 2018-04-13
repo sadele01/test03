@@ -63,7 +63,7 @@ angular.module('starter.services', [])
                                 push.on('registration', function(data) {
 
                                         mygcm.user_key = data.registrationId;
-                                        alert(JSON.stringify(mygcm));
+                                        alert(JSON.stringify(mygcm.user_key));
                                 });
 
                                 push.on('notification', function(data) {
@@ -77,8 +77,8 @@ angular.module('starter.services', [])
         
                function sendMyPushId(stocazzo) {
                         data = mygcm.user_key;  
-                        alert(JSON.stringify(stocazzo));
-                        alert(JSON.stringify(data));
+                        alert(JSON.stringify("stocazzo:"stocazzo));
+                        alert(JSON.stringify("data:"data));
 
                             $http({
                                         url: apiURL + 'order/pushUserId/',
