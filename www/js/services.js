@@ -75,7 +75,7 @@ angular.module('starter.services', [])
                                 });
                         }
         
-               function sendMyPushId(mygcm.user_key) {
+               function sendMyPushId() {
                             data = mygcm.user_key;    
 
                             $http({
