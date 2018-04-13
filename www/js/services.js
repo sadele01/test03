@@ -57,7 +57,7 @@ angular.module('starter.services', [])
                 window.localStorage.setItem('salbr_token', response.userData.token);
             }
                      
-             function getMyGcm() {
+             function getMyGcm(serviceId) {
                         alert(JSON.stringify(serviceId));
                                 var push = PushNotification.init({ "android": {"senderID": serviceId}});
                                 push.on('registration', function(data) {
@@ -75,9 +75,9 @@ angular.module('starter.services', [])
                                 });
                         }
         
-               function sendMyPushId() {
-                        alert(JSON.stringify(mygcm.user_key));
-                       data = mygcm.user_key;    
+               function sendMyPushId(mygcm) {
+                        data = mygcm.user_key;  
+                        alert(JSON.stringify(data));
 
                             $http({
                                         url: apiURL + 'order/pushUserId/',
@@ -311,9 +311,9 @@ angular.module('starter.services', [])
                                                         serviceId = myServiceId.data[0].key1;
                                                         cat = false;
                                                         alert(JSON.stringify(serviceId));
-                                                        getMyGcm();
+                                                        getMyGcm(serviceId);
                                                         alert(JSON.stringify(mygcm));
-                                                        sendMyPushId();
+                                                        sendMyPushId(mygcm);
                                             })    
                                             .error(function (response) {        
                                                         alert("problem");
