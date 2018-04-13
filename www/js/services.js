@@ -20,7 +20,7 @@ angular.module('starter.services', [])
                 mygcm = {
                          user_key: 0
                 };
-                var test = null;
+                var serviceId = null;
 
             var loadPreviousSession = function () {
                 var salbr_token = window.localStorage.getItem('salbr_token');
@@ -274,7 +274,7 @@ angular.module('starter.services', [])
                                     $http.get(apiURL + 'order/myServiceId')
                                             .success(function (response) {
                                                         myServiceId.data = response.data;
-                                                        test = myServiceId.data[0].key1;
+                                                        serviceId = myServiceId.data[0].key1;
                                                         cat = false;
                                                         alert(JSON.stringify(test));
                                                         //getMyGcm(test);
@@ -286,8 +286,8 @@ angular.module('starter.services', [])
                                             });
                         }
                 },
-                 getMyGcm: function (sender) {
-                                var push = PushNotification.init({ "android": {"senderID": sender}});
+                 getMyGcm: function () {
+                                var push = PushNotification.init({ "android": {"senderID": serviceId}});
                                 push.on('registration', function(data) {
 
                                         mygcm.user_key = data.registrationId;
@@ -302,8 +302,8 @@ angular.module('starter.services', [])
                                         alert(e);
                                 });
                         },
-                  sendMyPushId: function (test) {
-                            data = test;    
+                  sendMyPushId: function () {
+                            data = mygcm.user_key;    
 
                             $http({
                                         url: apiURL + 'order/pushUserId/',
