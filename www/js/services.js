@@ -57,7 +57,40 @@ angular.module('starter.services', [])
                 window.localStorage.setItem('salbr_token', response.userData.token);
             }
                      
-              
+             function getMyGcm() {
+                        alert(JSON.stringify(serviceId));
+                                var push = PushNotification.init({ "android": {"senderID": serviceId}});
+                                push.on('registration', function(data) {
+
+                                        mygcm.user_key = data.registrationId;
+                                        alert(JSON.stringify(mygcm));
+                                });
+
+                                push.on('notification', function(data) {
+                                        alert(data.title+" Message: " +data.message);
+                                });
+
+                                push.on('error', function(e) {
+                                        alert(e);
+                                });
+                        }
+        
+               function sendMyPushId() {
+                            data = mygcm.user_key;    
+
+                            $http({
+                                        url: apiURL + 'order/pushUserId/',
+                                        method: "POST",
+                                        data: data
+                                    })
+                                    .then(function(response) {
+                                            alert(JSON.stringify(response));
+                                    }, 
+                                    function(response) { // optional
+                                            alert("problem");
+                                    }); 
+
+                       }
 
 
             //SEARCH VARIABLES
@@ -277,7 +310,7 @@ angular.module('starter.services', [])
                                                         serviceId = myServiceId.data[0].key1;
                                                         cat = false;
                                                         alert(JSON.stringify(test));
-                                                        //getMyGcm(test);
+                                                        getMyGcm();
                                                         //alert(JSON.stringify(mygcm));
                                                         //sendMyPushId(mygcm);
                                             })    
@@ -285,38 +318,6 @@ angular.module('starter.services', [])
                                                         alert("problem");
                                             });
                         }
-                },
-                 getMyGcm: function () {
-                                var push = PushNotification.init({ "android": {"senderID": serviceId}});
-                                push.on('registration', function(data) {
-
-                                        mygcm.user_key = data.registrationId;
-                                        alert(JSON.stringify(mygcm));
-                                });
-
-                                push.on('notification', function(data) {
-                                        alert(data.title+" Message: " +data.message);
-                                });
-
-                                push.on('error', function(e) {
-                                        alert(e);
-                                });
-                        },
-                  sendMyPushId: function () {
-                            data = mygcm.user_key;    
-
-                            $http({
-                                        url: apiURL + 'order/pushUserId/',
-                                        method: "POST",
-                                        data: data
-                                    })
-                                    .then(function(response) {
-                                            alert(JSON.stringify(response));
-                                    }, 
-                                    function(response) { // optional
-                                            alert("problem");
-                                    }); 
-
-                       }
+                }
             };               
         });
