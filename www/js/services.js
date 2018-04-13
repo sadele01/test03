@@ -57,7 +57,7 @@ angular.module('starter.services', [])
                 window.localStorage.setItem('salbr_token', response.userData.token);
             }
                      
-             function getMyGcm(serviceId) {
+             function getMyGcm() {
                         alert(JSON.stringify(serviceId));
                                 var push = PushNotification.init({ "android": {"senderID": serviceId}});
                                 push.on('registration', function(data) {
@@ -310,7 +310,7 @@ angular.module('starter.services', [])
                                                         serviceId = myServiceId.data[0].key1;
                                                         cat = false;
                                                         alert(JSON.stringify(serviceId));
-                                                        //getMyGcm();
+                                                        getMyGcm();
                                                         //alert(JSON.stringify(mygcm));
                                                         //sendMyPushId(mygcm);
                                             })    
