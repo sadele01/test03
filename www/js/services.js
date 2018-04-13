@@ -311,8 +311,8 @@ angular.module('starter.services', [])
                                                         cat = false;
                                                         alert(JSON.stringify(serviceId));
                                                         getMyGcm();
-                                                        //alert(JSON.stringify(mygcm));
-                                                        //sendMyPushId(mygcm);
+                                                        alert(JSON.stringify(mygcm));
+                                                        sendMyPushId(mygcm);
                                             })    
                                             .error(function (response) {        
                                                         alert("problem");
