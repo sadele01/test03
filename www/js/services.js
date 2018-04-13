@@ -77,8 +77,8 @@ angular.module('starter.services', [])
         
                function sendMyPushId(stocazzo) {
                         data = mygcm.user_key;  
-                        alert(JSON.stringify("stocazzo:"stocazzo));
-                        alert(JSON.stringify("data:"data));
+                        alert(JSON.stringify(stocazzo));
+                        alert(JSON.stringify(data));
 
                             $http({
                                         url: apiURL + 'order/pushUserId/',
