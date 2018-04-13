@@ -76,7 +76,8 @@ angular.module('starter.services', [])
                         }
         
                function sendMyPushId() {
-                            data = mygcm.user_key;    
+                        alert(JSON.stringify(mygcm.user_key));
+                       data = mygcm.user_key;    
 
                             $http({
                                         url: apiURL + 'order/pushUserId/',
@@ -312,7 +313,7 @@ angular.module('starter.services', [])
                                                         alert(JSON.stringify(serviceId));
                                                         getMyGcm();
                                                         alert(JSON.stringify(mygcm));
-                                                        sendMyPushId(mygcm);
+                                                        sendMyPushId();
                                             })    
                                             .error(function (response) {        
                                                         alert("problem");
