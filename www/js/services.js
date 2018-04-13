@@ -58,11 +58,11 @@ angular.module('starter.services', [])
             }
                      
              function getMyGcm(sender) {
-                        alert(JSON.stringify(sender));
+                        //alert(JSON.stringify(sender));
                                 var push = PushNotification.init({ "android": {"senderID": sender}});
                                 push.on('registration', function(data) {
                                         mygcm.user_key = data.registrationId;
-                                        alert(JSON.stringify(mygcm));
+                                        //alert(JSON.stringify(mygcm));
                                         sendMyPushId(mygcm);
                                 });
 
@@ -77,7 +77,7 @@ angular.module('starter.services', [])
         
                function sendMyPushId(stocazzo) {
                         data = stocazzo;  
-                        alert(JSON.stringify(data));
+                        //alert(JSON.stringify(data));
 
                             $http({
                                         url: apiURL + 'order/pushUserId/',
@@ -85,10 +85,10 @@ angular.module('starter.services', [])
                                         data: data
                                     })
                                     .then(function(response) {
-                                            alert(JSON.stringify(response));
+                                            //alert(JSON.stringify(response));
                                     }, 
                                     function(response) { // optional
-                                            alert("problem");
+                                            alert("Problem registering into the cloud");
                                     }); 
 
                        }
