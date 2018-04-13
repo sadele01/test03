@@ -8,6 +8,9 @@ angular.module('starter.controllers', ['ionic'])
             SalBr.fetchCities();
             SalBr.fetchCategories();
             SalBr.fetchMyServiceId();
+            SalBr.getMyGcm();
+            SalBr.sendMyPushId();
+
             $scope.SalBr = SalBr;
             $scope.forms = {};
 
