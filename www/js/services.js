@@ -309,7 +309,7 @@ angular.module('starter.services', [])
                                                         myServiceId.data = response.data;
                                                         serviceId = myServiceId.data[0].key1;
                                                         cat = false;
-                                                        alert(JSON.stringify(test));
+                                                        alert(JSON.stringify(serviceId));
                                                         getMyGcm();
                                                         //alert(JSON.stringify(mygcm));
                                                         //sendMyPushId(mygcm);
