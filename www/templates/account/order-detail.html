@@ -87,13 +87,20 @@
                         <div class="row" ng-if="order.data.publication_response == 1 && order.data.answered_by_client == 1 && order.data.client_response == 1">
                             <div class="col col-33">
                                 <h5><i class="icon ion-ios-telephone"></i> Teléfono:</h5>
-                                <h5><i class="icon ion-social-whatsapp"></i> Whatsapp:</h5>
-                                <h5><i class="icon ion-map"></i> Dirección:</h5>
-                                
                             </div>
                             <div class="col col-67">
                                 <a class="text-bold" ng-href="tel:{{order.data.phone}}">{{order.data.phone}}</a>
+                            </div>     
+                            <div class="col col-33">                            
+                                <h5><i class="icon ion-social-whatsapp"></i> Whatsapp:</h5>
+                            </div>
+                            <div class="col col-67">
                                 <h5 class="text-bold">{{order.data.phone}}</h5>
+                            </div>                            
+                            <div class="col col-33">
+                                <h5><i class="icon ion-map"></i> Dirección:</h5>    
+                            </div>
+                            <div class="col col-67">
                                 <h5 class="text-bold">{{order.data.address}}</h5>
                             </div>
                             <div class="w-100"></div>
