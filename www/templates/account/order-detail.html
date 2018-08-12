@@ -85,14 +85,14 @@
                             </div>
                         </div>
                         <div class="row" ng-if="order.data.publication_response == 1 && order.data.answered_by_client == 1 && order.data.client_response == 1">
-                            <strong>Felicidades, haz abierto una oportunidad de negocio con : {{order.data.publication}} </strong>
-                            <div class="row">
-                                <div class="col">
-                                    Datos de contacto: 
-                                </div>
-                                <div class="col">
-                                    {{order.data}}
-                                </div>
+                            <div class="col col-100">
+                                <strong>Felicidades, haz abierto una oportunidad de negocio con : {{order.data.publication}} </strong>
+                            </div>  
+                            <div class="col col-30">
+                                Datos de contacto: 
+                            </div>
+                            <div class="col col-70">
+                                {{order.data}}
                             </div>
                         </div>
                     </div>
