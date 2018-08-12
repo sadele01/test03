@@ -85,19 +85,30 @@
                             </div>
                         </div>
                         <div class="row" ng-if="order.data.publication_response == 1 && order.data.answered_by_client == 1 && order.data.client_response == 1">
-                            <div class="col col-100">
-                                <strong>Felicidades, haz abierto una oportunidad de negocio con : {{order.data.publication}} </strong>
-                            </div> 
                             <div class="row">
                                 <div class="col col-33">
-                                    Datos de contacto: 
+                                    <h5>Teléfono</h5>
                                 </div>
-                                <div class="col col-67">
-                                    {{order.data.phone}}
-                                    {{order.data.address}}
-                                    {{order.data.email}}
+                                <div class="col">
+                                    <h5 class="text-bold">{{order.data.phone}}</h5>
                                 </div>
                             </div>
+                             <div class="row">
+                                <div class="col col-33">
+                                    <h5>Dirección</h5>
+                                </div>
+                                <div class="col">
+                                    <h5 class="text-bold">{{order.data.address}}</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-33">
+                                    <h5>Correo</h5>
+                                </div>
+                                <div class="col">
+                                    <h5 class="text-bold">{{order.data.email}}</h5>
+                                </div>
+                            </div>                            
                         </div>
                     </div>
                     <div ng-if="order.data.answered == 0">
