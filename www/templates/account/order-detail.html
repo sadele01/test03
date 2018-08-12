@@ -84,6 +84,14 @@
                                 </button>
                             </div>
                         </div>
+                        <div class="row" ng-if="order.data.publication_response == 1 && order.data.answered_by_client == 1 && order.data.client_response == 1">
+                            <div class="col">
+                                Aqui insertamos los datos del proveedor
+                            </div>
+                            <div class="col">
+                                Aqui insertamos los datos del proveedor
+                            </div>
+                        </div>
                     </div>
                     <div ng-if="order.data.answered == 0">
                         <h5>Esperando respuesta del anunciante</h5>
