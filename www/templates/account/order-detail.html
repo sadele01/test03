@@ -86,17 +86,13 @@
                         </div>
                         <div class="row" ng-if="order.data.publication_response == 1 && order.data.answered_by_client == 1 && order.data.client_response == 1">
                             <div class="col col-33">
-                                <h5><i class="icon ion-ios-telephone button-calm"></i> Teléfono:</h5>
+                                <h5><i class="icon ion-ios-telephone"></i> Teléfono:</h5>
                                 <h5><i class="icon ion-social-whatsapp"></i> Whatsapp:</h5>
                                 <h5><i class="icon ion-map"></i> Dirección:</h5>
                                 <h5><i class="icon ion-email"></i> Correo:</h5>
                             </div>
-                            
-<a class="button icon-left ion-ios7-telephone button-calm" ng-href="tel: {{phoneno}}">Call (03) 9533 1100</a>
-
-                            
                             <div class="col">
-                                <a class="text-bold" ng-href="{{order.data.phone}}">{{order.data.phone}}</a>
+                                <a class="text-bold" ng-href="tel:{{order.data.phone}}"></a>
                                 <h5 class="text-bold">{{order.data.phone}}</h5>
                                 <h5 class="text-bold">{{order.data.address}}</h5>
                                 <h5 class="text-bold">{{order.data.email}}</h5>
