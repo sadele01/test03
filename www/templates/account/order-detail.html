@@ -86,6 +86,18 @@
                         </div>
                         <div class="row" ng-if="order.data.publication_response == 1 && order.data.answered_by_client == 1 && order.data.client_response == 1">
                             <div class="row">
+                                <div class="col">
+                                    <button class="button button-assertive button-full" ng-click="answerPublicationOffer(0)">
+                                        <i class="icon ion-close-circled"></i> Rechazar
+                                    </button>
+                                </div>
+                                <div class="col">
+                                    <button class="button button-balanced button-full" ng-click="answerPublicationOffer(1)">
+                                        <i class="icon ion-checkmark-circled"></i> Confirmar
+                                    </button>
+                                </div>
+                            </div>                            
+                            <div class="row">
                                 <div class="col col-33">
                                     <h5>Teléfono</h5>
                                 </div>
