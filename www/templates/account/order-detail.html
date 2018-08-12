@@ -89,13 +89,19 @@
                                 <h5><i class="icon ion-ios-telephone"></i> Teléfono:</h5>
                                 <h5><i class="icon ion-social-whatsapp"></i> Whatsapp:</h5>
                                 <h5><i class="icon ion-map"></i> Dirección:</h5>
-                                <h5><i class="icon ion-email"></i> Correo:</h5>
+                                
                             </div>
                             <div class="col">
                                 <a class="text-bold" ng-href="tel:{{order.data.phone}}">{{order.data.phone}}</a>
                                 <h5 class="text-bold">{{order.data.phone}}</h5>
                                 <h5 class="text-bold">{{order.data.address}}</h5>
-                                <h5 class="text-bold" ng-href="mailto:{{order.data.email}}">{{order.data.email}}</h5>
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="col col-33">
+                                <h5><i class="icon ion-email"></i> Correo:</h5>
+                            </div>
+                            <div class="col">    
+                                <a class="text-bold" ng-href="mailto:{{order.data.email}}">{{order.data.email}}</a>
                             </div>
                         </div>
                     </div>
