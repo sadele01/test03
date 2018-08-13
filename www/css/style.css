@@ -38,10 +38,5 @@ button.button.back-button.header-item span.back-text{display: none;}
   border:1px solid;
 }
 .valing-center {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;  
+    vertical-align:text-top;
 }
