@@ -40,7 +40,7 @@ button.button.back-button.header-item span.back-text{display: none;}
 
 .valing-center {
   position: relative;
-  top: 20%;
+  top: 25%;
   transform: perspective(1px) translateY(-50%);
 }
 
