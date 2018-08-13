@@ -38,7 +38,9 @@ button.button.back-button.header-item span.back-text{display: none;}
   border:1px solid;
 }
 .valing-center {
-    vertical-align:text-top !important;
+  position: relative;
+  top: 50%;
+  transform: perspective(1px) translateY(-50%);
 }
 .valing-middle {
     vertical-align:bottom !important;
