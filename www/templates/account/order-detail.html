@@ -107,8 +107,9 @@
                                     <h5><i class="icon ion-map"></i> Dirección:</h5>    
                                 </div>
                                 <div class="col col-67">
-                                    <h5 class="text-bold valing-center">{{order.data.address}}</h5>
+                                    <a class="text-bold valing-center" ng-href="https://www.google.com/maps/search/?api=1&query={{order.data.latitude}},{{order.data.longitude}}">{{order.data.address}}</a>
                                 </div>
+                                
                             </div>
                             <div class="row" > 
                                 <div class="col col-33">
