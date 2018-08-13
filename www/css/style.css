@@ -40,3 +40,6 @@ button.button.back-button.header-item span.back-text{display: none;}
 .valing-center {
     vertical-align:text-top;
 }
+.valing-middle {
+    vertical-align:middle;
+}
