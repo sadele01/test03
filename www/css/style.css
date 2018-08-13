@@ -38,8 +38,8 @@ button.button.back-button.header-item span.back-text{display: none;}
   border:1px solid;
 }
 .valing-center {
-    vertical-align:text-top;
+    vertical-align:text-top !important;
 }
 .valing-middle {
-    vertical-align:bottom;
+    vertical-align:bottom !important;
 }
