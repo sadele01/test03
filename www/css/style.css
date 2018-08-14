@@ -46,13 +46,11 @@ button.button.back-button.header-item span.back-text{display: none;}
 .optgroup {
     background-color: white;
     color: red;
-      font-family: Cursive;
 }
 .option {
     background-color: white;
-    color: black;
+    color: blue;
 }
 .select {
-  font-family: Cursive;
   background-color: white;
 }
