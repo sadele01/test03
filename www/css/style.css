@@ -44,8 +44,10 @@ button.button.back-button.header-item span.back-text{display: none;}
   transform: perspective(1px) translateY(-50%);
 }
 optgroup {
-    background-color: gray;
+    background-color: white;
     color: red;
+      font-family: Cursive;
+
 }
 option {
     background-color: white;
