@@ -18,6 +18,7 @@
                         <optgroup ng-repeat="parentCat in SalBr.getCategories()" label="{{parentCat.name}}">
                             <option
                                 ng-style="{'background-color': 'blue' }"
+                                    ng-style = "{'background':'green'}"
                                 ng-if="parentCat.children.length"
                                 ng-repeat="category in parentCat.children"
                                 ng-value="category.id_category"
