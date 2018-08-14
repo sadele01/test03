@@ -10,7 +10,7 @@
         <form ng-submit="SalBr.search(search)" novalidate="" name="forms.search" id="searchForm">
             <div class="list">
 
-                <label class="item item-input item-select">
+                <label class="item item-input item-select item-stable">
                     <div class="input-label">
                         Categoría
                     </div>
@@ -27,7 +27,7 @@
                     </select>
                 </label>
 
-                <label class="item item-input item-select" ng-if="childCategory">
+                <label class="item item-input item-select item-stable" ng-if="childCategory">
                     <div class="input-label">
                         Subcategoría
                     </div>
@@ -40,7 +40,7 @@
                     </select>
                 </label>
 
-                <input type="hidden" name="id_state" ng-model="search.id_state" ng-value="21"/>
+                <input type="hidden" name="id_state item-stable" ng-model="search.id_state" ng-value="21"/>
                 <!--label class="item item-input item-select hide">
                     <div class="input-label">
                         Estado
@@ -52,7 +52,7 @@
                     </select>
                 </label-->
 
-                <label class="item item-input item-select">
+                <label class="item item-input item-select item-stable">
                     <div class="input-label">
                         Ciudad
                     </div>
