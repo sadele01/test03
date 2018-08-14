@@ -51,3 +51,7 @@ option {
     background-color: white;
     color: black;
 }
+select {
+  font-family: Cursive;
+  background-color: white;
+}
