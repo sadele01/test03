@@ -16,7 +16,8 @@
                     </div>
                     <select ng-model="search.id_category" name="id_category" id="id_category" required="" ng-change="onChangeCategory()">
                         <optgroup ng-repeat="parentCat in SalBr.getCategories()" label="{{parentCat.name}}">
-                            <option 
+                            <option
+                                style="background: #5cb85c; color: #fff;"
                                 ng-if="parentCat.children.length"
                                 ng-repeat="category in parentCat.children"
                                 ng-value="category.id_category"
