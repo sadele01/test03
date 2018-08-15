@@ -43,14 +43,8 @@ button.button.back-button.header-item span.back-text{display: none;}
   top: 25%;
   transform: perspective(1px) translateY(-50%);
 }
-.optgroup {
-    background-color: white;
-    color: red;
-}
-.option {
-    background-color: white;
-    color: blue;
-}
-.select {
-  background-color: white;
+
+select,
+option {
+  color: red;
 }
