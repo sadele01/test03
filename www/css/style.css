@@ -44,7 +44,8 @@ button.button.back-button.header-item span.back-text{display: none;}
   transform: perspective(1px) translateY(-50%);
 }
 
-select,
-option {
-  color: red;
+.item.item-input {
+	border-color: rgba(0, 0, 0, 0);
+	background-color: rgba(0, 0, 0, 0);
+	color: white; 
 }
