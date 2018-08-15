@@ -43,33 +43,3 @@ button.button.back-button.header-item span.back-text{display: none;}
   top: 25%;
   transform: perspective(1px) translateY(-50%);
 }
-.transparent{
-  background:rgba(255,255,255,0.5);
- }
-.item-complex .item-content, .item{
-    background-color: #b2ff00 !important;
-}
-.trest {
-    background-color: #b2ff00 !important;
-}
-.item {
-     background-color: #b2ff00 !important;
-}
-.item-input {
-     background-color: #ff0000 !important;
-}
-.item-select {
-     background-color: #ffbb00 !important;
-}
-  .item-select select {
-     background-color: #7fff00 !important;
-}
-  .item-select option {
-     background-color: #0099ff !important;
-}
-.list {
-     background-color: #bb00ff !important;
-}
-.input-label {
-     background-color: #ff00bb !important;
-}
