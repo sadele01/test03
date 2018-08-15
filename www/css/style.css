@@ -66,3 +66,6 @@ button.button.back-button.header-item span.back-text{display: none;}
 .list {
      background-color: #bb00ff !important;
 }
+.input-label {
+     background-color: #ff00bb !important;
+}
