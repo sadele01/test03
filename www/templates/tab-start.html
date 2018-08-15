@@ -1,17 +1,22 @@
-<ion-view view-title="SalBr">
+<ion-view>
+    <ion-nav-title style="position: relative;top:25%;margin-left:5px;">
+      <img style="float:left;width:8%;padding-top:8px;" ng-src="img/logo.png">
+      SalBr
+    </ion-nav-title>
+
     <ion-content class="padding">
 
         <h3 class="text-center">¿Qué estás buscando?</h3>
         <form ng-submit="SalBr.search(search)" novalidate="" name="forms.search" id="searchForm">
             <div class="list">
 
-                <label class="item item-input item-select">
+                <label class="item item-input item-select" >
                     <div class="input-label">
                         Categoría
                     </div>
                     <select ng-model="search.id_category" name="id_category" id="id_category" required="" ng-change="onChangeCategory()">
                         <optgroup ng-repeat="parentCat in SalBr.getCategories()" label="{{parentCat.name}}">
-                            <option 
+                            <option
                                 ng-if="parentCat.children.length"
                                 ng-repeat="category in parentCat.children"
                                 ng-value="category.id_category"
@@ -23,7 +28,7 @@
                 </label>
 
                 <label class="item item-input item-select" ng-if="childCategory">
-                    <div class="input-label">
+                    <div class="input-label" >
                         Subcategoría
                     </div>
                     <select ng-model="search.id_child_category" name="id_child_category" id="id_child_category" required="">
@@ -63,7 +68,7 @@
 
             </div>
             <div class="text-center">
-                <button class="button button-dark button-block" type="submit"
+                <button class="button button-balanced button-block" type="submit"
                         ng-disabled="forms.search.$invalid">
                     <i class="icon ion-ios-search"></i>
                     <strong>Buscar</strong>

@@ -34,4 +34,12 @@ button.button.back-button.header-item span.back-text{display: none;}
     font-size: 3em;
     color: lightgray;
 }
+/*.row {
+  border:1px solid;
+} */
 
+.valing-center {
+  position: relative;
+  top: 25%;
+  transform: perspective(1px) translateY(-50%);
+}

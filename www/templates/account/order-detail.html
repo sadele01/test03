@@ -84,6 +84,42 @@
                                 </button>
                             </div>
                         </div>
+                        <div ng-if="order.data.publication_response == 1 && order.data.answered_by_client == 1 && order.data.client_response == 1">
+                            <h5 class="text-center">Datos de Contacto:</h5>
+                            <div class="row">     
+                                <div class="col col-33">
+                                    <h5><i class="icon ion-ios-telephone"></i> Teléfono:</h5>
+                                </div>
+                                <div class="col col-67">
+                                    <a class="text-bold valing-center" ng-href="tel:{{order.data.phone}}">{{order.data.phone}}</a>
+                                </div>
+                            </div>
+                            <div class="row">     
+                                <div class="col col-33">                            
+                                    <h5><i class="icon ion-social-whatsapp"></i> Whatsapp:</h5>
+                                </div>
+                                <div class="col col-67">
+                                    <a class="text-bold valing-center" ng-href="https://wa.me/{{order.data.phone}}?text=Hola,%20te%20contacté%20mediante%20SALBR.%20Este%20es%20mi%20número%20celular.%20Saludos.">{{order.data.phone}}</a>
+                                </div>
+                            </div>
+                            <div class="row"> 
+                                <div class="col col-33">
+                                    <h5><i class="icon ion-map"></i> Dirección:</h5>    
+                                </div>
+                                <div class="col col-67">
+                                    <a class="text-bold valing-center" ng-href={{order.data.address}}>Esta es mi dirección.</a>
+                                </div>
+                                
+                            </div>
+                            <div class="row" > 
+                                <div class="col col-33">
+                                    <h5><i class="icon ion-email"></i> Correo:</h5>
+                                </div>
+                                <div class="col col-67">    
+                                    <a class="text-bold valing-center" ng-href="mailto:{{order.data.email}}">{{order.data.email}}</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div ng-if="order.data.answered == 0">
                         <h5>Esperando respuesta del anunciante</h5>
