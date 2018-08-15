@@ -10,33 +10,31 @@
         <form ng-submit="SalBr.search(search)" novalidate="" name="forms.search" id="searchForm">
             <div class="list">
 
-                <label class="item item-input item-select" class="transparent">
+                <label class="item item-input item-select" >
                     <div class="input-label">
                         Categoría
                     </div>
-                    <select ng-model="search.id_category" name="id_category" id="id_category" required="" ng-change="onChangeCategory()" class="transparent">
-                        <optgroup ng-repeat="parentCat in SalBr.getCategories()" label="{{parentCat.name}}" class="transparent">
+                    <select ng-model="search.id_category" name="id_category" id="id_category" required="" ng-change="onChangeCategory()">
+                        <optgroup ng-repeat="parentCat in SalBr.getCategories()" label="{{parentCat.name}}">
                             <option
                                 ng-if="parentCat.children.length"
                                 ng-repeat="category in parentCat.children"
                                 ng-value="category.id_category"
-                                ng-selected="{{category.id_category == SalBr.getSearchParams.id_category}}"
-                                class="transparent">
+                                ng-selected="{{category.id_category == SalBr.getSearchParams.id_category}}">
                                 {{category.name}}
                             </option>
                         </optgroup>
                     </select>
                 </label>
 
-                <label class="item item-input item-select" ng-if="childCategory" class="input-menu">
+                <label class="item item-input item-select" ng-if="childCategory">
                     <div class="input-label" >
                         Subcategoría
                     </div>
-                    <select ng-model="search.id_child_category" name="id_child_category" id="id_child_category" required="" class="input-menu">
+                    <select ng-model="search.id_child_category" name="id_child_category" id="id_child_category" required="">
                         <option 
                             ng-repeat="child in childCategory.children"
-                            ng-value="child.id_category"
-                            class="input-menu">
+                            ng-value="child.id_category">
                             {{child.name}}
                         </option>
                     </select>
