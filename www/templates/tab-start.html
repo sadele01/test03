@@ -5,20 +5,7 @@
     </ion-nav-title>
 
     <ion-content class="padding">
-            <ion-list>               
-             <ion-item>
-              <ion-label>Gaming</ion-label>
-              <ion-select [(ngModel)]="gaming" okText="Okay" cancelText="Dismiss" interface="popover">
-                <ion-option value="nes">NES</ion-option>
-                <ion-option value="n64">Nintendo64</ion-option>
-                <ion-option value="ps">PlayStation</ion-option>
-                <ion-option value="genesis">Sega Genesis</ion-option>
-                <ion-option value="saturn">Sega Saturn</ion-option>
-                <ion-option value="snes">SNES</ion-option>
-              </ion-select>
-            </ion-item>
-          </ion-list>
-
+        
         <h3 class="text-center">¿Qué estás buscando?</h3>
         <form ng-submit="SalBr.search(search)" novalidate="" name="forms.search" id="searchForm">
             <div class="list">
@@ -64,6 +51,21 @@
                         <option>Red</option>
                     </select>
                 </label-->
+                
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        Ciudad
+                    </div>
+                    <select ng-model="search.id_city" name="id_city" id="id_city">
+                        <option 
+                            ng-repeat="city in SalBr.getCities()"
+                            ng-value="city.id_city"
+                            ng-selected="{{city.id_city == 1684}}">
+                            {{city.name}}
+                        </option>
+                    </select>
+                </label>            
+                                
             </div>
             <div class="text-center">
                 <button class="button button-balanced button-block" type="submit"
