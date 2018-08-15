@@ -44,8 +44,21 @@ button.button.back-button.header-item span.back-text{display: none;}
   transform: perspective(1px) translateY(-50%);
 }
 
-.item.item-input {
-	border-color: rgba(0, 0, 0, 0);
-	background-color: rgba(0, 0, 0, 0);
-	color: white; 
+.item-select select {
+    -moz-appearance: none;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    padding: 0px 45px 0px 0px;
+    max-width: 100%;
+    border: medium none;
+    background: #FFF none repeat scroll 0% 0%;
+    color: #333;
+    text-indent: 0.01px;
+    text-overflow: "";
+    white-space: nowrap;
+    font-size: 14px;
+    cursor: pointer;
+    direction: rtl;
 }
