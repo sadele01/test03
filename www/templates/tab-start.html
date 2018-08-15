@@ -14,7 +14,7 @@
                     <div class="input-label">
                         Categoría
                     </div>
-                    <select ng-model="search.id_category" name="id_category" id="id_category" required="" ng-change="onChangeCategory()">
+                    <select ng-model="search.id_category" name="id_category" id="id_category" required="" ng-change="onChangeCategory()" class="transparent">
                         <optgroup ng-repeat="parentCat in SalBr.getCategories()" label="{{parentCat.name}}">
                             <option
                                 ng-if="parentCat.children.length"
