@@ -10,12 +10,12 @@
         <form ng-submit="SalBr.search(search)" novalidate="" name="forms.search" id="searchForm">
             <div class="list">
 
-                <label class="item item-input item-select">
+                <label class="item item-input item-select" class="transparent">
                     <div class="input-label">
                         Categoría
                     </div>
-                    <select ng-model="search.id_category" name="id_category" id="id_category" required="" ng-change="onChangeCategory()">
-                        <optgroup ng-repeat="parentCat in SalBr.getCategories()" label="{{parentCat.name}}">
+                    <select ng-model="search.id_category" name="id_category" id="id_category" required="" ng-change="onChangeCategory()" class="transparent">
+                        <optgroup ng-repeat="parentCat in SalBr.getCategories()" label="{{parentCat.name}}" class="transparent">
                             <option
                                 ng-if="parentCat.children.length"
                                 ng-repeat="category in parentCat.children"
@@ -28,11 +28,11 @@
                     </select>
                 </label>
 
-                <label class="item item-input item-select" ng-if="childCategory">
-                    <div class="input-label">
+                <label class="item item-input item-select" ng-if="childCategory" class="input-menu">
+                    <div class="input-label" >
                         Subcategoría
                     </div>
-                    <select ng-model="search.id_child_category" name="id_child_category" id="id_child_category" required="" >
+                    <select ng-model="search.id_child_category" name="id_child_category" id="id_child_category" required="" class="input-menu">
                         <option 
                             ng-repeat="child in childCategory.children"
                             ng-value="child.id_category"
