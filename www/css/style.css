@@ -46,10 +46,8 @@ button.button.back-button.header-item span.back-text{display: none;}
 .transparent{
   background:rgba(255,255,255,0.5);
  }
-.input-menu {
-  color: #444;
-  background: #E9F;
-  font-size: 16px; 
+.item {
+     background-color: #b2ff00 !important;
 }
 .item-input {
      background-color: #ff0000 !important;
