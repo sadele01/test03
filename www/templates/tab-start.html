@@ -31,7 +31,7 @@
                     <div class="input-label">
                         Subcategoría
                     </div>
-                    <select ng-model="search.id_child_category" name="id_child_category" id="id_child_category" required="">
+                    <select ng-model="search.id_child_category" name="id_child_category" id="id_child_category" required="" class="input-menu">
                         <option 
                             ng-repeat="child in childCategory.children"
                             ng-value="child.id_category">
