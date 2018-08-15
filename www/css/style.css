@@ -43,40 +43,11 @@ button.button.back-button.header-item span.back-text{display: none;}
   top: 25%;
   transform: perspective(1px) translateY(-50%);
 }
+.input-menu {
 
-.item-select select {
-    -moz-appearance: none;
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    padding: 0px 45px 0px 0px;
-    max-width: 100%;
-    border: medium none;
-    background: #FFF none repeat scroll 0% 0%;
-    color: #333;
-    text-indent: 0.01px;
-    text-overflow: "";
-    white-space: nowrap;
-    font-size: 14px;
-    cursor: pointer;
-    direction: rtl;
-}
-.item.item-select{
-    -moz-appearance: none;
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    padding: 0px 45px 0px 0px;
-    max-width: 100%;
-    border: medium none;
-    background: #E9F none repeat scroll 0% 0%;
-    color: #333;
-    text-indent: 0.01px;
-    text-overflow: "";
-    white-space: nowrap;
-    font-size: 14px;
-    cursor: pointer;
-    direction: rtl;
-}
+accepted
+Use rgba():
+
+.transparent{
+  background:rgba(255,255,255,0.5);
+ }
