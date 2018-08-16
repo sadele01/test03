@@ -1,4 +1,8 @@
-<ion-view view-title="">
+<ion-view>
+    <ion-nav-title style="position: relative;top:20%;margin-left:5px;">
+      <img style="float:left;width:8%;padding-top:8px;" ng-src="img/logo.png">
+      SalBr - Detalles del servicio
+    </ion-nav-title>
     <ion-content>
         <div ng-if="order === null">
             <h2 class="text-center">
@@ -151,7 +155,7 @@
                                 <span class="input-label">Comentario</span>
                                 <textarea maxlength="250" required="" ng-model="rank.comment"></textarea>
                             </label>
-                            <button class="button button-dark button-full">
+                            <button class="button button-balanced button-full">
                                 <i class="icon ion-paper-airplane"></i> Enviar calificación
                             </button>
                         </ion-list>

@@ -4,7 +4,12 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
-<ion-view view-title="">
+<ion-view>
+    <ion-nav-title style="position: relative;top:20%;margin-left:5px;">
+      <img style="float:left;width:8%;padding-top:8px;" ng-src="img/logo.png">
+      SalBr - Detalles
+    </ion-nav-title>
+  
     <ion-content class="padding">
         <h2 class="text-center">{{publication.title}}</h2>
         <p class="text-center ratingContainer">
@@ -21,7 +26,7 @@
             </ion-slide>
         </ion-slide-box>
         <p class="text-center">
-            <button class="button button-dark" ng-click="openModal();"> 
+            <button class="button button-balanced" ng-click="openModal();"> 
                 <i class="icon ion-ios-checkmark-outline"></i> Solicitar órden 
             </button>
         </p>
