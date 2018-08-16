@@ -1,4 +1,9 @@
-<ion-view view-title="Mis Órdenes">
+<ion-view>
+    <ion-nav-title style="position: relative;top:25%;margin-left:5px;">
+      <img style="float:left;width:8%;padding-top:8px;" ng-src="img/logo.png">
+      SalBr - Servicios que solicitas
+    </ion-nav-title>
+    
     <ion-content class="padding">
         <ion-list ng-if="SalBr.getMyOrders().total_lines">
             <ion-item class="item-remove-animate item-icon-right" 
