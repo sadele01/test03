@@ -4,9 +4,9 @@ angular.module('starter.controllers', ['ionic','ionic-modal-select'])
             SalBr.recoverSession();
         })
 
-        .controller('StartCtrl', function ($scope, $http, SalBr) {
+        .controller('StartCtrl', ['$scope', function ($scope) {
           $scope.selectables = [1, 2, 3];
-        })
+        }])
 
         .controller('ChatsCtrl', function ($scope, Chats) {
             // With the new view caching in Ionic, Controllers are only called
