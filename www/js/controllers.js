@@ -5,40 +5,7 @@ angular.module('starter.controllers', ['ionic'])
         })
 
         .controller('StartCtrl', function ($scope, $http, SalBr) {
-            SalBr.fetchCities();
-            SalBr.fetchCategories();
-            SalBr.fetchMyServiceId();
-
-            $scope.SalBr = SalBr;
-            $scope.forms = {};
-
-            $scope.search = SalBr.getSearch();
-
-            $scope.childCategory = false;
-
-            $scope.onChangeCategory = function () {
-                var cats = SalBr.getCategories();
-                $scope.id_child_category = null;
-                for (var master in cats) {
-                    for (var i in cats[master].children) {
-                        category = cats[master].children[i];
-                        if (category.id_category == $scope.search.id_category) {
-                            if (!category.children) {
-                                $scope.childCategory = false;
-                            } else {
-                                $scope.forms.search.$invalid = true;
-                                $scope.childCategory = category;
-                            }
-                            return null;
-                        }
-                    }
-                }
-            };
-
-
-            $scope.getStarClass = function (star, rating) {
-                return parseInt(rating) >= star ? 'active' : 'inactive';
-            };
+          $scope.selectables = [1, 2, 3];
         })
 
         .controller('ChatsCtrl', function ($scope, Chats) {
@@ -378,8 +345,5 @@ angular.module('starter.controllers', ['ionic'])
 
         .controller('MyClientCodeCtrl', function ($scope, SalBr, $http) {
             $scope.SalBr = SalBr;
-        })
-        .controller('MainCtrl', ['$scope', function ($scope) {
-          $scope.selectables = [1, 2, 3];
         })
         ;
