@@ -3,29 +3,38 @@
       <img style="float:left;width:8%;padding-top:8px;" ng-src="img/logo.png">
       SalBr
     </ion-nav-title>
+            <form ng-submit="SalBr.search(search)" novalidate="" name="forms.search" id="searchForm">
+                <ion-pane>
+                    <ion-header-bar class="bar-stable">
+                      <h1 class="title">Ionic modal select example</h1>
+                    </ion-header-bar>
+                    <ion-content>
+                      <div class="item item-divider"></div>
+                      
+                        <div class="item item-text-wrap">
+                        List of numbers.
+                      </div>
+                        
+                      <div class="item item-body">
+                        <button class="button button-positive" modal-select="" ng-model="someModel" options="selectables" modal-title="Select a number">
+                            Select it
+                            <div class="option">
+                              {{option}}
+                            </div>
+                         </button>
 
-    <ion-content class="padding">
-        
-        <h3 class="text-center">¿Qué estás buscando?</h3>
-        <form ng-submit="SalBr.search(search)" novalidate="" name="forms.search" id="searchForm">
-            <div class="list">
-                <div padding-top></div>
-                <p ion-text text-center>Register With Your Phone Number</p>
-                <ion-item>
-                    <ion-icon item-start name="phone-portrait"></ion-icon>
-                    <ion-select item-left [(ngModel)]="account.code" name="countrycode">
-                      <ion-option value="a">AAAAAA</ion-option>
-                      <ion-option value="b">BBBBBB</ion-option>
-                      <ion-option value="c">CCCCCC</ion-option>
-                    </ion-select>
-                </ion-item>
-
-                <div padding>
-                    <button ion-button color="primary" block>Send Confirmation Code</button>
-                </div>
-
-                <p ion-text text-center color="dark">We will send a one time SMS message to verify your phone number.</p>
-
+                        <button class="button button-positive" modal-select="" ng-model="someModel" options="selectables" modal-title="Select a number" has-search="true">
+                            Select it (with search)
+                            <div class="option">
+                              {{option}}
+                            </div>
+                          </button>
+                      </div>
+                        
+                      <div class="item">
+                        someModel: {{someModel}}
+                      </div>
+                    </ion-content>
+                </ion-pane>        
             </form>
-        </ion-content>
 </ion-view>
