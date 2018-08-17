@@ -379,4 +379,7 @@ angular.module('starter.controllers', ['ionic'])
         .controller('MyClientCodeCtrl', function ($scope, SalBr, $http) {
             $scope.SalBr = SalBr;
         })
+        .controller('MainCtrl', ['$scope', function ($scope) {
+          $scope.selectables = [1, 2, 3];
+        })
         ;
