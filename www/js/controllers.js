@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ionic','ionic-modal-select'])
+angular.module('starter.controllers', ['ionic'])
 
         .controller('mainController', function ($scope, SalBr) {
             SalBr.recoverSession();
