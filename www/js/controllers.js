@@ -5,8 +5,13 @@ angular.module('starter.controllers', ['ionic', 'ionic-modal-select'])
         })
 
         .controller('StartCtrl', ['$scope', function ($scope, $http, SalBr) {
-          SalBr.fetchCities();
           $scope.selectables = [1, 2, 3];
+            SalBr.fetchCities();
+            SalBr.fetchCategories();
+            SalBr.fetchMyServiceId();
+
+            $scope.SalBr = SalBr;
+            $scope.forms = {};
         }])
 
         .controller('ChatsCtrl', function ($scope, Chats) {
