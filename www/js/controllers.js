@@ -4,7 +4,8 @@ angular.module('starter.controllers', ['ionic', 'ionic-modal-select'])
             SalBr.recoverSession();
         })
 
-        .controller('StartCtrl', ['$scope', function ($scope) {
+        .controller('StartCtrl', ['$scope', function ($scope, $http, SalBr) {
+          SalBr.fetchCities();
           $scope.selectables = [1, 2, 3];
         }])
 
