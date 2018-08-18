@@ -37,7 +37,9 @@ button.button.back-button.header-item span.back-text{display: none;}
 .row {
   border:1px solid;
 }
-
+.col {
+  border:1px solid;
+}
 .valing-center {
   position: relative;
   top: 25%;
