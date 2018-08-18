@@ -60,13 +60,16 @@
                     <h5>{{SalBr.getUser().address}}</h5>
                 </div>
             </div>
-             <div class="row">
+            <div class="row">
                 <div class="col col-33">
                     <h5>Descripción:</h5>
-                </div>
-                <div class="col">
-                    <h5>{{SalBr.getUser().rating}}</h5>
-                </div>
+                </div>            
+                <div class="col starRankingSelector">
+                    <div class="text-center" ratingContainer">
+                        <i class="icon ion-star" ng-repeat="star in [1, 2, 3, 4, 5]"
+                            ng-class="getStarClass($index + 1, {{SalBr.getUser().rating}})"></i>
+                    </div>
+                </div>  
             </div>
             <div class="row">
                 <div class="col col-33">
