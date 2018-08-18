@@ -52,25 +52,20 @@
                 <div class="row">
                     <div class="mapouter">
                         <div class="gmap_canvas">
-                            
-                            <iframe width="303" height="299" id="gmap_canvas" src="https://maps.google.com/maps?q=notaria%2021%20puebla&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                            <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=notaria%2021%20puebla&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
                             </iframe>
                         </div>
                         <style>
-                            .mapouter{text-align:right;height:299px;width:303px;}.gmap_canvas {overflow:hidden;background:none!important;height:300px;width:300px;}
+                            .mapouter{text-align:right;}.gmap_canvas {overflow:hidden;background:none!important;}
                         </style>
                     </div> 
                 </div>
                 <div class="row">
                      <div class="mapouter">
                         <div class="gmap_canvas">
-                            
-                            <iframe width="303" height="299" id="gmap_canvas" src="{{SalBr.getUser().address}}" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                            <iframe id="gmap_canvas" src="{{SalBr.getUser().address}}" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
                             </iframe>
                         </div>
-                        <style>
-                            .mapouter{text-align:right;height:299px;width:303px;}.gmap_canvas {overflow:hidden;background:none!important;height:300px;width:300px;}
-                        </style>
                     </div>                           
                 </div>
             </div>
