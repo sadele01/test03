@@ -1,17 +1,86 @@
 <ion-view>
     <ion-nav-title style="position: relative;top:20%;margin-left:5px;">
       <img style="float:left;width:8%;padding-top:8px;" ng-src="img/logo.png">
-      SalBr - Mi código de cliente
+      SalBr - Mis datos
     </ion-nav-title>    
     <ion-content class="padding text-center">
+        <div ng-if="order === null">
+            <h2 class="text-center">
+                <strong>Cargando órden</strong>
+                <br>
+                <ion-spinner icon="spiral" class="spiral-calm"></ion-spinner>
+            </h2>
+        </div>
+        <div id="userdetails">
+            <div class="row">
+                <div class="col col-33">
+                    <h5>Id:</h5>
+                </div>
+                <div class="col">
+                    <h5>{{SalBr.getUser().screen_name}}</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-33">
+                    <h5>Nombre:</h5>
+                </div>
+                <div class="col">
+                    <h5>{{SalBr.getUser().title}}</h5>
+                </div>
+            </div>
+             <div class="row">
+                <div class="col col-33">
+                    <h5>Descripción:</h5>
+                </div>
+                <div class="col">
+                    <h5>{{SalBr.getUser().description}}</h5>
+                </div>
+            </div>
+             <div class="row">
+                <div class="col col-33">
+                    <h5>E-mail:</h5>
+                </div>
+                <div class="col">
+                    <h5>{{SalBr.getUser().email}}</h5>
+                </div>
+            </div>                    
+             <div class="row">
+                <div class="col col-33">
+                    <h5>Teléfono:</h5>
+                </div>
+                <div class="col">
+                    <h5>{{SalBr.getUser().telephone}}</h5>
+                </div>
+            </div> 
+             <div class="row">
+                <div class="col col-33">
+                    <h5>Dirección:</h5>
+                </div>
+                <div class="col">
+                    <h5>{{SalBr.getUser().address}}</h5>
+                </div>
+            </div>
+             <div class="row">
+                <div class="col col-33">
+                    <h5>Descripción:</h5>
+                </div>
+                <div class="col">
+                    <h5>{{SalBr.getUser().rating}}</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-33">
+                    <h5>Código de Cliente:</h5>
+                </div>
+                <div class="col">
+                    <h5>{{SalBr.getUser().user_key}}</h5>
+                </div>
+            </div>
+        </div>
+        
+        
         <p>
-            Éste es su código de cliente:
-        </p>
-        <h1>
-            {{SalBr.getUser()}}
-        </h1>
-        <p>
-            Con éste código podrá dar de alta sus anuncios y así las notificaciones le llegarán directamente a usted en caso de que algún cliente necesite de sus servicios.
+            Con el Código de Cliente podrá dar de alta sus anuncios y así las notificaciones le llegarán directamente a usted en caso de que algún cliente necesite de sus servicios.
         </p>
         <p>
             También podrá utilizarlo para hacer válidas sus promociones en caso de calificar para ellas.
