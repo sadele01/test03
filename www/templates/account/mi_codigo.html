@@ -56,7 +56,7 @@
                 <div class="col col-33">
                     <h5>Dirección:</h5>
                 </div>
-                <div class="col">
+                <div class="col col-60">
                     <h5>{{SalBr.getUser().address}}</h5>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1885.8543458021563!2d-98.20568617059936!3d19.032553999999998!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x46a189500add1fc2!2sThe+Queen+Pastes+Artesanales!5e0!3m2!1ses-419!2smx!4v1493267807216" frameborder="0" style="border:0" ></iframe> 
                 </div>
@@ -66,7 +66,7 @@
                     <h5>Calificación como servidor:</h5>
                 </div>            
                 <div class="col starRankingSelector">
-                    <div class="text-center" ratingContainer">
+                    <div class="text-center ratingContainer">
                         <i class="icon ion-star" ng-repeat="star in [1, 2, 3, 4, 5]"
                             ng-class="getStarClass($index + 1, {{SalBr.getUser().rating}})"></i>
                     </div>
