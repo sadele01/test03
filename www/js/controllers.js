@@ -377,6 +377,9 @@ angular.module('starter.controllers', ['ionic'])
         })
 
         .controller('MyClientCodeCtrl', function ($scope, SalBr, $http) {
-            $scope.SalBr = SalBr;
+                $scope.SalBr = SalBr;
+                $scope.getStarClass = function (star, rating) {
+                        return parseInt(rating) >= star ? 'active' : 'inactive';
+                };
         })
         ;
