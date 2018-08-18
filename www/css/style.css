@@ -34,9 +34,9 @@ button.button.back-button.header-item span.back-text{display: none;}
     font-size: 3em;
     color: lightgray;
 }
-/*.row {
+.row {
   border:1px solid;
-} */
+}
 
 .valing-center {
   position: relative;
