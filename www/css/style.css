@@ -46,3 +46,8 @@ button.button.back-button.header-item span.back-text{display: none;}
   top: 25%;
   transform: perspective(1px) translateY(-50%);
 }
+.center-div
+{
+     margin: 0 auto;
+     width: 100px; 
+}
