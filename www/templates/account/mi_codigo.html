@@ -3,17 +3,10 @@
       <img style="float:left;width:8%;padding-top:8px;" ng-src="img/logo.png">
       SalBr - Mis datos
     </ion-nav-title>    
-    <ion-content class="padding text-center">
-        <div ng-if="order === null">
-            <h2 class="text-center">
-                <strong>Cargando órden</strong>
-                <br>
-                <ion-spinner icon="spiral" class="spiral-calm"></ion-spinner>
-            </h2>
-        </div>
+    <ion-content class="padding">
         <div id="userdetails">
             <div class="row">
-                <div class="col col-33">
+                <div class="col col-30">
                     <h5>Id:</h5>
                 </div>
                 <div class="col">
@@ -21,7 +14,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col col-33">
+                <div class="col col-30">
                     <h5>Nombre:</h5>
                 </div>
                 <div class="col">
@@ -29,7 +22,7 @@
                 </div>
             </div>
              <div class="row">
-                <div class="col col-33">
+                <div class="col col-30">
                     <h5>Descripción:</h5>
                 </div>
                 <div class="col">
@@ -37,7 +30,7 @@
                 </div>
             </div>
              <div class="row">
-                <div class="col col-33">
+                <div class="col col-30">
                     <h5>E-mail:</h5>
                 </div>
                 <div class="col">
@@ -45,7 +38,7 @@
                 </div>
             </div>                    
              <div class="row">
-                <div class="col col-33">
+                <div class="col col-30">
                     <h5>Teléfono:</h5>
                 </div>
                 <div class="col">
@@ -53,16 +46,12 @@
                 </div>
             </div> 
              <div class="row">
-                <div class="col col-33">
                     <h5>Dirección:</h5>
-                </div>
-                <div class="col col-60">
                     <h5>{{SalBr.getUser().address}}</h5>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1885.8543458021563!2d-98.20568617059936!3d19.032553999999998!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x46a189500add1fc2!2sThe+Queen+Pastes+Artesanales!5e0!3m2!1ses-419!2smx!4v1493267807216" frameborder="0" style="border:0" ></iframe> 
-                </div>
             </div>
             <div class="row">
-                <div class="col col-33">
+                <div class="col col-30">
                     <h5>Calificación como servidor:</h5>
                 </div>            
                 <div class="col starRankingSelector">
@@ -73,10 +62,10 @@
                 </div>  
             </div>
             <div class="row">
-                <div class="col col-33">
+                <div class="col col-30">
                     <h5>Código de Cliente:</h5>
                 </div>
-                <div class="col">
+                <div class="col valing-center">
                     <strong>{{SalBr.getUser().user_key}}</strong>
                 </div>
             </div>
