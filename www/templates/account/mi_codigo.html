@@ -45,8 +45,13 @@
                     <h5>{{SalBr.getUser().telephone}}</h5>
                 </div>
             </div> 
-            <div>
-                <h5 class="text-center">Dirección:</h5>
+            <div class="row"> 
+                <div class="col col-33">
+                    <h5>Dirección:</h5>    
+                </div>
+                <div class="col col-67">
+                    <a class="text-bold valing-center" ng-href={{SalBr.getUser().address}}>Esta es mi dirección.</a>
+                </div>
             </div>
             <div class="row">
                 <div class="col col-33">
@@ -55,7 +60,18 @@
                 <div class="col starRankingSelector">
                     <div class="text-center ratingContainer">
                         <i class="icon ion-star" ng-repeat="star in [1, 2, 3, 4, 5]"
-                            ng-class="getStarClass($index + 1, {{SalBr.getUser().rating}})"></i>
+                            ng-class="getStarClass($index + 1, {{SalBr.getUser().rating_pro}})"></i>
+                    </div>
+                </div>  
+            </div>
+            <div class="row">
+                <div class="col col-33">
+                    <h5>Calificación como cliente:</h5>
+                </div>            
+                <div class="col starRankingSelector">
+                    <div class="text-center ratingContainer">
+                        <i class="icon ion-star" ng-repeat="star in [1, 2, 3, 4, 5]"
+                            ng-class="getStarClass($index + 1, {{SalBr.getUser().rating_cnt}})"></i>
                     </div>
                 </div>  
             </div>
